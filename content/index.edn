@@ -1,0 +1,5 @@
+[:landing-page
+ [:title "Brian Sunter"]
+ [:about "My name is Brian Sunter and I'm a software Engineer in San Francisco"]
+ [:social [:github] [:linked-in] [:facebook] [:twitter]]
+ [:work [:capital-one] [:snap-up] [:partender] [:amazon] [:disney]]]
