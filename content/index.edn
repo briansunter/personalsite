@@ -1,5 +1,19 @@
 [:landing-page
  [:title "Brian Sunter"]
  [:about "My name is Brian Sunter and I'm a software Engineer in San Francisco"]
- [:social [:github] [:linked-in] [:facebook] [:twitter]]
- [:work [:capital-one] [:snap-up] [:partender] [:amazon] [:disney]]]
+ [:social
+  [:github {:href "https://github.com/briansunter"}]
+  [:linkedin {:href "https://www.linkedin.com/in/brian-sunter-9853a649"}]
+  [:twitter {:href "https://twitter.com/bsunter"}]
+  [:facebook {:href "https://www.facebook.com/briansunterblog"}]]
+ [:work
+  [:capital-one
+   "I build APIs for APIs. I work on DevExchange, Capital One's streaming data and REST API platform. We practice microservice architecture, end to end ownership of features by full stack teams, and continuous delivery."]
+  [:snap-up
+   "I worked on SnapUp, a machine learning powered shopping app. Track any product you like by taking a screenshot. We did this with patented product fingerprinting and price tracking technology. Acquired by ipsy."]
+  [:partender
+   "I co-founded Partender, a bar and restaurant inventory management system. We practiced lean product development and worked closely with our customers to find market fit. We went through the 500 Startups accelerator to build out our sales and marketing. We are featured on the show Bar Rescue. Our customers include restaurant groups, hotel chains, and establishments worldwide."]
+  [:amazon
+   "I built debugging tools for Amazon's internal messaging platform. I used great implementations of agile scrum, strict TDD, and continuous integration to write clean, correct, and maintainable code."]
+  [:disney
+   "I developed a cross platform mobile app and node backend for guests of Disney's Wide World of Sports complex in Orlando, FL."]]]

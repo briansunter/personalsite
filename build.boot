@@ -15,8 +15,7 @@
 (task-options!
  pom {:project 'briansuter.com
       :version "0.2.0"}
- s3-sync {
-          :bucket "bsun.io"
+ s3-sync {:bucket "bsun.io"
           :source "public/"
           :access-key (System/getenv "AWS_ACCESS_KEY")
           :secret-key (System/getenv "AWS_SECRET_KEY")
