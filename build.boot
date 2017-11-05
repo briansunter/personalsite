@@ -1,6 +1,6 @@
 (set-env!
  :source-paths #{"src"}
- :resource-paths #{"content"}
+ :resource-paths #{"content" "resources"}
  :dependencies '[[perun "0.4.2-SNAPSHOT" :scope "test"]
                  [boot/core "2.6.0" :scope "provided"]
                  [pandeiro/boot-http "0.8.3"]
@@ -34,6 +34,7 @@
    (rss :site-title "Brian Sunter" :description "Brian Sunter's personal site" :base-url "https://briansunter.com/")
    (atom-feed :site-title "Brian Sunter" :description "Brian Sunter's Personal Site" :base-url "https://briansunter.com/")
    (sift :move {#"(.*)\.edn$" "$1.html"})
+   (sift :move {#"(.*\.ttf)" "public/$1"})
    (target)))
 
 (deftask dev

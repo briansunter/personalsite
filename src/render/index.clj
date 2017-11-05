@@ -10,35 +10,29 @@
 (defn style [s]
   (clojure.string/join ";" (map #(str (name %) ":" ((keyword %) s)) (keys s))))
 
-(deftag :contact-link
-  (fn [attrs content]
-    [:div "Contact"]))
+(defn project-section
+  [name content]
+  [:div
+   [:h4 {:style (style {:font-size sub-header-font-size :padding-bottom ".25em"})} name]
+   [:div {:style (style {:font-size content-font-size :padding-bottom "1em"})} content]])
 
-(deftag :projects-link
+(deftag :personal-site
   (fn [attrs content]
-    [:div "Projects"]))
+    (project-section "Personal Site" content)))
 
-(deftag :work-link
+(deftag :projects
   (fn [attrs content]
-    [:div "Work"]))
-
-(deftag :about-link
-  (fn [attrs content]
-    [:div "About"]))
-
-(deftag :navigation
-  (fn [attrs content]
-    [:div {:style (style {:display "grid"
-                          :font-size sub-header-font-size
-                          :grid-template-columns "repeat(4, 1fr)"
-                          :grid-column "2 / span 20"})}
-     content]))
+  [:div {:style (style {:grid-column "2 / span 20"})}
+   [:h3 {:style (style {:font-size header-font-size :padding-bottom ".25em"})} "Projects"]
+   [:div {:style (style {:padding-top "1em"})} content]]))
 
 (defn work-section
   [name content]
   [:div
-  [:h4 {:style (style {:font-size sub-header-font-size :padding-bottom ".25em"})} name]
-   [:div {:style (style {:font-size content-font-size :padding-bottom "1em"})} content]])
+   [:h4 {:style (style {:font-size sub-header-font-size :padding-bottom ".25em"})} name]
+   [:div {:style (style {:font-size content-font-size
+                         :padding-bottom "1em"})}
+    content]])
 
 (deftag :capital-one
   (fn [attrs content]
@@ -68,7 +62,7 @@
 
 (defn social-link
   [{:keys [href]} content]
-   [:a {:href href} content])
+  [:a {:href href} content])
 
 (deftag :facebook
   (fn [attrs content]
@@ -92,28 +86,27 @@
                           :justify-content "space-between"
                           :font-size social-font-size
                           :grid-column "2 / span 20"})}
-    content]))
+     content]))
 
 (deftag :about
   (fn [attrs content]
     [:div {:style (style {:grid-column "2 / span 20"
-                          :font-size sub-header-font-size
-                          :font-family "'Montserrat', sans-serif"})}
+                          :font-size sub-header-font-size})}
      [:h2 attrs content]]))
 
 (deftag :title
-(fn [attrs content]
+  (fn [attrs content]
     [:div {:style (style {:font-size title-font-size
-                          :grid-column "2/ -1"
-                          :font-family "'Montserrat', sans-serif"})}
+                          :grid-column "2/ -1"})}
      [:h1 content]]))
+
 
 (deftag :landing-page
   (fn [attrs content]
     [:body
      [:div {:style (style {:display "grid"
                            :grid-template-columns "repeat(24, [col-start] 1fr)"
-                           :font-family "'Montserrat', sans-serif"
                            :grid-auto-flow "column"
+                           :font-family "'Montserrat', sans-serif"
                            :grid-row-gap "3em"})}
       content]]))
