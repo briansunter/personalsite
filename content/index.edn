@@ -8,12 +8,12 @@
   [:facebook {:href "https://www.facebook.com/briansunterblog"}]]
  [:work
   [:capital-one
-   "I build APIs for APIs. I work on DevExchange, Capital One's streaming data and REST API platform. We practice microservice architecture, end to end ownership of features by full stack teams, and continuous delivery."]
+   "I build APIs for APIs. I work on DevExchange, Capital One's streaming data and REST API platform. We practice agile, microservice architecture, continuous delivery, and end to end ownership of features by full stack teams."]
   [:snap-up
    "I worked on SnapUp, a machine learning powered shopping app. Track any product you like by taking a screenshot. We did this with patented product fingerprinting and price tracking technology. Acquired by ipsy."]
   [:partender
-   "I co-founded Partender, a bar and restaurant inventory management system. We practiced lean product development and worked closely with our customers to find market fit. We went through the 500 Startups accelerator to build out our sales and marketing. We are featured on the show Bar Rescue. Our customers include restaurant groups, hotel chains, and establishments worldwide."]
+   "I co-founded Partender, a bar and restaurant inventory management system. We practiced lean product development and worked closely with our customers to find market fit. We went through the 500 Startups accelerator to build out our sales and marketing. We are featured on the show hit show Bar Rescue with 2.2 million viewers. Our customers include restaurant groups, hotel chains, and establishments worldwide."]
   [:amazon
-   "I built debugging tools for Amazon's internal messaging platform. I used great implementations of agile scrum, strict TDD, and continuous integration to write clean, correct, and maintainable code."]
+   "I built debugging tools for Amazon's internal messaging platform. I used agile scrum, strict TDD, and continuous integration to write clean, correct, and maintainable code."]
   [:disney
    "I developed a cross platform mobile app and node backend for guests of Disney's Wide World of Sports complex in Orlando, FL."]]]
