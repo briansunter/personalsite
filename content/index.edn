@@ -19,5 +19,5 @@
    "I developed a cross platform mobile app and node backend for guests of Disney's Wide World of Sports complex in Orlando, FL."]]
  [:projects
   [:personal-site
-   {:href "/projects/personal_site"}
-   "This site is a data structure. The content and structure is defined by an edn file, Clojure's version of json. It is a vector of vectors that is rendered to an html page using boot, a middleware oriented build tool. "]]]
+   {:href "/personal-site/personal-site.html"}
+   "This site is a data structure. The content and structure is defined by an edn file, Clojure's version of json. It is a vector of vectors that is rendered to an html page using boot, a middleware oriented build tool."]]]

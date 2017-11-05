@@ -10,26 +10,45 @@
 (defn style [s]
   (clojure.string/join ";" (map #(str (name %) ":" ((keyword %) s)) (keys s))))
 
+(deftag :project
+  (fn [attrs content]
+    [:div {:style (style {:display "grid"
+                          :grid-template-columns "repeat(24, [col-start] 1fr)"
+                          :grid-auto-flow "column"
+                          :font-family "'Montserrat', sans-serif"
+                          :grid-row-gap "3em"})}
+     content]))
+
 (defn project-section
-  [name content]
+  [name {:keys [href]} content]
   [:div
-   [:h4 {:style (style {:font-size sub-header-font-size :padding-bottom ".25em"})} name]
-   [:div {:style (style {:font-size content-font-size :padding-bottom "1em"})} content]])
+   [:a {:href href
+        :style (style {:font-size sub-header-font-size
+                       :padding-bottom ".5em"})}
+    name]
+   [:div {:style (style {:font-size content-font-size
+                         :padding-bottom "1em"
+                         :padding-top "1em"})}
+    content]])
 
 (deftag :personal-site
   (fn [attrs content]
-    (project-section "Personal Site" content)))
+    (project-section "Personal Site" attrs content)))
 
 (deftag :projects
   (fn [attrs content]
-  [:div {:style (style {:grid-column "2 / span 20"})}
-   [:h3 {:style (style {:font-size header-font-size :padding-bottom ".25em"})} "Projects"]
-   [:div {:style (style {:padding-top "1em"})} content]]))
+    [:div {:style (style {:grid-column "2 / span 20"})}
+     [:h3 {:style (style {:font-size header-font-size
+                         :padding-bottom ".25em"})}
+      "Projects"]
+     [:div content]]))
 
 (defn work-section
   [name content]
   [:div
-   [:h4 {:style (style {:font-size sub-header-font-size :padding-bottom ".25em"})} name]
+   [:h4 {:style (style {:font-size sub-header-font-size
+                        :padding-bottom ".25em"})}
+    name]
    [:div {:style (style {:font-size content-font-size
                          :padding-bottom "1em"})}
     content]])
@@ -99,7 +118,6 @@
     [:div {:style (style {:font-size title-font-size
                           :grid-column "2/ -1"})}
      [:h1 content]]))
-
 
 (deftag :landing-page
   (fn [attrs content]
