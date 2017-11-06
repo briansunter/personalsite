@@ -12,7 +12,7 @@
 
 (defn base
   [c]
-  (html5 [:head[:meta {:charset "utf-8"}]]
+  (html5 [:head [:meta {:charset "utf-8"}]]
         (-> c :entry :content)))
 
 (defn render
