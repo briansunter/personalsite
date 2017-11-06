@@ -25,16 +25,19 @@
   []
   (comp
    (global-metadata)
-   (render :renderer 'render.render/render :extensions [".edn"])
    (draft)
    (ttr)
    (slug)
    (permalink)
+   (render :renderer 'render.render/render :extensions [".edn"])
+   (asciidoctor)
    (sitemap :filename "sitemap.xml")
    (rss :site-title "Brian Sunter" :description "Brian Sunter's personal site" :base-url "https://briansunter.com/")
    (atom-feed :site-title "Brian Sunter" :description "Brian Sunter's Personal Site" :base-url "https://briansunter.com/")
    (sift :move {#"(.*)\.edn$" "$1.html"})
    (sift :move {#"(.*\.ttf)" "public/$1"})
+   (sift :move {#"(.*\.js)" "public/$1"})
+   (sift :move {#"(.*\.css)" "public/$1"})
    (target)))
 
 (deftask dev
@@ -43,7 +46,7 @@
    (print-meta)
    (watch)
    (build)
-   (serve :resource-root "public")))
+   (serve :dir "target/public" )))
 
 (deftask deploy
   []

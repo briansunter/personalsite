@@ -1,0 +1,120 @@
+---
+---
+== Intro to Clojurescript with Reagent
+The Javascript community has finally started rallying around the power of functional programming and immutability in React apps, but what would this look like in a language that supported these ideas really well?
+
+=== What is Reagent?
+Reagent is a Clojurescript wrapper around React. It simplifies the interface to React and allows us to define our UI using hiccup templates, instead of JSX.
+
+=== Hello World Component
+REPL syntax for importing Reagent.
+From a file, the syntax is:
+(ns my-ns.core
+  (:require [reagent.core :as r]))
+
+[source.clj]
+----
+(require '[reagent.core :as r])
+----
+
+Define a simple Reagent (React) component. Components are functions that take 0 or more arguments and return a Hiccup data structure
+
+[source.clj]
+----
+(defn hello [name]
+  [:p (str "Hello " name "!")])
+----
+
+Mount the react component on #hello-world div
+
+[source.clj]
+----
+(r/render-component [hello "World"] (.getElementById js/document "hello-world"))
+----
+
+[#hello-world]
+Loading...
+
+=== Clojure functions and Hiccup
+defn defines a function in Clojure. Our function takes one "name" parameter and returns a vector. The last "expression" in the function is the return value.
+
+[source.clj]
+----
+(defn hello [name]
+  [:p (str "Hello " name "!")])
+----
+
+=== Calling our Function
+The first expression in a set of parens is a function
+that will be called with the following expressions as arguments.
+Our function will return an array [:p "Hello World!"] with a :keyword as the first item signifying the type of element to be rendered, and the content of the element in the second position.
+
+[source.clj]
+----
+(hello "World")
+----
+
+[source.clj]
+----
+(defn hello [name]
+  (str "hello " name "\n"))
+
+(println "hello world")
+(defn draw-pixel! [canvas x y color]
+  (let [ctx (.getContext canvas "2d")
+        scale 2]
+    (set! (.-fillStyle ctx) color)
+    (.fillRect ctx (* scale x) (* scale y) scale scale)))
+(defn reset-canvas! [canvas]
+  (let [ctx (.getContext canvas "2d")]
+    (set! (.-fillStyle ctx) "white")
+    (.fillRect ctx 0 0 (.-width canvas) (.-height canvas))))
+(defn draw-bw-wallpaper! [canvas a b side]
+  (let [points 200]
+    (dotimes [i points]
+      (dotimes [j points]
+        (let [x (+ a (* i (/ side points)))
+              y (+ b (* j (/ side points)))
+              c (int (+ (* x x) (* y y)))]
+          (when (even? c)
+            (draw-pixel! canvas i j "black")))))))
+
+(def canvas (.createElement js/document "canvas"))
+(.appendChild (.getElementById js/document "black-and-white") canvas)
+(draw-bw-wallpaper! canvas 5 5 9)
+----
+
+[#black-and-white]
+Black and White
+
+++++
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.5.4/react-with-addons.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.5.4/react-dom.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css">
+
+<script>
+window.klipse_settings = {
+                          codemirror_options_in: {
+                                                  autoCloseBrackets: true
+                                                  },
+                          codemirror_options_out: {
+                                                   },
+                          beautify_strings: true,
+                          selector: '.clj',
+                          selector_js: '.transpile-cljs',
+                          selector_reagent: '.reagent',
+                          selector_eval_js: '.eval-js',
+                          selector_render_jsx: '.render-jsx',
+                          selector_jsx: '.eval-jsx',
+                          selector_es2017: '.es2017',
+                          selector_transpile_jsx: '.transpile-jsx',
+                          selector_eval_python_client: '.python',
+                          selector_eval_html: '.html',
+                          selector_sql: '.sql',
+                          selector_eval_ruby: '.ruby',
+                          };
+</script>
+<script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js?v=7.0.6"></script>
+<link rel="stylesheet" type="text/css" href="/css/blog.css">
+++++

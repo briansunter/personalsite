@@ -1,0 +1,13 @@
+.CodeMirror {
+    border: 1px solid #eee;
+    height: auto;
+}
+
+.CodeMirror-Scroll {
+    height: auto;
+}
+
+html {
+    margin:    0 auto;
+    max-width: 900px;
+}
