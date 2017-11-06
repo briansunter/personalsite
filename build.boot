@@ -29,6 +29,7 @@
    (ttr)
    (slug)
    (permalink)
+   (markdown)
    (render :renderer 'render.render/render :extensions [".edn"])
    (asciidoctor)
    (markdown)
