@@ -10,14 +10,22 @@
 (defn style [s]
   (clojure.string/join ";" (map #(str (name %) ":" ((keyword %) s)) (keys s))))
 
+(deftag :cljs
+  (fn [attrs content]
+    [:div
+     {:style (style {:grid-column "2 / span 20"})}
+     [:code.language-klipse
+          content]]))
+
 (deftag :project
   (fn [attrs content]
-    [:div {:style (style {:display "grid"
-                          :grid-template-columns "repeat(24, [col-start] 1fr)"
-                          :grid-auto-flow "column"
-                          :font-family "'Montserrat', sans-serif"
-                          :grid-row-gap "3em"})}
-     content]))
+    [:body
+     [:div {:style (style {:display "grid"
+                           :grid-template-columns "repeat(24, [col-start] 1fr)"
+                           :grid-auto-flow "column"
+                           :font-family "'Montserrat', sans-serif"
+                           :grid-row-gap "3em"})}
+      content]]))
 
 (defn project-section
   [name {:keys [href]} content]
@@ -39,7 +47,7 @@
   (fn [attrs content]
     [:div {:style (style {:grid-column "2 / span 20"})}
      [:h3 {:style (style {:font-size header-font-size
-                         :padding-bottom ".25em"})}
+                          :padding-bottom ".25em"})}
       "Projects"]
      [:div content]]))
 
@@ -127,4 +135,3 @@
                            :grid-auto-flow "column"
                            :font-family "'Montserrat', sans-serif"
                            :grid-row-gap "3em"})}
-      content]]))
