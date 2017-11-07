@@ -31,6 +31,7 @@
    (permalink)
    (render :renderer 'render.render/render :extensions [".edn"])
    (asciidoctor)
+   (markdown)
    (render :renderer 'render.render/base :extensions [".html"])
    (sitemap :filename "sitemap.xml")
    (rss :site-title "Brian Sunter" :description "Brian Sunter's personal site" :base-url "https://briansunter.com/")
