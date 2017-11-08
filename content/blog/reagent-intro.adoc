@@ -4,23 +4,24 @@ author-name: "Brian Sunter"
 ---
 
 == Intro to Clojurescript with Reagent
-The Javascript community has finally started rallying around the power of functional programming and immutability in React apps, but what would this look like in a language that supported these ideas really well?
+The Javascript community has finally started rallying around the power of functional programming and immutability with React, but what would this look like in a language that supported these ideas really well?
 
 === What is Reagent?
-Reagent is a Clojurescript wrapper around React. It simplifies the interface to React and allows us to define our UI using hiccup templates, instead of JSX.
+Reagent is a Clojurescript wrapper around React. It simplifies the interface to React and allows us to define our UI using hiccup(ish) templates, instead of JSX.
 
 === Hello World Component
-REPL syntax for importing Reagent.
-From a file, the syntax is:
-(ns my-ns.core
-(:require [reagent.core :as r]))
-
+Let's start by just getting something on the screen.
 [source.clj]
 ----
+;; REPL function syntax for importing.
+;; From a file, the syntax is:
+;; (ns my-ns.core
+;; (:require [reagent.core :as r]))
+
 (require '[reagent.core :as r])
 ----
 
-Define a simple Reagent (React) component. Components are functions that take 0 or more arguments and return a Hiccup data structure
+Define a simple Reagent (React) component. Components are functions that take 0 or more arguments and return a hiccup data structure.
 
 [source.clj]
 ----
@@ -28,7 +29,7 @@ Define a simple Reagent (React) component. Components are functions that take 0 
 [:p (str "Hello " name "!")])
 ----
 
-Mount the react component on #hello-world div
+Mount the react component on the `#hello-world` div of this page.
 
 [source.clj]
 ----
@@ -38,23 +39,82 @@ Mount the react component on #hello-world div
 [#hello-world]
 Loading...
 
-=== Clojure functions and Hiccup
-defn defines a function in Clojure. Our function takes one "name" parameter and returns a vector. The last "expression" in the function is the return value.
+=== Clojure functions and hiccup
+`defn` defines a function in Clojure. Our function takes one `name` parameter and returns a vector. The last "expression" in the function is the return value.
 
 [source.clj]
 ----
 (defn hello [name]
-[:p (str "Hello " name "!")])
+   [:p (str "Hello " name "!")])
 ----
 
 === Calling our Function
-The first expression in a set of parens is a function
-that will be called with the following expressions as arguments.
-Our function will return an array [:p "Hello World!"] with a :keyword as the first item signifying the type of element to be rendered, and the content of the element in the second position.
+The first thing in a set of parens is a function that will be called with the following expressions as arguments. Our function will return an array `[:p "Hello World!"]` with a :keyword as the first item signifying the type of element to be rendered, and the content of the element in the second position.
 
 [source.clj]
 ----
+;; (function arg)
 (hello "World")
+----
+Some functions can take any number of arguments, like `str`
+[source.clj]
+----
+(str "this function " "can take" " many args")
+----
+
+=== Keywords
+Keywords are named values commonly used in map keys. They are symbols prefixed with a `:` like `:my-keyword` or `:h1`.
+
+=== Vectors and Map Syntax in Clojure
+The syntax for a vector is
+
+`[1 2 "three" four]`
+
+where the elements are separated by whitespace in between brackets.
+(`,` is treated as whitespace)
+
+
+The syntax for a map is
+
+`{:key-1 :value-1 :key-2 :value-2}`
+
+which are a series of pairs in between braces.
+
+=== Hiccup
+Hiccup is a syntax for writing UIs with data. It is just a vector of vectors. The first item in the vector can be a `:keyword`, which will be rendered to a `<div></div>`.
+
+[source.reagent]
+----
+(defn my-title
+  [title]
+  [:div
+   [:h1 title]])
+
+[my-title "My Title"]
+----
+
+We can combine components, where a function that returns a component is the first element of the vector.
+
+[source.reagent]
+----
+(defn my-app
+  []
+  [:div
+   [my-title "My Title"]
+   [:p "This is starting to get cool"]])
+----
+
+There is a shorthand for applying css classes and ids on elements.
+
+`[:h1#my-id.my-class "foo"]`
+
+`:keyword` components can optionally take a first argument of a map, in the form `{:key "value"}`
+
+which will be rendered as `<div key="value"></>`
+
+[source.reagent]
+----
+[:a {:href "https://google.com"} "Link to google"]
 ----
 
 [source.clj]
