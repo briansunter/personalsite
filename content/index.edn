@@ -1,6 +1,6 @@
 [:landing-page
  [:title "Brian Sunter"]
- [:about "My name is Brian Sunter and I'm a software Engineer in San Francisco"]
+ [:about "My name is Brian Sunter and I'm a software Engineer in San&nbsp;Francisco"]
  [:social
   [:github {:href "https://github.com/briansunter"}]
   [:linkedin {:href "https://www.linkedin.com/in/brian-sunter-9853a649"}]

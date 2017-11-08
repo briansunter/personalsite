@@ -5,7 +5,7 @@
 (def header-font-size "6em")
 (def sub-header-font-size "4em")
 (def social-font-size "3em")
-(def content-font-size "2em")
+(def content-font-size "1.5em")
 
 (defn style [s]
   (clojure.string/join ";" (map #(str (name %) ":" ((keyword %) s)) (keys s))))
@@ -23,7 +23,6 @@
      [:div {:style (style {:display "grid"
                            :grid-template-columns "repeat(24, [col-start] 1fr)"
                            :grid-auto-flow "column"
-                           :font-family "'Montserrat', sans-serif"
                            :grid-row-gap "3em"})}
       content]]))
 
@@ -57,7 +56,7 @@
    [:h4 {:style (style {:font-size sub-header-font-size
                         :padding-bottom ".25em"})}
     name]
-   [:div {:style (style {:font-size content-font-size
+   [:p {:style (style {:font-size content-font-size
                          :padding-bottom "1em"})}
     content]])
 
@@ -109,7 +108,7 @@
 
 (deftag :social
   (fn [attrs content]
-    [:div {:style (style {:display "flex"
+    [:div.social {:style (style {:display "flex"
                           :justify-content "space-between"
                           :font-size social-font-size
                           :grid-column "2 / span 20"})}
@@ -119,7 +118,7 @@
   (fn [attrs content]
     [:div {:style (style {:grid-column "2 / span 20"
                           :font-size sub-header-font-size})}
-     [:h2 attrs content]]))
+     [:p attrs content]]))
 
 (deftag :title
   (fn [attrs content]
@@ -133,6 +132,5 @@
      [:div {:style (style {:display "grid"
                            :grid-template-columns "repeat(24, [col-start] 1fr)"
                            :grid-auto-flow "column"
-                           :font-family "'Montserrat', sans-serif"
                            :grid-row-gap "3em"})}
       content]]))

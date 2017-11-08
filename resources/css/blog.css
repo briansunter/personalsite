@@ -1,6 +1,34 @@
 .CodeMirror {
-    border: 1px solid #eee;
+    margin: 8px 12px;
+    font-size: 15px;
+    border: 1px solid #e8e8e8;
+    border-radius: 3px;
+    background-color: #F5F7F9;
     height: auto;
+}
+
+h1, h2, h3, h4, a, .social{
+    font-family: 'Montserrat', sans-serif;
+}
+h2 {
+    font-size: 4em;
+}
+
+h3 {
+    font-size: 3em;
+}
+
+p {
+    font-family: 'Neuton', serif;
+    font-size: 1em;
+}
+.paragraph > p {
+    font-size: 2em;
+}
+p > code {
+    border: 1px solid #e8e8e8;
+    background-color: #F5F7F9;
+    border-radius: 3px;
 }
 
 .CodeMirror-Scroll {
@@ -9,5 +37,7 @@
 
 html {
     margin:    0 auto;
-    max-width: 900px;
+    max-width: 1024px;
+    padding-left: 10px;
+    padding-right: 10px;
 }

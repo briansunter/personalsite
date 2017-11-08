@@ -1,5 +1,5 @@
 ---
-uuid: "reagent-vs-react"
+uuid: "clojurescript-intro"
 author-name: "Brian Sunter"
 ---
 
@@ -13,7 +13,7 @@ Reagent is a Clojurescript wrapper around React. It simplifies the interface to 
 REPL syntax for importing Reagent.
 From a file, the syntax is:
 (ns my-ns.core
-  (:require [reagent.core :as r]))
+(:require [reagent.core :as r]))
 
 [source.clj]
 ----
@@ -25,7 +25,7 @@ Define a simple Reagent (React) component. Components are functions that take 0 
 [source.clj]
 ----
 (defn hello [name]
-  [:p (str "Hello " name "!")])
+[:p (str "Hello " name "!")])
 ----
 
 Mount the react component on #hello-world div
@@ -44,7 +44,7 @@ defn defines a function in Clojure. Our function takes one "name" parameter and 
 [source.clj]
 ----
 (defn hello [name]
-  [:p (str "Hello " name "!")])
+[:p (str "Hello " name "!")])
 ----
 
 === Calling our Function
@@ -59,28 +59,24 @@ Our function will return an array [:p "Hello World!"] with a :keyword as the fir
 
 [source.clj]
 ----
-(defn hello [name]
-  (str "hello " name "\n"))
-
-(println "hello world")
 (defn draw-pixel! [canvas x y color]
-  (let [ctx (.getContext canvas "2d")
-        scale 2]
-    (set! (.-fillStyle ctx) color)
-    (.fillRect ctx (* scale x) (* scale y) scale scale)))
+(let [ctx (.getContext canvas "2d")
+scale 2]
+(set! (.-fillStyle ctx) color)
+(.fillRect ctx (* scale x) (* scale y) scale scale)))
 (defn reset-canvas! [canvas]
-  (let [ctx (.getContext canvas "2d")]
-    (set! (.-fillStyle ctx) "white")
-    (.fillRect ctx 0 0 (.-width canvas) (.-height canvas))))
+(let [ctx (.getContext canvas "2d")]
+(set! (.-fillStyle ctx) "white")
+(.fillRect ctx 0 0 (.-width canvas) (.-height canvas))))
 (defn draw-bw-wallpaper! [canvas a b side]
-  (let [points 200]
-    (dotimes [i points]
-      (dotimes [j points]
-        (let [x (+ a (* i (/ side points)))
-              y (+ b (* j (/ side points)))
-              c (int (+ (* x x) (* y y)))]
-          (when (even? c)
-            (draw-pixel! canvas i j "black")))))))
+(let [points 200]
+(dotimes [i points]
+(dotimes [j points]
+(let [x (+ a (* i (/ side points)))
+y (+ b (* j (/ side points)))
+c (int (+ (* x x) (* y y)))]
+(when (even? c)
+(draw-pixel! canvas i j "black")))))))
 
 (def canvas (.createElement js/document "canvas"))
 (.appendChild (.getElementById js/document "black-and-white") canvas)
@@ -98,23 +94,25 @@ Black and White
 
 <script>
 window.klipse_settings = {
-                          codemirror_options_in: {autoCloseBrackets: true},
-                          codemirror_options_out: {},
-                          beautify_strings: true,
-                          selector: '.clj',
-                          selector_js: '.transpile-cljs',
-                          selector_reagent: '.reagent',
-                          selector_eval_js: '.eval-js',
-                          selector_render_jsx: '.render-jsx',
-                          selector_jsx: '.eval-jsx',
-                          selector_es2017: '.es2017',
-                          selector_transpile_jsx: '.transpile-jsx',
-                          selector_eval_python_client: '.python',
-                          selector_eval_html: '.html',
-                          selector_sql: '.sql',
-                          selector_eval_ruby: '.ruby',
-                          };
+codemirror_options_in: {autoCloseBrackets: true},
+codemirror_options_out: {},
+beautify_strings: true,
+selector: '.clj',
+selector_js: '.transpile-cljs',
+selector_reagent: '.reagent',
+selector_eval_js: '.eval-js',
+selector_render_jsx: '.render-jsx',
+selector_jsx: '.eval-jsx',
+selector_es2017: '.es2017',
+selector_transpile_jsx: '.transpile-jsx',
+selector_eval_python_client: '.python',
+selector_eval_html: '.html',
+selector_sql: '.sql',
+selector_eval_ruby: '.ruby',
+};
 </script>
+
 <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js?v=7.0.6"></script>
+
 <link rel="stylesheet" type="text/css" href="/css/blog.css">
 ++++
