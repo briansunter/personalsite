@@ -28,7 +28,7 @@
    (render :renderer 'render.render/render :extensions [".edn"])
    (asciidoctor)
    (markdown)
-   (render :renderer 'render.render/base :extensions [".adoc"])
+   (render :renderer 'render.render/base :extensions [".html"])
    (draft)
    (ttr)
    ;; (slug)
