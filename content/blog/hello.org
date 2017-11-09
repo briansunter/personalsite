@@ -1,0 +1,14 @@
+* Sample Clojure code
+Let's try writing some clojure in emacs
+* sample defn
+
+#+BEGIN_SRC clojure
+(defn add [x y]
+ (+ x y))
+#+END_SRC
+
+* sample invoking function
+
+#+BEGIN_SRC clojure
+(add 1 2)
+#+END_SRC

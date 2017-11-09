@@ -1,3 +1,3 @@
 window.klipse_settings = {
-    selector: '.language-klipse',
+    selector: 'code',
 };

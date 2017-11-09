@@ -28,6 +28,7 @@
    (render :renderer 'render.render/render :extensions [".edn"])
    (asciidoctor)
    (markdown)
+   (pandoc :extensions [".org"] :out-ext ".html" :cmd-opts ["-f" "org" "-t" "html5"])
    (render :renderer 'render.render/base :extensions [".html"])
    (draft)
    (ttr)
