@@ -1,15 +1,17 @@
 (set-env!
- :source-paths #{"src"}
+ :source-paths #{"src" "sass"}
  :resource-paths #{"content" "resources"}
  :dependencies '[[perun "0.4.2-SNAPSHOT" :scope "test"]
                  [boot/core "2.6.0" :scope "provided"]
                  [pandeiro/boot-http "0.8.3"]
                  [shakkuri "1.0.5"]
                  [clj-time "0.9.0"]
+                 [deraen/boot-sass "0.3.1"]
                  [hashobject/boot-s3 "0.1.2-SNAPSHOT"]])
 
 (require  '[io.perun :refer :all]
           '[pandeiro.boot-http :refer [serve]]
+          '[deraen.boot-sass :refer :all]
           '[hashobject.boot-s3 :refer :all])
 
 (task-options!
@@ -25,22 +27,22 @@
   []
   (comp
    (global-metadata)
-   (render :renderer 'render.render/render :extensions [".edn"])
+   (draft)
    (asciidoctor)
    (markdown)
-   (pandoc :extensions [".org"] :out-ext ".html" :cmd-opts ["-f" "org" "-t" "html5"])
-   (render :renderer 'render.render/base :extensions [".html"])
-   (draft)
    (ttr)
-   ;; (slug)
    (permalink)
    (sitemap :filename "sitemap.xml")
    (rss :site-title "Brian Sunter" :description "Brian Sunter's personal site" :base-url "https://briansunter.com/")
    (atom-feed :site-title "Brian Sunter" :description "Brian Sunter's Personal Site" :base-url "https://briansunter.com/")
+   (pandoc :extensions [".org"] :out-ext ".html" :cmd-opts ["-f" "org" "-t" "html5"])
+   (render :renderer 'render.render/base :extensions [".html"])
+   (sass :source-map true)
    (sift :move {#"(.*)\.edn$" "$1.html"})
    (sift :move {#"(.*\.ttf)" "public/$1"})
    (sift :move {#"(.*\.js)" "public/$1"})
-   (sift :move {#"(.*\.css)" "public/$1"})
+   (sift :move {#"css/(.*)" "public/css/$1"})
+   (sift :move {#"main.css" "public/css/main.css"})
    (target)))
 
 (deftask dev

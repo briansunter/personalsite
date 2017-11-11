@@ -1,0 +1,35 @@
+#+OPTIONS: html-style:nil
+
+#+HTML: <div class="header">
+* Brian Sunter
+My name is Brian Sunter and I'm a software Engineer in San&nbsp;Francisco.
+
+#+begin_social
+[[https://github.com/briansunter][Github]]
+[[https://www.linkedin.com/in/brian-sunter-9853a649][LinkedIn]]
+[[https://twitter.com/bsunter][Twitter]]
+[[https://www.facebook.com/briansunterblog][Facebook]]
+#+end_social
+
+#+HTML: </div>
+
+#+HTML: <div class="work-section">
+* Work
+** Capital One
+   I build APIs for APIs. I work on DevExchange, Capital One's streaming data and REST API platform. We practice agile, microservice architecture, continuous delivery, and end to end ownership of features by full stack teams.
+** SnapUp
+I worked on SnapUp, a machine learning powered shopping app. Track any product you like by taking a screenshot. We do this with patented product fingerprinting and price tracking technology. Acquired by ipsy.
+** Partender
+I co-founded Partender, a bar and restaurant inventory management system. We practiced lean product development and worked closely with our customers to find market fit. We went through the 500 Startups accelerator to build out our sales and distribution. We are featured on the show hit show Bar Rescue with 2+ million viewers. Our customers include restaurant groups, hotel chains, and establishments worldwide.
+** Amazon
+I built debugging tools for Amazon's internal messaging platform. I used agile scrum, strict TDD, and continuous integration to write clean, correct, and maintainable code.
+** Disney
+I developed a cross platform mobile app and node backend for guests of Disney's Wide World of Sports complex in Orlando, FL.
+#+HTML: </div>
+
+#+HTML: <div class="projects-section">
+* Projects
+
+[[/personal-site/personal-site.html][Personal Site]]
+This site is a data structure. The content and structure is defined by an edn file, Clojure's version of json. It is a vector of vectors that is rendered to an html page using boot, a middleware oriented build tool.
+#+HTML: </div>

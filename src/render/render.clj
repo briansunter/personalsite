@@ -1,7 +1,6 @@
 (ns render.render
   (:require [hiccup.core :refer [deftag]]
-            [hiccup.page :refer [html5 include-css include-js]]
-            [render.index]))
+            [hiccup.page :refer [html5 include-css include-js]]))
 
 (def head
   [:head
@@ -13,7 +12,7 @@
 (defn base
   [c]
   (html5 [:head [:meta {:charset "utf-8"}]
-          (include-css "/css/blog.css")
+          (include-css "/css/main.css")
           (include-css "https://storage.googleapis.com/app.klipse.tech/css/codemirror.css")
           (include-js "/js/scripts/klipse.js")
           (include-css "https://fonts.googleapis.com/css?family=Montserrat")
@@ -21,7 +20,3 @@
          (-> c :entry :content)
          (include-js "https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js")
          ))
-
-(defn render
-  [c]
-  (html5 head (-> c :entry :content read-string)))

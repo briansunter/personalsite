@@ -1,3 +1,4 @@
 window.klipse_settings = {
-    selector: 'code',
+    selector: '.clojure',
+    selector_reagent: '.reagent'
 };
