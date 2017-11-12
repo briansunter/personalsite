@@ -1,0 +1,8 @@
+{:title "Brian Sunter"
+ :site "bsun.io"
+ :description "My name is Brian Sunter and I am a software Engineer in San Francisco"
+ :social-profiles
+ [{:name "Github" :link "https://github.com/briansunter"}
+  {:name "LinkedIn" :link "https://www.linkedin.com/in/brian-sunter-9853a649/"}
+  {:name "Twitter" :link "https://twitter.com/bsunter"}
+  {:name "Facebook" :link "https://www.facebook.com/briansunterblog"}]}
