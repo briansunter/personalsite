@@ -5,6 +5,12 @@
             [garden.stylesheet :refer [at-media]]
             [garden.core :refer [css]]))
 
+(defn async-js
+  [src]
+  [:script
+   {:src src,
+    :async ""}])
+
 (def garden-style
   [[:h1 :h2 :h3 :h4 {:font-family "'Monserrat', sans-serif"}]
    [:p {:font-family "'Lora', serif"}]
@@ -31,7 +37,7 @@
 
 (def head
   [:head
-   (include-js "https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js")
+   (async-js "https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js")
    [:meta {:name "viewport" :content "width=device-width, initial-scale=1"}]
    [:script
     "WebFont.load({
