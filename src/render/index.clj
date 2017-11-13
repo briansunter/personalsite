@@ -7,10 +7,10 @@
 
 (def garden-style
   [[:h1 :h2 :h3 :h4 {:font-family "'Monserrat', sans-serif"}]
-   [:ul.social {:display :flex
-                :justify-content :space-between}]
+   [:ul.social {:display "flex"
+                :justify-content "space-between"}]
    [:p {:font-family "'Lora', serif"}]
-   [:ul {:list-style-type :none
+   [:ul {:list-style-type "none"
          :padding 0}]
    (at-media {:min-width "320px"}
              [:html
