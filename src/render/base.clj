@@ -4,4 +4,5 @@
 
 (defn render
   [content]
-  (html5 [:head ][:div.foo (-> content :entry :content)]))
+  (html5 [:head [:meta {:charset "utf-8"}]]
+         [:div.foo (-> content :entry :content)]))
