@@ -5,26 +5,22 @@
             [garden.stylesheet :refer [at-media]]
             [garden.core :refer [css]]))
 
-(defn async-js
-  [src]
-  [:script
-   {:src src,
-    :async ""}])
-
 (def garden-style
   [[:h1 :h2 :h3 :h4 {:font-family "'Monserrat', sans-serif"}]
+   [:ul.social {:display :flex
+                :justify-content :space-between}]
    [:p {:font-family "'Lora', serif"}]
    [:ul {:list-style-type :none
          :padding 0}]
    (at-media {:min-width "320px"}
              [:html
-              {:font-size "calc(16px + 6 * ((100vw - 320px) / 480))"}])
+              {:font-size "calc(18px + 6 * ((100vw - 320px) / 680))"}])
    [:div.header {:grid-area "header"
-                 :grid-column "1 / 12"}]
+                 :grid-column "1 / 13"}]
    [:div.work-section {:grid-area "work-section"
-                       :grid-column " 1 / 12"}]
+                       :grid-column " 1 / 13"}]
    [:div.projects-section {:grid-area "projects-section"
-                           :grid-column " 1 / 12"}]
+                           :grid-column " 1 / 13"}]
    [:div.home {:display :grid
                :grid-gap "20px"
                :grid-template-columns "repeat(12, [col-start] 1fr)"
@@ -60,7 +56,7 @@
    [:p description]
    [:ul.social
     (for [{:keys [link name]} social-profiles]
-      [:li
+      [:li.social-profile.flex-item
        [:a {:href link} name]])]])
 
 (defn job

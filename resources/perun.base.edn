@@ -1,6 +1,6 @@
 {:title "Brian Sunter"
  :site "bsun.io"
- :description "My name is Brian Sunter and I am a software Engineer in San Francisco"
+ :description "My name is Brian Sunter and I'm a software Engineer in San Francisco."
  :social-profiles
  [{:name "Github" :link "https://github.com/briansunter"}
   {:name "LinkedIn" :link "https://www.linkedin.com/in/brian-sunter-9853a649/"}
