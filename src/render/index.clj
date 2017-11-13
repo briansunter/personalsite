@@ -37,18 +37,19 @@
 
 (def head
   [:head
-   (async-js "https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js")
    [:meta {:name "viewport" :content "width=device-width, initial-scale=1"}]
-   [:script
-    "WebFont.load({
-                  google: {
-                           families: ['Source Sans Pro:400,600,700,400italic,700italic',
-                                      'Montserrat',
-                                      'Open Sans',
-                                      'Lora'
-]
-                           }
-                  });"
+   [:script "WebFontConfig = { google: { families:
+    ['Source Sans Pro:400,600,700,400italic,700italic',
+    'Montserrat',
+    'Open Sans',
+    'Lora']}};
+
+   (function(d) {
+      var wf = d.createElement('script'), s = d.scripts[0];
+      wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+      wf.async = true;
+      s.parentNode.insertBefore(wf, s);
+   })(document);"
     ]
    [:style (css garden-style)]])
 
