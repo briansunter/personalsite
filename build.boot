@@ -31,6 +31,7 @@
    (draft)
    (asciidoctor)
    (markdown)
+   (render :renderer 'render.base/render)
    (tags :renderer 'render.tag/render)
    (ttr)
    (permalink)
