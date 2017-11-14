@@ -1,0 +1,14 @@
+{
+  "name": "path-rewrite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "add-spec.js",
+  "scripts": {
+    "test": "mocha -R spec test/*-spec.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "check-more-types": "^2.24.0"
+  }
+}
