@@ -14,9 +14,5 @@ description: >
 
 job: true
 ---
-
 # DevExchange
-
 About this project
-
-## foo

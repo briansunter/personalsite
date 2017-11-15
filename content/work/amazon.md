@@ -11,4 +11,4 @@ description: >
              correct, and maintainable code.
 ---
 # Amazon
-I built debugging tools for Amazon's internal messaging platform. I used agile scrum, strict TDD, and continuous integration to write clean, correct, and maintainable code.
+About Amazon

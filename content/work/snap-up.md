@@ -6,17 +6,10 @@ tags:
 name: SnapUp
 date: 2014-08-01
 description: >
-  I build APIs for APIs. I work on DevExchange,
-  Capital One's streaming data and REST API platform.
-  We practice agile, microservice architecture,
-  continuous delivery, and end to end ownership of
-  features by full stack teams.
-
+  I worked on SnapUp, a machine learning powered shopping app.
+  Track any product you like by taking a screenshot.
+  We do this with patented product fingerprinting and price tracking technology. Acquired by ipsy.
 job: true
 ---
-
 # SnapUp
-
 About this project
-
-## foo
