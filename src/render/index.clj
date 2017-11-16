@@ -93,8 +93,8 @@
         projects (filter (partial has-tag? "project") entries)]
     [:div.home
      (header meta)
-     (work-section jobs)
-     (projects-section projects)]))
+     (projects-section projects)
+     (work-section jobs)]))
 
 (defn render
   [content]

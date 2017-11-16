@@ -5,12 +5,14 @@
                  [boot/core "2.6.0" :scope "provided"]
                  [pandeiro/boot-http "0.8.3"]
                  [shakkuri "1.0.5"]
+                 [cheshire "5.8.0"]
                  [clj-time "0.9.0"]
                  [garden "1.3.3"]
                  [hashobject/boot-s3 "0.1.2-SNAPSHOT"]])
 
 (require  '[io.perun :refer :all]
           '[pandeiro.boot-http :refer [serve]]
+          '[render.photography :refer [group-albums]]
           '[utils :refer [has-tag?]]
           '[hashobject.boot-s3 :refer :all])
 
@@ -23,14 +25,21 @@
           :secret-key (System/getenv "AWS_SECRET_KEY")
           :options {"Cache-Control" "max-age=315360000, no-transform, public"}})
 
+(def ^:dynamic *opts* {:rm-originals false})
 
 (deftask build
   []
   (comp
    (global-metadata)
+   (images-dimensions)
    (draft)
-   (asciidoctor)
    (markdown)
+   (asciidoctor)
+   (assortment :renderer 'render.photography/render-album
+               :grouper group-albums
+               :extensions [".htm" ".html" "png" "jpg"]
+               :out-dir "albums"
+               :rm-originals false)
    (render :renderer 'render.base/render)
    (tags :renderer 'render.tag/render)
    (ttr)
@@ -47,6 +56,8 @@
    (sift :move {#"(.*\.ttf)" "public/$1"})
    (sift :move {#"(.*\.js)" "public/$1"})
    (sift :move {#"css/(.*)" "public/css/$1"})
+   (sift :move {#"img" "public/img"})
+   (sift :move {#"static" "public/static"})
    (sift :move {#"main.css" "public/css/main.css"})
    (target)))
 
