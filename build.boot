@@ -78,6 +78,7 @@
    (build)
    (images-dimensions)
    (markdown)
+   (permalink)
    (assortment :renderer 'render.photography/render-photoswipe-json
                :grouper group-albums
                :extensions [".htm" ".html" "png" "jpg"]

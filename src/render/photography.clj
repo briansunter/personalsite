@@ -9,8 +9,8 @@
 (defn images-to-photoswipe
   [images-by-name {:keys [images]}]
   (for [{:keys [title caption] :as image} images]
-    (let [{:keys [permalink width height]} (images-by-name (:image image))]
-      {:src permalink
+    (let [{:keys [filename width height]} (images-by-name (:image image))]
+      {:src (str "http://photos.bsun.io/" filename)
        :title title
        :caption caption
        :w width
@@ -95,7 +95,7 @@ gallery.init();
   (let [albums (filter (partial has-tag? "photography") entries)
         all-images (filter :height entries)
         images-by-name (group-by-singly :filename all-images)
-        photoswipe-json-for-entry #(generate-string {:data (images-to-photoswipe images-by-name %)})]
+        photoswipe-json-for-entry #(generate-string {:data (images-to-photoswipe images-by-name %)} {:pretty-print true})]
     (into {} (map (fn [a] [(:original-path a) {:entry {:photoswipe-json (photoswipe-json-for-entry a)}}]) albums))))
 
 (defn render
