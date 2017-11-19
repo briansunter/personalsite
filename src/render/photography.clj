@@ -2,11 +2,9 @@
   (:require [hiccup.core :refer [deftag]]
             [hiccup.page :refer [html5 include-css include-js]]
             [utils :refer [has-tag?]]
-            [cheshire.core :refer [generate-string]]))
-
-(defn find-first
-  [p c]
-  (first (filter)))
+            [clojure.java.io :as io]
+            [io.perun.core   :as perun]
+            [cheshire.core :refer [generate-string parse-string]]))
 
 (defn images-to-photoswipe
   [images-by-name {:keys [images]}]
@@ -62,26 +60,34 @@
           (include-css "/static/default-skin/default-skin.css")
           (include-js "/js/photoswipe.min.js")
           (include-js "/js/photoswipe-ui-default.min.js")]
-         [:div.bar
-          photoswipe
-          ;; TODO: Clojurescript or react
-          [:script (str "var items = " (:photoswipe-json entry) " \n"
-                        "var options = {index: 0,
+         (let [photoswipe-url (str (:permalink entry) "photoswipe.json")]
+           [:div.bar
+           photoswipe
+           ;; TODO: Clojurescript or react
+            [:script (str
+                      "var psURL = '" photoswipe-url "';\n"
+                      "var options = {index: 0,
 captionEl: true,
-
 addCaptionHTMLFn: function(item, captionEl, isFake) {
     if(!item.title) {
         captionEl.children[0].innerHTML = '';
         return false;
     }
-    captionEl.children[0].innerHTML = item.title;
+    captionEl.children[0].innerHTML = '<h1>' + item.title + '</h1>';
     return true;
 }};
 
+fetch(psURL).then(function(response) {
+  return response.json();
+}).then(function(psData) {
+var items = psData.data;
 var pswpElement = document.querySelectorAll('.pswp')[0];
 var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
 gallery.init();
-                          ")]]))
+});
+
+
+                          ")]])))
 
 
 (defn group-albums
@@ -89,10 +95,14 @@ gallery.init();
   (let [albums (filter (partial has-tag? "photography") entries)
         all-images (filter :height entries)
         images-by-name (group-by-singly :filename all-images)
-        photoswipe-json-for-entry #(generate-string (images-to-photoswipe images-by-name %))]
-    (into {} (map (fn [a] [(:filename a) {:entry {:photoswipe-json (photoswipe-json-for-entry a)}}]) albums))))
+        photoswipe-json-for-entry #(generate-string {:data (images-to-photoswipe images-by-name %)})]
+    (into {} (map (fn [a] [(:original-path a) {:entry {:photoswipe-json (photoswipe-json-for-entry a)}}]) albums))))
 
 (defn render
   [content]
   (html5 [:head [:meta {:charset "utf-8"}]]
          [:div.foo (-> content)]))
+
+(defn render-photoswipe-json
+  [{:keys [entry]}]
+    (:photoswipe-json entry))
