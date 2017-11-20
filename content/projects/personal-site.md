@@ -1,12 +1,12 @@
----
-name: Personal Site
-description: |
++++
+name = "Personal Site"
+description = """
   This site is made with perun, a series of boot plugins for making a static site.
-uuid: personal-site
-tags:
-  - project
-  - index-page
----
+  """
+uuid = "personal-site"
+tags = ["project", "index-page"]
++++
+
 <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css" />
 
 # sample Clojure code

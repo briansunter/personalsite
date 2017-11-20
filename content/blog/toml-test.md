@@ -1,6 +1,6 @@
 +++
 brian = "cool"
-tags = ["post"]
+tags = ["blog", "index-page"]
 +++
 
 # TOML
