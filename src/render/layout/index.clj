@@ -1,4 +1,4 @@
-(ns render.index
+(ns render.layout.index
   (:require [hiccup.core :refer [deftag]]
             [utils :refer [has-tag?]]
             [hiccup.page :refer [html5 include-css include-js]]
