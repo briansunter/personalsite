@@ -42,7 +42,7 @@
    (render :renderer 'render.photography/render-album
            :filterer (partial has-tag? "photography"))
    (render :renderer 'render.base/render
-           :filterer (partial has-tag? "post"))
+           :filterer (partial has-tag? "blog"))
    (tags :renderer 'render.tag/render)
    (sitemap :filename "sitemap.xml")
    (rss :site-title "Brian Sunter" :description "Brian Sunter's personal site" :base-url "https://briansunter.com/")

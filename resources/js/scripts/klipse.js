@@ -1,4 +1,5 @@
 window.klipse_settings = {
-    selector: '.clojure',
-    selector_reagent: '.reagent'
+    selector: '.language-clojure',
+    selector_reagent: '.language-reagent',
+    selector_eval_js: '.language-eval-js'
 };
