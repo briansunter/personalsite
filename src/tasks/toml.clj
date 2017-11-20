@@ -28,10 +28,10 @@
       (first (drop 2 splitted))
       content)))
 
-(defn parse-toml[{:keys [entry]} keep-yaml]
+(defn parse-toml [{:keys [entry]} keep-yaml]
   (let [content (-> entry :full-path io/file slurp)
         parsed-metadata (if-let [metadata-str (substr-between content *toml-head* *toml-head*)]
-                          (toml/parse-string metadata-str)
+                          (walk/keywordize-keys (toml/parse-string metadata-str))
                           {})
         metadata (merge entry parsed-metadata)]
     (if keep-yaml
