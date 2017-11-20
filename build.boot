@@ -38,10 +38,12 @@
    (markdown)
    (asciidoctor)
    (permalink)
-   (render :renderer 'render.photography/render-album)
-   (render :renderer 'render.base/render)
-   (tags :renderer 'render.tag/render)
    (ttr)
+   (render :renderer 'render.photography/render-album
+           :filterer (partial has-tag? "photography"))
+   (render :renderer 'render.base/render
+           :filterer (partial has-tag? "post"))
+   (tags :renderer 'render.tag/render)
    (sitemap :filename "sitemap.xml")
    (rss :site-title "Brian Sunter" :description "Brian Sunter's personal site" :base-url "https://briansunter.com/")
    (atom-feed :site-title "Brian Sunter" :description "Brian Sunter's Personal Site" :base-url "https://briansunter.com/")
@@ -49,7 +51,7 @@
    (collection :renderer 'render.index/render
                :page "index.html"
                :filterer (partial has-tag? "index-page"))
-   (inject-scripts :scripts #{"https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"})
+   (print-meta)
    (sift :move {#"(.*)\.edn$" "$1.html"})
    (sift :move {#"(.*\.ttf)" "public/$1"})
    (sift :move {#"css" "public"})
