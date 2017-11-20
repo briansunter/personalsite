@@ -54,7 +54,7 @@
    (print-meta)
    (sift :move {#"(.*)\.edn$" "$1.html"})
    (sift :move {#"(.*\.ttf)" "public/$1"})
-   (sift :move {#"css" "public"})
+   (sift :move {#"(.*\.css$)" "public/$1"})
    (sift :move {#"(.*\.js$)" "public/$1"})
    (sift :move {#"img" "public/img/"})
    (sift :move {#"static" "public/static"})

@@ -18,7 +18,7 @@
 
 (def ^:private ^:deps toml-metadata-deps
   '[[org.clojure/tools.namespace "0.3.0-alpha3"]
-    [clj-toml "0.3.1"]])
+    [toml "0.1.2"]])
 
 (def ^:private +toml-metadata-defaults+
   {:filterer identity

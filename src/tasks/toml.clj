@@ -1,5 +1,5 @@
 (ns tasks.toml
-  (:require [clj-toml.core   :as toml]
+  (:require [toml.core   :as toml]
             [clojure.java.io :as io]
             [clojure.string  :as str]
             [clojure.walk    :as walk]
@@ -31,7 +31,7 @@
 (defn parse-toml [{:keys [entry]} keep-yaml]
   (let [content (-> entry :full-path io/file slurp)
         parsed-metadata (if-let [metadata-str (substr-between content *toml-head* *toml-head*)]
-                          (walk/keywordize-keys (toml/parse-string metadata-str))
+                          (walk/keywordize-keys (toml/read metadata-str))
                           {})
         metadata (merge entry parsed-metadata)]
     (if keep-yaml
