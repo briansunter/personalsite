@@ -48,7 +48,7 @@
    (rss :site-title "Brian Sunter" :description "Brian Sunter's personal site" :base-url "https://briansunter.com/")
    (atom-feed :site-title "Brian Sunter" :description "Brian Sunter's Personal Site" :base-url "https://briansunter.com/")
    (pandoc :extensions [".org"] :out-ext ".html" :cmd-opts ["-f" "org" "-t" "html5"])
-   (collection :renderer 'render.index/render
+   (collection :renderer 'render.layout.index/render
                :page "index.html"
                :filterer (partial has-tag? "index-page"))
    (print-meta)
