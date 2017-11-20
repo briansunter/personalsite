@@ -15,6 +15,7 @@
           '[pandeiro.boot-http :refer [serve]]
           '[render.photography :refer [group-albums]]
           '[cpmcdaniel.boot-copy :refer :all]
+          '[tasks.tasks :refer [toml-metadata]]
           '[utils :refer [has-tag?]]
           '[hashobject.boot-s3 :refer :all])
 
@@ -32,6 +33,7 @@
   (comp
    (global-metadata)
    (images-dimensions)
+   (toml-metadata)
    (draft)
    (markdown)
    (asciidoctor)
