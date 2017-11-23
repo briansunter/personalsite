@@ -12,7 +12,6 @@
   [images-by-name images]
   (for [{:keys [title caption] :as image} images]
     (let [{:keys [filename width height]} (images-by-name (:image image))]
-      (assert width)
       {:src (str "http://photos.bsun.io/" filename)
        :title title
        :caption caption

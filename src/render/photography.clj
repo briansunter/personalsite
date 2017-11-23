@@ -4,60 +4,65 @@
             [utils :refer [has-tag?]]
             [clojure.java.io :as io]
             [io.perun.core   :as perun]
-            [cheshire.core :refer [generate-string parse-string]]))
+            [garden.stylesheet :refer [at-media]]
+            [garden.core :refer [css]]))
 
-
+(def style [[:h1 :h2 :h3 :h4 {:font-family "'Monserrat', sans-serif"}]
+            [:ul.social {:display "flex"
+                         :justify-content "space-between"}]
+            [:p {:font-family "'Lora', serif"}]
+            [:div.content {:grid-column " 2 / 23"}]
+            [:div.container {:display :grid
+                             :grid-gap "20px"
+                             :grid-template-rows "auto 1fr auto"
+                             :grid-template-columns "repeat(24, [col-start] 1fr)"}]
+            [:ul {:list-style-type "none"
+                  :padding 0}]
+            (at-media {:min-width "320px"}
+                      [:html
+                       {:font-size "calc(18px + 6 * ((100vw - 320px) / 680))"}])])
 (def photoswipe
-   [:div.pswp
-    {:aria-hidden "true", :role "dialog", :tabindex "-1"}
-    [:div.pswp__bg]
-    [:div.pswp__scroll-wrap
-     [:div.pswp__container
-      [:div.pswp__item]
-      [:div.pswp__item]
-      [:div.pswp__item]]
-     [:div.pswp__ui.pswp__ui--hidden
-      [:div.pswp__top-bar
-       [:div.pswp__counter]
-       [:button.pswp__button.pswp__button--close
-        {:title "Close (Esc)"}]
-       [:button.pswp__button.pswp__button--share {:title "Share"}]
-       [:button.pswp__button.pswp__button--fs
-        {:title "Toggle fullscreen"}]
-       [:button.pswp__button.pswp__button--zoom {:title "Zoom in/out"}]
-       [:div.pswp__preloader
-        [:div.pswp__preloader__icn
-         [:div.pswp__preloader__cut [:div.pswp__preloader__donut]]]]]
-      [:div.pswp__share-modal.pswp__share-modal--hidden.pswp__single-tap
-       [:div.pswp__share-tooltip]
-       " \n            "]
-      [:button.pswp__button.pswp__button--arrow--left
-       {:title "Previous (arrow left)"}]
-      [:button.pswp__button.pswp__button--arrow--right
-       {:title "Next (arrow right)"}]
-      [:div.pswp__caption [:div.pswp__caption__center]]]]])
+  [:div.pswp
+   {:aria-hidden "true", :role "dialog", :tabindex "-1"}
+   [:div.pswp__bg]
+   [:div.pswp__scroll-wrap
+    [:div.pswp__container
+     [:div.pswp__item]
+     [:div.pswp__item]
+     [:div.pswp__item]]
+    [:div.pswp__ui.pswp__ui--hidden
+     [:div.pswp__top-bar
+      [:div.pswp__counter]
+      [:button.pswp__button.pswp__button--close
+       {:title "Close (Esc)"}]
+      [:button.pswp__button.pswp__button--share {:title "Share"}]
+      [:button.pswp__button.pswp__button--fs
+       {:title "Toggle fullscreen"}]
+      [:button.pswp__button.pswp__button--zoom {:title "Zoom in/out"}]
+      [:div.pswp__preloader
+       [:div.pswp__preloader__icn
+        [:div.pswp__preloader__cut [:div.pswp__preloader__donut]]]]]
+     [:div.pswp__share-modal.pswp__share-modal--hidden.pswp__single-tap
+      [:div.pswp__share-tooltip]
+      " \n            "]
+     [:button.pswp__button.pswp__button--arrow--left
+      {:title "Previous (arrow left)"}]
+     [:button.pswp__button.pswp__button--arrow--right
+      {:title "Next (arrow right)"}]
+     [:div.pswp__caption [:div.pswp__caption__center]]]]])
 
-(defn render-album
-  [{:keys [entry]}]
-  (html5 [:head [:meta {:charset "utf-8"}]
-          (include-css "/css/photoswipe.css")
-          (include-css "/static/default-skin/default-skin.css")
-          (include-js "/js/photoswipe.min.js")
-          (include-js "/js/photoswipe-ui-default.min.js")]
-         (let [photoswipe-url (str (:permalink entry) "photoswipe.json")]
-           [:div.bar
-           photoswipe
-           ;; TODO: Clojurescript or react
-            [:script (str
-                      "var psURL = '" photoswipe-url "';\n"
-                      "var options = {index: 0,
+(defn photoswipe-js
+  [photoswipe-url]
+  [:script (str
+            "var psURL = '" photoswipe-url "';\n"
+            "var options = {index: 0,
 captionEl: true,
 addCaptionHTMLFn: function(item, captionEl, isFake) {
     if(!item.title) {
         captionEl.children[0].innerHTML = '';
         return false;
     }
-    captionEl.children[0].innerHTML = '<h1>' + item.title + '</h1>';
+    captionEl.children[0].innerHTML = '<h3>' + item.title + '</h3>';
     return true;
 }};
 
@@ -69,15 +74,19 @@ var pswpElement = document.querySelectorAll('.pswp')[0];
 var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
 gallery.init();
 });
-                          ")]])))
+                          ")])
 
-
-
-(defn render
-  [content]
-  (html5 [:head [:meta {:charset "utf-8"}]]
-         [:div.foo (-> content)]))
-
-(defn render-photoswipe-json
+(defn render-album
   [{:keys [entry]}]
-    (:photoswipe-json entry))
+  (let [photoswipe-url (str (:permalink entry) "photoswipe.json")]
+    (html5 [:head [:meta {:charset "utf-8"}]
+            (include-css "/css/photoswipe.css")
+            (include-css "/static/default-skin/default-skin.css")
+            (include-js "/js/photoswipe.min.js")
+            (include-js "/js/photoswipe-ui-default.min.js")
+            [:style (css style)]
+            (photoswipe-js photoswipe-url)]
+           [:div.container
+            [:div.content
+             photoswipe
+             (:content entry)]])))
