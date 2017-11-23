@@ -1,5 +1,6 @@
 (ns tasks.tasks
   (:require [boot.core :as boot :refer [deftask]]
+            [tasks.photoswipe]
             [io.perun :as perun]
             [boot.pod :as pod]))
 
@@ -22,7 +23,7 @@
 
 (def ^:private +toml-metadata-defaults+
   {:filterer identity
-   :extensions []})
+   :extensions [".md"]})
 
 (deftask toml-metadata
   "Parse TOML metadata at the beginning of files
@@ -42,3 +43,27 @@
       :task-name "toml-metadata"
       :tracer :io.perun/toml-metadata
       :pod pod})))
+
+(def ^:private ^:deps photoswipe-album-deps
+  '[[org.clojure/tools.namespace "0.3.0-alpha3"]])
+
+(def ^:private +photoswipe-album-defaults+
+  {:filterer identity
+   :comparator (fn [i1 i2] (compare i2 i1))
+   :renderer 'tasks.photoswipe/generate-photoswipe-json
+   :grouper tasks.photoswipe/group-albums
+   :sortby :date-published
+   :extensions []})
+
+(deftask photoswipe-album
+  "Generate photoswipe json file with image name and dimensions."
+  [_ filterer   FILTER     code  "predicate to use for selecting entries (default: `identity`)"
+   e extensions EXTENSIONS [str] "extensions of files to include (default: `[]`, aka, all extensions)"]
+  (let [pod (create-pod photoswipe-album-deps)
+        options (merge +photoswipe-album-defaults+ *opts*)]
+    (perun/assortment-task
+     (merge
+      options
+      {:task-name "photoswipe-album"
+       :tracer :io.perun/photoswipe-album
+       :pod pod}))))

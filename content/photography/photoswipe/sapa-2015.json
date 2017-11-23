@@ -1,1 +1,27 @@
-{"data":[{"src":"http://photos.bsun.io/DSC00012.jpg","title":"Reykjavik Church","caption":"Cool Church","w":6000,"h":4000},{"src":"http://photos.bsun.io/DSC00015.jpg","title":"Reagent is a Clojurescript wrapper around React.\nIt simplifies the interface to React and allows us\nto defineour UI using hiccup(ish) templates, instead of JSX.\n","caption":"These houses are colorful","w":6000,"h":4000},{"src":"http://photos.bsun.io/DSC00020.jpg","title":"Icy Roofed Houses","caption":"ICY!","w":6000,"h":4000},{"src":"http://photos.bsun.io/DSC00028.jpg","title":"Icy Roofed Houses","caption":null,"w":6000,"h":4000}]}
+{
+  "data" : [ {
+    "src" : "http://photos.bsun.io/DSC00012.jpg",
+    "title" : "Reykjavik Church",
+    "caption" : "Cool Church",
+    "w" : 6000,
+    "h" : 4000
+  }, {
+    "src" : "http://photos.bsun.io/DSC00015.jpg",
+    "title" : "      Reagent is a Clojurescript wrapper around React.\n      It simplifies the interface to React and allows us\n      to define our UI using hiccup(ish) templates, instead of JSX.\n      ",
+    "caption" : "These houses are colorful",
+    "w" : 6000,
+    "h" : 4000
+  }, {
+    "src" : "http://photos.bsun.io/DSC00020.jpg",
+    "title" : "Icy Roofed Houses",
+    "caption" : "ICY!",
+    "w" : 6000,
+    "h" : 4000
+  }, {
+    "src" : "http://photos.bsun.io/DSC00028.jpg",
+    "title" : "Icy Roofed Houses",
+    "caption" : null,
+    "w" : 6000,
+    "h" : 4000
+  } ]
+}

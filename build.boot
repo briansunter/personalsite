@@ -13,9 +13,8 @@
 
 (require  '[io.perun :refer :all]
           '[pandeiro.boot-http :refer [serve]]
-          '[render.photography :refer [group-albums]]
           '[cpmcdaniel.boot-copy :refer :all]
-          '[tasks.tasks :refer [toml-metadata]]
+          '[tasks.tasks :refer [toml-metadata photoswipe-album]]
           '[utils :refer [has-tag?]]
           '[hashobject.boot-s3 :refer :all])
 
@@ -79,16 +78,11 @@
 (deftask deploy-images
   []
   (comp
-   (build)
    (images-dimensions)
-   (markdown)
-   (permalink)
-   (assortment :renderer 'render.photography/render-photoswipe-json
-               :grouper group-albums
-               :extensions [".htm" ".html" "png" "jpg"]
-               :out-dir "photoswipe")
-   (sift :move {#"photoswipe/photography/(.*)\..+" "photoswipe/$1.json"})
+   (toml-metadata)
+   (photoswipe-album)
+   (sift :move {#"^photos" "public/photos"})
    (target)
-   (copy :output-dir    "content/photography/"
-         :matching       #{#"^photoswipe/.*\.json$"})
+   (copy :output-dir    "content/"
+         :matching       #{#"photoswipe/.*\.json$"})
    (s3-sync :source "public/photos" :bucket "photos.bsun.io")))

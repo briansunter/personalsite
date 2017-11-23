@@ -6,22 +6,6 @@
             [io.perun.core   :as perun]
             [cheshire.core :refer [generate-string parse-string]]))
 
-(defn images-to-photoswipe
-  [images-by-name {:keys [images]}]
-  (for [{:keys [title caption] :as image} images]
-    (let [{:keys [filename width height]} (images-by-name (:image image))]
-      {:src (str "http://photos.bsun.io/" filename)
-       :title title
-       :caption caption
-       :w width
-       :h height})))
-
-(defn update-values [m f & args]
-  (reduce (fn [r [k v]] (assoc r k (apply f v args))) {} m))
-
-(defn group-by-singly
-  [p i]
-  (update-values (group-by p i) first))
 
 (def photoswipe
    [:div.pswp
@@ -85,18 +69,9 @@ var pswpElement = document.querySelectorAll('.pswp')[0];
 var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
 gallery.init();
 });
-
-
                           ")]])))
 
 
-(defn group-albums
-  [entries]
-  (let [albums (filter (partial has-tag? "photography") entries)
-        all-images (filter :height entries)
-        images-by-name (group-by-singly :filename all-images)
-        photoswipe-json-for-entry #(generate-string {:data (images-to-photoswipe images-by-name %)} {:pretty-print true})]
-    (into {} (map (fn [a] [(:original-path a) {:entry {:photoswipe-json (photoswipe-json-for-entry a)}}]) albums))))
 
 (defn render
   [content]
