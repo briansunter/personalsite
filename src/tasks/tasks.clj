@@ -23,7 +23,7 @@
 
 (def ^:private +toml-metadata-defaults+
   {:filterer identity
-   :extensions [".md"]})
+   :extensions [".md" ".adoc" ".org"]})
 
 (deftask toml-metadata
   "Parse TOML metadata at the beginning of files

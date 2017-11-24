@@ -36,21 +36,22 @@
    (draft)
    (markdown)
    (asciidoctor)
+   (pandoc :extensions [".org"] :out-ext ".html" :cmd-opts ["-f" "org" "-t" "html5"])
+   (sitemap :filename "sitemap.xml")
+   (rss :site-title "Brian Sunter" :description "Brian Sunter's personal site" :base-url "https://briansunter.com/")
+   (atom-feed :site-title "Brian Sunter" :description "Brian Sunter's Personal Site" :base-url "https://briansunter.com/")
    (permalink)
    (ttr)
    (render :renderer 'render.photography/render-album
            :filterer (partial has-tag? "photography"))
    (render :renderer 'render.base/render
            :filterer (partial has-tag? "blog"))
+   (render :renderer 'render.base/render
+           :filterer (partial has-tag? "project"))
    (tags :renderer 'render.tag/render)
-   (sitemap :filename "sitemap.xml")
-   (rss :site-title "Brian Sunter" :description "Brian Sunter's personal site" :base-url "https://briansunter.com/")
-   (atom-feed :site-title "Brian Sunter" :description "Brian Sunter's Personal Site" :base-url "https://briansunter.com/")
-   (pandoc :extensions [".org"] :out-ext ".html" :cmd-opts ["-f" "org" "-t" "html5"])
    (collection :renderer 'render.layout.index/render
                :page "index.html"
                :filterer (partial has-tag? "index-page"))
-   (print-meta)
    (sift :move {#"(.*)\.edn$" "$1.html"})
    (sift :move {#"(.*\.ttf)" "public/$1"})
    (sift :move {#"(.*\.css$)" "public/$1"})
@@ -67,6 +68,7 @@
   (comp
    (watch)
    (build)
+   (print-meta)
    (serve :dir "target/public" )))
 
 (deftask deploy

@@ -2,6 +2,7 @@
   (:require [hiccup.core :refer [deftag]]
             [hiccup.page :refer [html5 include-css include-js]]
             [garden.stylesheet :refer [at-media]]
+            [garden.selectors :refer [first-letter]]
             [garden.core :refer [css]]))
 
 (def async-fonts [:script "WebFontConfig = { google: { families:
@@ -26,11 +27,9 @@
                         :grid-gap "20px"
                         :grid-template-rows "auto 1fr auto"
                         :grid-template-columns "repeat(24, [col-start] 1fr)"}]
-            [:ul {:list-style-type "none"
-                  :padding 0}]
             (at-media {:min-width "320px"}
                       [:html
-                       {:font-size "calc(18px + 6 * ((100vw - 320px) / 680))"}])])
+                       {:font-size "calc(22px + 6 * ((100vw - 320px) / 680))"}])])
 
 (defn render
   [content]

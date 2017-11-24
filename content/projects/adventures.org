@@ -1,0 +1,35 @@
++++
+name = "Adventures"
+description = "Experiences I'd like to have"
+uuid = "adventures"
+tags = ["project"]
++++
+* White Mountain Bristlecone Pines
+* Farallon Islands
+* Lake Tahoe
+** Skiing
+** Rent Cabin
+** Emerald Lake Tahoe
+* Try Kiteboarding
+* Windsurfing
+* Take a Chinese Language Class
+* Go to an extended mindfulness retreat
+* Multi Day bicycle trip
+* Camping In Mendocino
+* Go to Japan
+** Tokyo
+** Hokkaido
+* Go to China
+** Hong Kong
+** Shanghai
+** Qinghai
+** Xinjiang
+* Go to India
+* Go to Korea
+* Go to Taiwan
+* Go to the Olympics
+* Surf Yoga Camp in Central America
+* Spanish classes in South America
+* Patagonia
+* Galapagos
+* Hawaii
