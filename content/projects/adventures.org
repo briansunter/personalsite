@@ -34,3 +34,5 @@ tags = ["project"]
 * Galapagos
 * Hawaii
 * Pet Cute Doggos
+* The Philippines 
+** Swim with Whale Sharks
