@@ -4,7 +4,9 @@ description = "Experiences I'd like to have"
 uuid = "adventures"
 tags = ["project"]
 +++
-* White Mountain Bristlecone Pines
+* Ancient Bristlecone Pine Forest
+** White mountains
+The Ancient Bristlecone Pine Forest is home to the oldest trees in the world, bristlecone pines. Some of these living trees exceed 4000 years of age and exhibit spectacular growth forms of twisted and beautifully colored wood.
 * Farallon Islands
 * Lake Tahoe
 ** Skiing

@@ -523,12 +523,6 @@ Soren Kierkegaard was a Danish philosopher, theologian and religious author inte
 ** Description
 A daring, spellbinding tale of anthropologists, missionaries, demon possession, sexual taboos, murder, and an obsessed young reporter named Mischa Berlinski.<br /><br />When his girlfriend takes a job as a schoolteacher in northern Thailand, Mischa Berlinski goes along for the ride, working as little as possible for one of Thailand’s English-language newspapers. One evening a fellow expatriate tips him off to a story. A charismatic American anthropologist, Martiya van der Leun, has been found de
 
-* Fieldwork
-** Mischa Berlinski
-** Rating: 3.60 / 3432
-** Description
-A daring, spellbinding tale of anthropologists, missionaries, demon possession, sexual taboos, murder, and an obsessed young reporter named Mischa Berlinski.<br /><br />When his girlfriend takes a job as a schoolteacher in northern Thailand, Mischa Berlinski goes along for the ride, working as little as possible for one of Thailand’s English-language newspapers. One evening a fellow expatriate tips him off to a story. A charismatic American anthropologist, Martiya van der Leun, has been found de
-
 * Fight Club
 ** Chuck Palahniuk
 ** Rating: 4.20 / 395968
@@ -600,7 +594,6 @@ A trusted advisor to America's top corporations and recognized as one of today's
 ** Rating: 4.03 / 6412
 ** Description
 
-
 * Getting Started in Consulting
 ** Alan Weiss
 ** Rating: 3.86 / 1752
@@ -661,13 +654,8 @@ Winner of the 1973 National Book Award, Gravity's Rainbow is a postmodern epic, 
 ** Description
 In 1931 Kurt Godel published his fundamental paper, "On Formally Undecidable Propositions of <i>Principia Mathematica</i> and Related Systems." This revolutionary paper challenged certain basic assumptions underlying much research in mathematics and logic. Godel received public recognition of his work in 1951 when he was awarded the first Albert Einstein Award for achievement in the natural sciences--perhaps the highest award of its kind in the United States. The award committee described his wo
 
-* Hackers & Painters: Big Ideas from the Computer Age
-** Paul Graham
-** Rating: 4.06 / 6266
-** Description
-“The computer world is like an intellectual Wild West, in which you can shoot anyone you wish with your ideas, if you’re willing to risk the consequences.” —from <cite>Hackers &amp; Painters: Big Ideas from the Computer Age</cite>, by Paul Graham<br /><br />We are living in the computer age, in a world increasingly designed and engineered by computer programmers and software designers, by people who call themselves hackers. Who are these people, what motivates them, and why should you care?<br /
-
-* Hackers & Painters: Big Ideas from the Computer Age
+* DONE Hackers & Painters: Big Ideas from the Computer Age
+  CLOSED: [2017-11-24 Fri 03:02]
 ** Paul Graham
 ** Rating: 4.06 / 6266
 ** Description
@@ -745,12 +733,6 @@ In However Long the Night, Aimee Molloy tells the unlikely and inspiring story o
 ** Description
 <i>Human Action: A Treatise on Economics</i> is the most important book on political economy you will ever own. It was (and remains) the most comprehensive, systematic, forthright, and powerful defense of the economics of liberty ever written. <br /><br />"Every once in a while the human race pauses in the job of botching its affairs and redeems itself by producing a noble work of the intellect.... To state that <i>Human Action</i> is a must' book is a great understatement. This is the economic
 
-* Human Action: A Treatise on Economics
-** Ludwig von Mises
-** Rating: 4.31 / 2773
-** Description
-<i>Human Action: A Treatise on Economics</i> is the most important book on political economy you will ever own. It was (and remains) the most comprehensive, systematic, forthright, and powerful defense of the economics of liberty ever written. <br /><br />"Every once in a while the human race pauses in the job of botching its affairs and redeems itself by producing a noble work of the intellect.... To state that <i>Human Action</i> is a must' book is a great understatement. This is the economic
-
 * I Know Why the Caged Bird Sings
 ** Maya Angelou
 ** Rating: 4.19 / 293308
@@ -792,7 +774,6 @@ The first book to present innovation and entrepreneurship as a purposeful and sy
 ** Rating: 4.14 / 4025
 ** Description
 
-
 * Interpreter of Maladies
 ** Jhumpa Lahiri
 ** Rating: 4.12 / 128249
@@ -822,7 +803,6 @@ Welcome to Derry, Maine…<br /><br />It’s a small city, a place as hauntingly
 ** Rating: 4.07 / 1485
 ** Description
 
-
 * Japan's Dietary Transition and Its Impacts
 ** Vaclav Smil
 ** Rating: 3.64 / 14
@@ -841,12 +821,6 @@ In a little more than a century, the Japanese diet has undergone a dramatic tran
 ** Description
 <i>Kafka on the Shore</i> is powered by two remarkable characters: a teenage boy, Kafka Tamura, who runs away from home either to escape a gruesome oedipal prophecy or to search for his long-missing mother and sister; and an aging simpleton called Nakata, who never recovered from a wartime affliction and now is drawn toward Kafka for reasons that, like the most basic activities of daily life, he cannot fathom.<br /><br />As their paths converge, and the reasons for that convergence become clear,
 
-* Kafka on the Shore
-** Haruki Murakami
-** Rating: 4.13 / 202842
-** Description
-<i>Kafka on the Shore</i> is powered by two remarkable characters: a teenage boy, Kafka Tamura, who runs away from home either to escape a gruesome oedipal prophecy or to search for his long-missing mother and sister; and an aging simpleton called Nakata, who never recovered from a wartime affliction and now is drawn toward Kafka for reasons that, like the most basic activities of daily life, he cannot fathom.<br /><br />As their paths converge, and the reasons for that convergence become clear,
-
 * Kaizen: The Key to Japan's Competitive Success
 ** Masaaki Imai
 ** Rating: 4.06 / 234
@@ -857,7 +831,6 @@ For the professional manager or student of management, a comprehensive handbook 
 ** David J. Anderson
 ** Rating: 3.97 / 1989
 ** Description
-
 
 * Kitchen Confidential: Adventures in the Culinary Underbelly
 ** Anthony Bourdain
@@ -931,13 +904,8 @@ A love story, an adventure, and an epic of the frontier, Larry McMurtry’s Puli
 ** Description
 When a plane crashes on a remote island, a small group of schoolboys are the sole survivors. From the prophetic Simon and virtuous Ralph to the lovable Piggy and brutish Jack, each of the boys attempts to establish control as the reality - and brutal savagery - of their situation sets in.<br /><br />The boys' struggle to find a way of existing in a community with no fixed boundaries invites readers to evaluate the concepts involved in social and political constructs and moral frameworks. Ideas o
 
-* Love Is a Dog from Hell
-** Charles Bukowski
-** Rating: 4.16 / 21198
-** Description
-Poems rising from and returning to Bukowski's personal experiences reflect people, objects, places, and events of the external world, and reflects on them, on their way out and back.
-
-* Love Is a Dog from Hell
+* DONE Love Is a Dog from Hell
+  CLOSED: [2017-11-24 Fri 03:06]
 ** Charles Bukowski
 ** Rating: 4.16 / 21198
 ** Description
@@ -989,7 +957,6 @@ Do you work at a breakneck pace all day, only to find that you haven't accomplis
 ** Jurgen Appelo
 ** Rating: 4.14 / 1301
 ** Description
-
 
 * Managing Humans: Biting and Humorous Tales of a Software Engineering Manager
 ** Michael Lopp
@@ -1075,18 +1042,6 @@ This classic is the benchmark against which all modern books about Nietzsche are
 ** Description
 In these four plays, Jean-Paul Sartre, the great existentialist novelist and philosopher, displays his mastery of drama. NO EXIT is an unforgettable portrayal of hell. THE FLIES is a modern reworking of the Electra-Orestes story. DIRTY HANDS is about a young intellectual torn between theory and praxis. THE RESPECTFUL PROSTITUTE is an attack on American racism.
 
-* No Exit and Three Other Plays
-** Jean-Paul Sartre
-** Rating: 4.09 / 22884
-** Description
-In these four plays, Jean-Paul Sartre, the great existentialist novelist and philosopher, displays his mastery of drama. NO EXIT is an unforgettable portrayal of hell. THE FLIES is a modern reworking of the Electra-Orestes story. DIRTY HANDS is about a young intellectual torn between theory and praxis. THE RESPECTFUL PROSTITUTE is an attack on American racism.
-
-* Norwegian Wood
-** Haruki Murakami
-** Rating: 4.02 / 226005
-** Description
-Toru, a quiet and preternaturally serious young college student in Tokyo, is devoted to Naoko, a beautiful and introspective young woman, but their mutual passion is marked by the tragic death of their best friend years before. Toru begins to adapt to campus life and the loneliness and isolation he faces there, but Naoko finds the pressures and responsibilities of life unbearable. As she retreats further into her own world, Toru finds himself reaching out to others and drawn to a fiercely indepe
-
 * Norwegian Wood
 ** Haruki Murakami
 ** Rating: 4.02 / 226005
@@ -1098,12 +1053,6 @@ Toru, a quiet and preternaturally serious young college student in Tokyo, is dev
 ** Rating: 4.17 / 67795
 ** Description
 A collection of powerful stories by one of the masters of Russian literature, illustrating the author's thoughts on political philosophy, religion and above all, humanity: <i>Notes from Underground, White Nights, The Dream of a Ridiculous Man, and Selections from The House of the Dead</i> (150th Anniversary Edition)<br /><br />The compelling works presented in this volume were written at distinct periods in Dostoyevsky's life, at decisive moments in his groping for a political philosophy and a r
-
-* Numbers Rule Your World: The Hidden Influence of Probabilities and Statistics on Everything You Do
-** Kaiser Fung
-** Rating: 3.53 / 927
-** Description
-<b>WHAT ARE THE ODDS YOU'LL WIN THE LOTTERY?<br /></b><br /><br />How long will your kids wait in line at Disney World?<br /><br />Who decides that "standardized tests" are fair?<br /><br />Why do highway engineers build slow-moving ramps?<br /><br />What does it mean, statistically, to be an "Average Joe"?<br /><br /><b>NUMBERS RULE YOUR WORLD</b><br /> In the popular tradition of eye-opening bestsellers like Freakonomics, The Tipping Point, and Super Crunchers, this fascinating book from renow
 
 * Numbers Rule Your World: The Hidden Influence of Probabilities and Statistics on Everything You Do
 ** Kaiser Fung
@@ -1241,7 +1190,6 @@ A fundamental software engineering project management guide based on the practic
 ** David    Allen
 ** Rating: 3.80 / 3373
 ** Description
-
 
 * Refactoring: Improving the Design of Existing Code
 ** Martin Fowler
@@ -1417,12 +1365,6 @@ Any Baedeker will tell us <i>where</i> we ought to travel, but only Alain de Bot
 ** Description
 If there was one man who articulated the anger, the struggle, and the beliefs of African Americans in the 1960s, that man was Malcolm X. His <i>Autobiography</i> is now an established classic of modern America, a book that expresses like none other the crucial truth about our violent times.
 
-* The Autobiography of Malcom X
-** Malcolm X
-** Rating: 4.29 / 138551
-** Description
-ONE OF TIME’S TEN MOST IMPORTANT NONFICTION BOOKS OF THE TWENTIETH CENTURY<br /><br />In the searing pages of this classic autobiography, originally published in 1964, Malcolm X, the Muslim leader, firebrand, and anti-integrationist, tells the extraordinary story of his life and the growth of the Black Muslim movement. His fascinating perspective on the lies and limitations of the American Dream, and the inherent racism in a society that denies its nonwhite citizens the opportunity to dream, giv
-
 * The Bad Beginning (A Series of Unfortunate Events, #1)
 ** Lemony Snicket
 ** Rating: 3.90 / 302215
@@ -1459,13 +1401,8 @@ A compelling argument for the necessity for art in life, Nietzsche's first book 
 ** Description
 A black swan is a highly improbable event with three principal characteristics: It is unpredictable; it carries a massive impact; and, after the fact, we concoct an explanation that makes it appear less random, and more predictable, than it was. <br /><br />The astonishing success of Google was a black swan; so was 9/11. For Nassim Nicholas Taleb, black swans underlie almost everything about our world, from the rise of religions to events in our own personal lives.<br /><br />Why do we not ackno
 
-* The Book on the Taboo Against Knowing Who You Are
-** Alan W. Watts
-** Rating: 4.28 / 10956
-** Description
-At the root of human conflict is our fundamental misunderstanding of who we are. The illusion that we are isolated beings, unconnected to the rest of the universe, has led us to view the “outside” world with hostility, and has fueled our misuse of technology and our violent and hostile subjugation of the natural world. In <i>The Book,</i> philosopher Alan Watts provides us with a much-needed answer to the problem of personal identity, distilling and adapting the ancient Hindu philosophy of Vedan
-
-* The Book on the Taboo Against Knowing Who You Are
+* DONE The Book on the Taboo Against Knowing Who You Are
+  CLOSED: [2017-11-24 Fri 16:07]
 ** Alan W. Watts
 ** Rating: 4.28 / 10956
 ** Description
@@ -1482,12 +1419,6 @@ In April 1956, a refitted oil tanker carried fifty-eight shipping containers fro
 ** Rating: 3.89 / 185259
 ** Description
 Things have never been easy for Oscar, a sweet but disastrously overweight, lovesick Dominican ghetto nerd. From his home in New Jersey, where he lives with his old-world mother and rebellious sister, Oscar dreams of becoming the Dominican J. R. R. Tolkien and, most of all, of finding love. But he may never get what he wants, thanks to the Fukœ-the curse that has haunted the Oscar's family for generations, dooming them to prison, torture, tragic accidents, and, above all, ill-starred love. Oscar
-
-* The Bully Pulpit: Theodore Roosevelt, William Howard Taft, and the Golden Age of Journalism
-** Doris Kearns Goodwin
-** Rating: 4.16 / 12447
-** Description
-Doris Kearns Goodwin, winner of the Pulitzer Prize and author of <i>Team of Rivals</i>, captures the Progressive Era through the story of the broken friendship between Theodore Roosevelt and William Howard Taft, culminating in their running against one another for president in 1912.
 
 * The Bully Pulpit: Theodore Roosevelt, William Howard Taft, and the Golden Age of Journalism
 ** Doris Kearns Goodwin
@@ -1518,18 +1449,6 @@ The hero-narrator of <i>The Catcher in the Rye</i> is an ancient child of sixtee
 ** Rating: 4.06 / 85305
 ** Description
 Touches readers of all colors as a vivid portrait of growing up, a haunting meditation on race and identity, and a lyrical valentine to a mother from her son.<br /><br />Who is Ruth McBride Jordan? A self-declared "light-skinned" woman evasive about her ethnicity, yet steadfast in her love for her twelve black children. James McBride, journalist, musician and son, explores his mother's past, as well as his own upbringing and heritage, in a poignant and powerful debut, The Color Of Water: A Black
-
-* The Communist Manifesto
-** Karl Marx
-** Rating: 3.51 / 72808
-** Description
-A rousing call to arms whose influence is still felt today, Karl Marx and Friedrich Engels' <i>The Communist Manifesto</i> is edited with an introduction by Gareth Stedman-Jones in Penguin Classics.<br /><br />Marx and Engels's revolutionary summons to the working classes, <i>The Communist Manifesto</i> is one of the most important political theories ever formulated. After four years of collaboration, they produced an incisive account of their idea of Communism, in which they envisage a society
-
-* The Communist Manifesto
-** Karl Marx
-** Rating: 3.51 / 72808
-** Description
-A rousing call to arms whose influence is still felt today, Karl Marx and Friedrich Engels' <i>The Communist Manifesto</i> is edited with an introduction by Gareth Stedman-Jones in Penguin Classics.<br /><br />Marx and Engels's revolutionary summons to the working classes, <i>The Communist Manifesto</i> is one of the most important political theories ever formulated. After four years of collaboration, they produced an incisive account of their idea of Communism, in which they envisage a society
 
 * The Complete Sherlock Holmes
 ** Arthur Conan Doyle
@@ -1614,7 +1533,6 @@ This style manual offers practical advice on improving writing skills. Throughou
 ** Rating: 4.01 / 2404
 ** Description
 
-
 * The Fault in Our Stars
 ** John Green
 ** Rating: 4.26 / 2570347
@@ -1638,7 +1556,6 @@ The mobile internet—the fifth wave of computing—is a tsunami. The convergenc
 ** Rating: 4.04 / 2164
 ** Description
 
-
 * The Fountainhead
 ** Ayn Rand
 ** Rating: 3.85 / 258960
@@ -1649,7 +1566,6 @@ When The Fountainhead was first published, Ayn Rand''s daringly original literar
 ** Richard Lancelyn Green
 ** Rating: 4.40 / 37265
 ** Description
-
 
 * The Giver (The Giver, #1)
 ** Lois Lowry
@@ -1705,18 +1621,6 @@ Offred is a Handmaid in the Republic of Gilead. She may leave the home of the Co
 ** Description
 Seconds before the Earth is demolished to make way for a galactic freeway, Arthur Dent is plucked off the planet by his friend Ford Prefect, a researcher for the revised edition of The Hitchhiker's Guide to the Galaxy who, for the last fifteen years, has been posing as an out-of-work actor.<br /><br />Together this dynamic pair begin a journey through space aided by quotes from The Hitchhiker's Guide ("A towel is about the most massively useful thing an interstellar hitchhiker can have") and a g
 
-* The Hitchhiker's Guide to the Galaxy: A Trilogy in Four Parts
-** Douglas Adams
-** Rating: 4.51 / 30287
-** Description
-<i>Charting the whole of Arthur Dent's odyssey through space are:</i><br /><br />THE HITCHHIKER'S GUIDE TO THE GALAXY.<br />One Thursday lunchtime the Earth gets unexpectedly demolished to make way for a new hyperspace bypass. For Arthur Dent, who has only just had his house demolished that morning, this seems already to be more than he can cope with. Sadly, however, the weekend has only just begun, and the Galaxy is a very very very large and startling place.<br /><br />THE RESTAURANT AT THE EN
-
-* The Hot Zone: The Terrifying True Story of the Origins of the Ebola Virus
-** Richard   Preston
-** Rating: 4.10 / 78033
-** Description
-<b>The bestselling landmark account of the first emergence of the Ebola virus.</b> A highly infectious, deadly virus from the central African rain forest suddenly appears in the suburbs of Washington, D.C. There is no cure. In a few days 90 percent of its victims are dead. A secret military SWAT team of soldiers and scientists is mobilized to stop the outbreak of this exotic "hot" virus. <i>The Hot Zone</i> tells this dramatic story, giving a hair-raising account of the appearance of rare and le
-
 * The Hot Zone: The Terrifying True Story of the Origins of the Ebola Virus
 ** Richard   Preston
 ** Rating: 4.10 / 78033
@@ -1753,7 +1657,6 @@ A new classic, cited by leaders and media around the globe as a highly recommend
 ** Clayton M. Christensen
 ** Rating: 4.00 / 25605
 ** Description
-
 
 * The Innovator's Solution: Creating and Sustaining Successful Growth
 ** Clayton M. Christensen
@@ -1825,7 +1728,6 @@ Marlowe befriends a down on his luck war veteran with the scars to prove it. The
 ** Lawrence Wright
 ** Rating: 4.38 / 15401
 ** Description
-
 
 * The Lord of the Rings (The Lord of the Rings, #1-3)
 ** J.R.R. Tolkien
@@ -2043,12 +1945,6 @@ The quintessential novel of the Lost Generation, <i>The Sun Also Rises</i> is on
 ** Description
 One of the world's most celebrated scholars, Stephen Greenblatt has crafted both an innovative work of history and a thrilling story of discovery, in which one manuscript, plucked from a thousand years of neglect, changed the course of human thought and made possible the world as we know it.<br /><br /><br />Nearly six hundred years ago, a short, genial, cannily alert man in his late thirties took a very old manuscript off a library shelf, saw with excitement what he had discovered, and ordered
 
-* The Swerve: How the World Became Modern
-** Stephen Greenblatt
-** Rating: 3.83 / 21314
-** Description
-One of the world's most celebrated scholars, Stephen Greenblatt has crafted both an innovative work of history and a thrilling story of discovery, in which one manuscript, plucked from a thousand years of neglect, changed the course of human thought and made possible the world as we know it.<br /><br /><br />Nearly six hundred years ago, a short, genial, cannily alert man in his late thirties took a very old manuscript off a library shelf, saw with excitement what he had discovered, and ordered
-
 * The Things They Carried
 ** Tim O'Brien
 ** Rating: 4.12 / 189294
@@ -2101,7 +1997,6 @@ The text of Eliot's 1922 masterpiece is accompanied by thorough explanatory anno
 ** Tony Schwartz
 ** Rating: 3.98 / 1641
 ** Description
-
 
 * The Wind in the Willows
 ** Kenneth Grahame
@@ -2192,7 +2087,6 @@ The inspiring account of one man's campaign to build schools in the most dangero
 ** Rating: 3.29 / 75
 ** Description
 
-
 * Thus Spoke Zarathustra
 ** Friedrich Nietzsche
 ** Rating: 4.05 / 81169
@@ -2258,14 +2152,8 @@ A multilayered, bone-chilling narrative of messianic delusion, savage violence, 
 ** Rating: 3.71 / 38315
 ** Description
 
-
-* Valley of the Dolls
-** Jacqueline Susann
-** Rating: 3.71 / 38315
-** Description
-
-
-* Watchmen
+* DONE Watchmen
+  CLOSED: [2017-11-24 Fri 03:02]
 ** Alan Moore
 ** Rating: 4.35 / 419053
 ** Description
@@ -2294,12 +2182,6 @@ This indispensable volume is a lucid and faithful account of the Buddha’s teac
 ** Rating: 4.04 / 284270
 ** Description
 A loving threesome, they ranged the dark hills and river bottoms of Cherokee country. Old Dan had the brawn. Little Ann had the brains, and Billy had the will to make them into the finest hunting team in the valley. Glory and victory were coming to them, but sadness waited too. Where the Red Fern Grows is an exciting tale of love and adventure you'll never forget.
-
-* Where the Sidewalk Ends
-** Shel Silverstein
-** Rating: 4.29 / 1037210
-** Description
-Where the Sidewalk Ends turns forty! Celebrate with this anniversary edition that features an eye-catching commemorative red sticker. This classic poetry collection, which is both outrageously funny and profound, has been the most beloved of Shel Silverstein's poetry books for generations.<br /><br />Where the sidewalk ends, Shel Silverstein's world begins. There you'll meet a boy who turns into a TV set and a girl who eats a whale. The Unicorn and the Bloath live there, and so does Sarah Cynthi
 
 * Where the Sidewalk Ends
 ** Shel Silverstein
@@ -2354,7 +2236,6 @@ On October 25, 1946, in a crowded room in Cambridge, England, the great twentiet
 ** Rating: 3.90 / 4223
 ** Description
 
-
 * World War Z: An Oral History of the Zombie War
 ** Max Brooks
 ** Rating: 4.01 / 353521
@@ -2367,13 +2248,8 @@ On October 25, 1946, in a crowded room in Cambridge, England, the great twentiet
 ** Description
 Small changes can make a big difference in your powers of persuasion.<br /><br />What one word can you start using today to increase your persuasiveness by more than fifty percent?<br />Which item of stationery can dramatically increase people's responses to your requests?<br />How can you win over your rivals by inconveniencing them?<br />Why does knowing that so many dentists are named Dennis improve your persuasive prowess?<br /><br />Every day we face the challenge of persuading others to do
 
-* You Can Draw in 30 Days: The Fun, Easy Way to Learn to Draw in One Month or Less
-** Mark Kistler
-** Rating: 4.22 / 929
-** Description
-   <b>Learn to draw in 30 days with public television’s favorite drawing teacher.</b><b> </b>Drawing is an acquired skill, not a talent—<i>anyone</i> can learn to draw! All you need is a pencil, a piece of paper, and the willingness to tap into your hidden artistic abilities. <i>You Can Draw in 30 Days</i> will teach you the rest. With Emmy award–winning, longtime PBS host Mark Kistler as your guide, you’ll learn the secrets of sophisticated three-dimensional renderings, and have fun along the way.
-
-* You Can Draw in 30 Days: The Fun, Easy Way to Learn to Draw in One Month or Less
+* DONE You Can Draw in 30 Days: The Fun, Easy Way to Learn to Draw in One Month or Less
+  CLOSED: [2017-11-24 Fri 03:02]
 ** Mark Kistler
 ** Rating: 4.22 / 929
 ** Description
