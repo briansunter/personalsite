@@ -33,3 +33,4 @@ tags = ["project"]
 * Patagonia
 * Galapagos
 * Hawaii
+* Pet Cute Doggos
