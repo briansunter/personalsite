@@ -7,6 +7,7 @@
             [garden.stylesheet :refer [at-media]]
             [garden.core :refer [css]]))
 
+
 (def style [[:h1 :h2 :h3 :h4 {:font-family "'Monserrat', sans-serif"}]
             [:p {:font-family "'Lora', serif"}]
             [:div.content {:grid-column " 2 / 23"}]
@@ -91,13 +92,25 @@ gallery.init();
 (def masonry-js
   [:script
    "
-var grid = document.getElementById('album');
-var msnry = new Masonry( grid, {
-  // options...
-  itemSelector: '.image',
-  columnWidth: 10
-});
+ var grid = document.getElementById('album');
+ var msnry = new Masonry( grid, {
+   // options...
+   itemSelector: '.image',
+   columnWidth: 10
+ });
+
+ imagesLoaded(grid).on('progress',function() {
+ msnry.layout();
+ });
+
+msnry.layout()
+
 "])
+
+(defn thumbnail
+  [filename]
+  (let [short-filename (second (re-matches #"(.*).jpg" filename))]
+    (str "http://photos.bsun.io/thumbnails/photos/" short-filename "_640.jpg")))
 
 (defn render-album
   [{:keys [entry]}]
@@ -108,6 +121,8 @@ var msnry = new Masonry( grid, {
             (include-js "/js/photoswipe.min.js")
             (include-js "/js/photoswipe-ui-default.min.js")
             (include-js "https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js")
+            (include-js "https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.js")
+            (include-js "https://code.jquery.com/jquery-3.2.1.slim.min.js")
             [:style (css style)]
             (photoswipe-js photoswipe-url)]
            [:div.container
@@ -116,8 +131,8 @@ var msnry = new Masonry( grid, {
              photoswipe
              [:div#album
               (map-indexed (fn [index {:keys [image title]}]
-                [:img.image {:src (str "http://photos.bsun.io/" image)
-                             :onClick (str "openGallery(" index ");" )
-                             }]) (:images entry))]
+                             [:img.image {:src (thumbnail image)
+                                          :onClick (str "openGallery(" index ");" )}])
+                           (:images entry))]
              masonry-js
              ]])))

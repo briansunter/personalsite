@@ -83,8 +83,9 @@
    (images-dimensions)
    (toml-metadata)
    (photoswipe-album)
-   (sift :move {#"^photos" "public/photos"})
+   ;; (sift :move {#"^photos" "/photos"})
+   (images-resize :out-dir "photos/thumbnails" :resolutions #{640})
    (target)
    (copy :output-dir    "content/"
          :matching       #{#"photoswipe/.*\.json$"})
-   (s3-sync :source "public/photos" :bucket "photos.bsun.io")))
+   (s3-sync :source "photos" :bucket "photos.bsun.io")))

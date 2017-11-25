@@ -204,10 +204,10 @@
     "w" : 5184,
     "h" : 3456
   }, {
-    "src" : "http://photos.bsun.io/foo.jpg",
+    "src" : "http://photos.bsun.io/",
     "title" : null,
     "caption" : null,
-    "w" : 6000,
-    "h" : 4000
+    "w" : null,
+    "h" : null
   } ]
 }
