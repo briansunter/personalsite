@@ -8,14 +8,17 @@
             [garden.core :refer [css]]))
 
 (def style [[:h1 :h2 :h3 :h4 {:font-family "'Monserrat', sans-serif"}]
-            [:ul.social {:display "flex"
-                         :justify-content "space-between"}]
             [:p {:font-family "'Lora', serif"}]
             [:div.content {:grid-column " 2 / 23"}]
             [:div.container {:display :grid
                              :grid-gap "20px"
                              :grid-template-rows "auto 1fr auto"
                              :grid-template-columns "repeat(24, [col-start] 1fr)"}]
+            [:div#album {:grid-column "2 / 23"
+                         }]
+            [:div.image :img {:width "32%"
+                              :padding-top "2px"
+                              }]
             [:ul {:list-style-type "none"
                   :padding 0}]
             (at-media {:min-width "320px"}
@@ -72,9 +75,20 @@ fetch(psURL).then(function(response) {
 var items = psData.data;
 var pswpElement = document.querySelectorAll('.pswp')[0];
 var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
-gallery.init();
+// gallery.init();
 });
                           ")])
+
+(def masonry-js
+  [:script
+   "
+var grid = document.getElementById('album');
+var msnry = new Masonry( grid, {
+  // options...
+  itemSelector: '.image',
+  columnWidth: 10
+});
+"])
 
 (defn render-album
   [{:keys [entry]}]
@@ -84,9 +98,15 @@ gallery.init();
             (include-css "/static/default-skin/default-skin.css")
             (include-js "/js/photoswipe.min.js")
             (include-js "/js/photoswipe-ui-default.min.js")
+            (include-js "https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js")
             [:style (css style)]
             (photoswipe-js photoswipe-url)]
            [:div.container
             [:div.content
+             (:content entry)
              photoswipe
-             (:content entry)]])))
+             [:div#album
+              (for [{:keys [image title]}  (:images entry)]
+                 [:img.image {:src (str "http://photos.bsun.io/" image)}])]
+             masonry-js
+             ]])))
