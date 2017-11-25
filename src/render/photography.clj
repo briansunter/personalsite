@@ -69,14 +69,23 @@ addCaptionHTMLFn: function(item, captionEl, isFake) {
     return true;
 }};
 
+var items;
 fetch(psURL).then(function(response) {
   return response.json();
 }).then(function(psData) {
-var items = psData.data;
+items = psData.data;
+});
+
+function openGallery(index) {
+if (!items) {
+  return;
+}
+
+options.index = index
 var pswpElement = document.querySelectorAll('.pswp')[0];
 var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
-// gallery.init();
-});
+gallery.init();
+}
                           ")])
 
 (def masonry-js
@@ -106,7 +115,9 @@ var msnry = new Masonry( grid, {
              (:content entry)
              photoswipe
              [:div#album
-              (for [{:keys [image title]}  (:images entry)]
-                 [:img.image {:src (str "http://photos.bsun.io/" image)}])]
+              (map-indexed (fn [index {:keys [image title]}]
+                [:img.image {:src (str "http://photos.bsun.io/" image)
+                             :onClick (str "openGallery(" index ");" )
+                             }]) (:images entry))]
              masonry-js
              ]])))
