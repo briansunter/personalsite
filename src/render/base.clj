@@ -22,14 +22,19 @@
             [:ul.social {:display "flex"
                          :justify-content "space-between"}]
             [:p {:font-family "'Lora', serif"}]
-            [:div.content {:grid-column " 2 / 23"}]
+            (at-media {:min-width "320px"}[:html
+                                           {:font-size "4vw"}])
+            (at-media {:min-width "1200px"}[:html
+                                            {:font-size "1.4vw"}])
             [:div.container {:display :grid
-                        :grid-gap "20px"
-                        :grid-template-rows "auto 1fr auto"
-                        :grid-template-columns "repeat(24, [col-start] 1fr)"}]
+                             :grid-gap "20px"
+                             :grid-template-rows "auto 1fr auto"
+                             :align-items "center"
+                             :grid-template-columns "repeat(24, [col-start] 1fr)"}]
             (at-media {:min-width "320px"}
-                      [:html
-                       {:font-size "calc(22px + 6 * ((100vw - 320px) / 680))"}])])
+                      [:div.content {:grid-column " 2 / 23"}])
+            (at-media {:min-width "1200px"}
+                      [:div.content {:grid-column " 5 / 20"}])])
 
 (defn render
   [content]

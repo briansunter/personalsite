@@ -6,7 +6,7 @@
             [garden.core :refer [css]]))
 
 (def garden-style
-  [[:h1 :h2 :h3 :h4 {:font-family "'Monserrat', sans-serif"}]
+  [[:h1 :h1 :h3 :h4 {:font-family "'Monserrat', sans-serif"}]
    [:ul.social {:display "flex"
                 :justify-content "space-between"}]
    [:p {:font-family "'Lora', serif"}]
@@ -74,7 +74,7 @@
 (defn blog-section
   [entries]
   [:div.blog-section
-   [:h2 "Blog"]
+   [:h1 "Blog"]
    [:ul
     (for [entry entries]
       (blog-entry entry))]])
@@ -88,7 +88,7 @@
 (defn photo-section
   [entries]
   [:div.photo-section
-   [:h2 "Photos"]
+   [:h1 "Photos"]
    [:ul
     (for [entry entries]
       (photo-entry entry))]])
@@ -102,7 +102,7 @@
 (defn work-section
   [entries]
   [:div.work-section
-   [:h2 "Work"]
+   [:h1 "Work"]
    [:ul
     (for [{:keys [name description] :as entry} entries]
       (job name description))]])
@@ -116,7 +116,7 @@
 (defn projects-section
   [entries]
   [:div.projects-section
-   [:h2 "Projects"]
+   [:h1 "Projects"]
    [:ul
     (for [entry entries]
       (project entry))]])
