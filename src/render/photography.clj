@@ -7,7 +7,6 @@
             [garden.stylesheet :refer [at-media]]
             [garden.core :refer [css]]))
 
-
 (def style [[:h1 :h2 :h3 :h4 {:font-family "'Monserrat', sans-serif"}]
             [:p {:font-family "'Lora', serif"}]
             [:div.content {:grid-column " 2 / 23"}]
