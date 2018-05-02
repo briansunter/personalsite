@@ -7,8 +7,6 @@ uuid = "transducers-clojure"
 tags = ["blog", "index-page"]
 +++
 
-<link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css" />
-
 # Transducers in Clojure
 
 ## Sum a Seq of Numbers
@@ -197,6 +195,3 @@ We can use transduce to find it in one pass.
 ```clj
 (transduce double-even-xforms + 0 (range 1 11))
 ```
-
-<script type="text/javascript">window.klipse_settings = {selector: '.language-clj', selector_eval_js: '.language-js'};</script>
-<script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>

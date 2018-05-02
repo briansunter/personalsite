@@ -1,4 +1,5 @@
 (set-env!
+ :jvm-opts ["-Xmx4G"]
  :source-paths #{"src"}
  :resource-paths #{"content" "resources"}
  :dependencies '[[perun "0.4.2-SNAPSHOT" :scope "test"]
@@ -31,7 +32,7 @@
   []
   (comp
    (global-metadata)
-   (images-dimensions)
+   #_(images-dimensions)
    (toml-metadata)
    (draft)
    (markdown)

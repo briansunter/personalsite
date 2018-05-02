@@ -40,7 +40,17 @@
   [content]
   (html5 [:head [:meta {:charset "utf-8"}]
           (include-css "/css/codemirror.css")
-          (include-js "/js/scripts/klipse.js")
+          (include-css "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/default.min.css")
+          (include-js "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js")
+          [:script "hljs.initHighlightingOnLoad()"]
+          #_(include-js "/js/scripts/klipse.js")
+          [:script "
+    window.klipse_settings = {
+        selector_eval_js: '.language-js',
+        selector: '.language-clj'
+    };
+
+"]
           [:style (css style)]
           async-fonts]
          [:div.container [:div.content (-> content :entry :content)]
