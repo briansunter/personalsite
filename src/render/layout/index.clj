@@ -31,7 +31,7 @@
     (for [{:keys [link name]} social-profiles]
       [:li.social-profile.flex-item
        [:a {:href link}
-        [:span.fab.fa-github-square]
+        [:i {:class "fab fa-github-square"}]
         [:h3 name]]])]])
 
 (defn blog-entry

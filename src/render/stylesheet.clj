@@ -21,28 +21,27 @@
     {:font-family "'Monserrat', sans-serif"
      :margin 0}]
    [:p {:font-size "1.5rem"
-        :font-family "'Lora', serif"
-        }]
-   [:.header [[:h1 {:font-size "3.5rem"}]]]
+        :font-family "'Lora', serif"}]
+   [:h1 {:font-size "3.5rem"}]
    [:.social-profile [:h3 {:font-size "1.25rem"}]]
    [:h3 {:font-size "2rem"}]
-   [:.blog-entry [[:p {:font-size "1.5rem"}]]]
 
    [:ul.social
     {:display "flex"
      :justify-content "space-around"}]
-   (at-media {:min-width "1200px"}
-             [:ul.social
-              {:display "flex"
-               :justify-content "space-between"}])
+
+   (at-media {:min-width "1000px"}
+             [[:ul.social
+               {:display "flex"
+                :justify-content "space-between"}]
+              [:p {:font-size "3rem"}]
+              [:h1 {:font-size "9rem"}]]
+             [:.social-profile [:h3 {:font-size "4rem"}]]
+             [:h3 {:font-size "4rem"}])
 
    [:ul
     {:list-style-type "none"
      :padding 0}]
-
-   (at-media {:min-width "320px"}
-             [:html
-              {:font-size "calc(18px + 6 * ((100vw - 320px) / 680))"}])
 
    [:div.header
     {:grid-area "header"
@@ -50,23 +49,19 @@
 
    [:div.work-section
     {:grid-area "work-section"
-     :grid-column " 1 / 13"}
-    [:h1 {:font-size "3.5rem"}]]
+     :grid-column " 1 / 13"}]
 
    [:div.projects-section
     {:grid-area "projects-section"
-     :grid-column " 1 / 13"}
-    [:h1 {:font-size "3.5rem"}]]
+     :grid-column " 1 / 13"}]
 
    [:div.blog-section
     {:grid-area "blog-section"
-     :grid-column " 1 / 13"}
-    [:h1 {:font-size "3.5rem"}]]
+     :grid-column " 1 / 13"}]
 
    [:div.photo-section
     {:grid-area "photo-section"
-     :grid-column " 1 / 13"}[:h1 {:font-size "3.5rem"}]]
-
+     :grid-column " 1 / 13"}]
 
    [:div.home
     {:display :grid
@@ -75,11 +70,11 @@
      :grid-template-areas " \"header\" \"blog-section\" \"projects-section\" \"photo-section\" \"work-section\""}]
 
    (at-media {:min-width "1000px"}
-             [:div.header {:grid-column "4 / span 6"}]
-             [:div.blog-section {:grid-column "4 / span 6"}]
-             [:div.projects-section {:grid-column "4 / span 6"}]
-             [:div.photo-section {:grid-column "4 / span 6"}]
-             [:div.work-section {:grid-column "4 / span 6"}])])
+             [:div.header {:grid-column "5 / span 4"}]
+             [:div.blog-section {:grid-column "5 / span 4"}]
+             [:div.projects-section {:grid-column "5 / span 4"}]
+             [:div.photo-section {:grid-column "5 / span 4"}]
+             [:div.work-section {:grid-column "5 / span 4"}])])
 
 (gdn/defstyles screen
   [:body
