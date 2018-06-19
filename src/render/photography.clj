@@ -4,26 +4,8 @@
             [utils :refer [has-tag?]]
             [clojure.java.io :as io]
             [io.perun.core   :as perun]
-            [garden.stylesheet :refer [at-media]]
-            [garden.core :refer [css]]))
+            [garden.stylesheet :refer [at-media]]))
 
-(def style [[:h1 :h2 :h3 :h4 {:font-family "'Monserrat', sans-serif"}]
-            [:p {:font-family "'Lora', serif"}]
-            [:div.content {:grid-column " 2 / 23"}]
-            [:div.container {:display :grid
-                             :grid-gap "20px"
-                             :grid-template-rows "auto 1fr auto"
-                             :grid-template-columns "repeat(24, [col-start] 1fr)"}]
-            [:div#album {:grid-column "2 / 23"
-                         }]
-            [:div.image :img {:width "32%"
-                              :padding-top "2px"
-                              }]
-            [:ul {:list-style-type "none"
-                  :padding 0}]
-            (at-media {:min-width "320px"}
-                      [:html
-                       {:font-size "calc(18px + 6 * ((100vw - 320px) / 680))"}])])
 (def photoswipe
   [:div.pswp
    {:aria-hidden "true", :role "dialog", :tabindex "-1"}
@@ -122,7 +104,7 @@ msnry.layout()
             (include-js "https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js")
             (include-js "https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.js")
             (include-js "https://code.jquery.com/jquery-3.2.1.slim.min.js")
-            [:style (css style)]
+            (include-css "/css/garden.css")
             (photoswipe-js photoswipe-url)]
            [:div.container
             [:div.content

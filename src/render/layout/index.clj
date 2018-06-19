@@ -2,59 +2,7 @@
   (:require [hiccup.core :refer [deftag]]
             [utils :refer [has-tag?]]
             [hiccup.page :refer [html5 include-css include-js]]
-            [garden.stylesheet :refer [at-media]]
-            [garden.core :refer [css]]))
-
-(def garden-style
-  [[:h1 :h1 :h3 :h4
-    {:font-family "'Monserrat', sans-serif"}]
-
-   [:ul.social
-    {:display "flex"
-     :justify-content "space-between"}]
-
-   [:p {:font-family "'Lora', serif"}]
-
-   [:ul
-    {:list-style-type "none"
-     :padding 0}]
-
-   (at-media {:min-width "320px"}
-             [:html
-              {:font-size "calc(18px + 6 * ((100vw - 320px) / 680))"}])
-
-   [:div.header
-    {:grid-area "header"
-     :grid-column "1 / 13"}]
-
-   [:div.work-section
-    {:grid-area "work-section"
-     :grid-column " 1 / 13"}]
-
-   [:div.projects-section
-    {:grid-area "projects-section"
-     :grid-column " 1 / 13"}]
-
-   [:div.blog-section
-    {:grid-area "blog-section"
-     :grid-column " 1 / 13"}]
-
-   [:div.photo-section
-    {:grid-area "photo-section"
-     :grid-column " 1 / 13"}]
-
-   [:div.home
-    {:display :grid
-     :grid-gap "20px"
-     :grid-template-columns "repeat(12, [col-start] 1fr)"
-     :grid-template-areas " \"header\" \"blog-section\" \"projects-section\" \"photo-section\" \"work-section\""}]
-
-   (at-media {:min-width "1000px"}
-             [:div.header {:grid-column "3 / span 8"}]
-             [:div.blog-section {:grid-column "3 / span 8"}]
-             [:div.projects-section {:grid-column "3 / span 8"}]
-             [:div.photo-section {:grid-column "3 / span 8"}]
-             [:div.work-section {:grid-column "3 / span 8"}])])
+            [garden.stylesheet :refer [at-media]]))
 
 (def head
   [:head
@@ -72,7 +20,7 @@
       s.parentNode.insertBefore(wf, s);
    })(document);"
     ]
-   [:style (css garden-style)]])
+   (include-css "/css/garden.css")])
 
 (defn header
   [{:keys [social-profiles title description]}]
@@ -82,7 +30,9 @@
    [:ul.social
     (for [{:keys [link name]} social-profiles]
       [:li.social-profile.flex-item
-       [:h3 [:a {:href link} name]]])]])
+       [:a {:href link}
+        [:span.fab.fa-github-square]
+        [:h3 name]]])]])
 
 (defn blog-entry
   [{:keys [title description permalink]}]

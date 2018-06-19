@@ -8,6 +8,7 @@
                  [shakkuri "1.0.5"]
                  [cheshire "5.8.0"]
                  [clj-time "0.9.0"]
+                 [org.martinklepsch/boot-garden "1.3.2-1"]
                  [cpmcdaniel/boot-copy "1.0"]
                  [garden "1.3.3"]
                  [hashobject/boot-s3 "0.1.2-SNAPSHOT"]])
@@ -17,7 +18,12 @@
           '[cpmcdaniel.boot-copy :refer :all]
           '[tasks.tasks :refer [toml-metadata photoswipe-album]]
           '[utils :refer [has-tag?]]
+          '[org.martinklepsch.boot-garden :refer [garden]]
           '[hashobject.boot-s3 :refer :all])
+
+(task-options! garden {:styles-var   'render.stylesheet/combined
+                       :output-to    "css/garden.css"
+                       :pretty-print false})
 
 (task-options!
  pom {:project 'briansuter.com
@@ -53,15 +59,16 @@
    (collection :renderer 'render.layout.index/render
                :page "index.html"
                :filterer (partial has-tag? "index-page"))
+   (garden)
    (sift :move {#"(.*)\.edn$" "$1.html"})
    (sift :move {#"(.*\.ttf)" "public/$1"})
-   (sift :move {#"(.*\.css$)" "public/$1"})
+   ;; (sift :move {#"/(.*\.css$)" "public/css/$1"})
    (sift :move {#"(.*\.js$)" "public/$1"})
    (sift :move {#"img" "public/img/"})
    (sift :move {#"static" "public/static"})
    (sift :move {#"^photos" "public/photos"})
    (sift :move {#"photography/photoswipe/(.*)\.json" "public/photography/$1/photoswipe.json"})
-   (sift :move {#"main.css" "public/css/main.css"})
+   (sift :move {#"css/(.*)" "public/css/$1"})
    (target)))
 
 (deftask dev
