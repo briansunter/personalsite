@@ -22,6 +22,7 @@
           '[hashobject.boot-s3 :refer :all])
 
 (task-options! garden {:styles-var   'render.stylesheet/combined
+                       :css-prepend ["css/reset.css"]
                        :output-to    "css/garden.css"
                        :pretty-print false})
 
