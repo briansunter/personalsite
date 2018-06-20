@@ -115,5 +115,4 @@ msnry.layout()
                              [:img.image {:src (thumbnail image)
                                           :onClick (str "openGallery(" index ");" )}])
                            (:images entry))]
-             masonry-js
-             ]])))
+             masonry-js]])))
