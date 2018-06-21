@@ -11,6 +11,7 @@
                  [org.martinklepsch/boot-garden "1.3.2-1"]
                  [cpmcdaniel/boot-copy "1.0"]
                  [garden "1.3.3"]
+                 [confetti/confetti "0.2.1"]
                  [hashobject/boot-s3 "0.1.2-SNAPSHOT"]])
 
 (require  '[io.perun :refer :all]
@@ -18,8 +19,8 @@
           '[cpmcdaniel.boot-copy :refer :all]
           '[tasks.tasks :refer [toml-metadata photoswipe-album]]
           '[utils :refer [has-tag?]]
-          '[org.martinklepsch.boot-garden :refer [garden]]
-          '[hashobject.boot-s3 :refer :all])
+          '[confetti.boot-confetti :refer [sync-bucket]]
+          '[org.martinklepsch.boot-garden :refer [garden]])
 
 (task-options! garden {:styles-var   'render.stylesheet/combined
                        :css-prepend ["css/reset.css"]
@@ -29,17 +30,16 @@
 (task-options!
  pom {:project 'briansuter.com
       :version "0.2.0"}
- s3-sync {:bucket "bsun.io"
+ sync-bucket {:bucket "bsun.io"
           :source "public/"
           :access-key (System/getenv "AWS_ACCESS_KEY")
           :secret-key (System/getenv "AWS_SECRET_KEY")
-          :options {"Cache-Control" "max-age=315360000, no-transform, public"}} )
+          :cloudfront-id "EMH2KZONKJMO3"})
 
 (deftask build
   []
   (comp
    (global-metadata)
-   #_(images-dimensions)
    (toml-metadata)
    (draft)
    (markdown)
@@ -84,17 +84,4 @@
   []
   (comp
    (build)
-   (s3-sync)))
-
-(deftask deploy-images
-  []
-  (comp
-   (images-dimensions)
-   (toml-metadata)
-   (photoswipe-album)
-   ;; (sift :move {#"^photos" "/photos"})
-   (images-resize :out-dir "photos/thumbnails" :resolutions #{640})
-   (target)
-   (copy :output-dir    "content/"
-         :matching       #{#"photoswipe/.*\.json$"})
-   (s3-sync :source "photos" :bucket "photos.bsun.io")))
+   (sync-bucket)))
