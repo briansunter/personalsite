@@ -8,7 +8,7 @@ jobs:
       - checkout
       - restore_cache:
           key: project-{{checksum "boot.properties" }}-{{ checksum "build.boot" }}
-      - run: boot deploy --verbose
+      - run: boot deploy
       - save_cache:
           paths:
             - ~/.m2
@@ -18,3 +18,4 @@ jobs:
     environment:
       BOOT_JVM_OPTIONS: "-Xms512m -Xmx1024m"
       BOOT_WATCHERS_DISABLE: "yes"
+      BOOT_CLOJURE_VERSION: 1.8.0
