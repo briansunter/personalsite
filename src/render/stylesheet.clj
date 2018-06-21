@@ -8,7 +8,13 @@
 
                      (at-media {:max-width "1000px"}
                                [:p {:font-family "'Lora', serif"}]
-                               )
+                               [:.container {:display :grid
+                                             :grid-template-columns "5vw 90vw 5vw"
+                                             }]
+                               [:.content {
+                                           :grid-column "2"
+
+                                           }])
 
                      (at-media {:min-width "1050px"}
                                [:div.container {:display :grid
@@ -41,11 +47,11 @@
 
                       [:h3 {:font-size "2rem"}]
                       [:p {:font-size "1.5rem"}]]]
-             [:.container {:padding "20px"}]
+             ;; [:.container {:padding "20px"}]
              [:.content [[:h1 {:font-size "3rem"}]
                          [:h2 {:font-size "3rem"}]
                          [:p {:font-size "2rem"}]
-                         [:.CodeMirror-code {:font-size "3rem"
+                         [:.CodeMirror-code {:font-size "1rem"
                                              :padding "10px"}]]]
              [:.social-profile [:h3 {:font-size "1rem"}]]
              [:h3 {:font-size "4rem"}])
@@ -101,7 +107,6 @@
   [:body
    {:font-family "Helvetica Neue"
     :font-size   "16px"
-    :width "100%"
     :line-height 1.5}])
 
 (gdn/defstyles combined

@@ -27,7 +27,9 @@
 
 (defn render
   [content]
-  (html5 [:head [:meta {:charset "utf-8"}]
+  (html5 [:head
+          [:meta {:name "viewport" :content "width=device-width, initial-scale=1"}]
+          [:meta {:charset "utf-8"}]
           (include-css "/css/codemirror.css")
           (include-css "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/default.min.css")
           (include-js "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js")
