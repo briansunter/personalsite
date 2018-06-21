@@ -3,20 +3,19 @@
  :source-paths #{"src"}
  :resource-paths #{"content" "resources"}
  :dependencies '[[perun "0.4.2-SNAPSHOT" :scope "test"]
+                 [org.clojure/clojure "1.8.0"]
                  [boot/core "2.6.0" :scope "provided"]
                  [pandeiro/boot-http "0.8.3"]
                  [shakkuri "1.0.5"]
                  [cheshire "5.8.0"]
                  [clj-time "0.9.0"]
                  [org.martinklepsch/boot-garden "1.3.2-1"]
-                 [cpmcdaniel/boot-copy "1.0"]
                  [garden "1.3.3"]
                  [confetti/confetti "0.2.1"]
                  [hashobject/boot-s3 "0.1.2-SNAPSHOT"]])
 
-(require  '[io.perun :refer :all]
+(require  '[io.perun :refer :all :exclude [trace]]
           '[pandeiro.boot-http :refer [serve]]
-          '[cpmcdaniel.boot-copy :refer :all]
           '[tasks.tasks :refer [toml-metadata photoswipe-album]]
           '[utils :refer [has-tag?]]
           '[confetti.boot-confetti :refer [sync-bucket]]
