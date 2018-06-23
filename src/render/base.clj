@@ -31,9 +31,11 @@
           [:meta {:name "viewport" :content "width=device-width, initial-scale=1"}]
           [:meta {:charset "utf-8"}]
           (include-css "/css/codemirror.css")
-          (include-css "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/default.min.css")
+          ;; (include-css "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/Vs.min.css")
           (include-js "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js")
+          (include-css "/css/vs.css")
           (include-css "/css/garden.css")
+          (include-js "/js/highlight.pack.js")
           (include-css "https://use.fontawesome.com/releases/v5.0.13/css/all.css")
           [:script "hljs.initHighlightingOnLoad()"]
           #_(include-js "/js/scripts/klipse.js")

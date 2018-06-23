@@ -3,6 +3,8 @@
             [garden.stylesheet :refer [at-media]]))
 
 (gdn/defstyles base [[:h1 :h2 :h3 :h4 {:font-family "'Monserrat', sans-serif"}]
+                     [:.hljs {:border "solid 1px #90B4FE"
+                              :font-family "FiraCode"}]
                      [:ul.social {:display "flex"
                                   :text-align "center"
                                   :justify-content "space-between"}]
@@ -25,7 +27,6 @@
   [[:h1 :h2 :h3 :h4
     {:font-family "'Monserrat', sans-serif"
      :margin 0}]
-
    [:p {:font-size "1.5rem"
         :font-family "'Lora', serif"}]
    [:h1 {:font-size "3.5rem"}]
@@ -38,16 +39,24 @@
                             :font-style "bold"}]
                       [:h3 {:font-size "2rem"}]
                       [:p {:font-size "1.5rem"}]]]
-             [:.content [[:h1 {:font-size "3rem"}]
-                         [:h2 {:font-size "3rem"}]
-                         [:p {:font-size "2rem"}]
+             [:.content [[:h1 {:font-size "3rem"
+                               :margin-top "20px"
+                               :margin-bottom "20px"}]
+                         [:h2 {:font-size "2.5rem"
+                               :margin-top "20px"
+                               :margin-bottom "20px"}]
+                         [:h3 {:font-size "2rem"
+                               :margin-top "20px"
+                               :margin-bottom "20px"}]
+                         [:p {:font-size "1.5rem"
+                              :margin-top "20px"}]
                          [:.CodeMirror {:margin-top "20px"
                                         :margin-bottom "20px"}]
                          [:.CodeMirror-code {:font-size "1rem"
-                                             :padding "10px"}]]]
-             [:.social-profile {:margin-top "10px"} [:h3 {:font-size "1.25rem"}]
-              [:i {:font-size "4rem"}]]
-             [:h3 {:font-size "4rem"}])
+                                             :padding "10px"}]]
+              [:.social-profile {:margin-top "10px"}
+               [:h3 {:font-size "1.25rem"}]
+               [:i {:font-size "4rem"}]]])
 
    (at-media {:min-width "1000px"}
              [[:ul.social
@@ -64,8 +73,7 @@
                           [:.CodeMirror-code {:font-size "2rem"
                                               :padding "10px"}]]]
               [:.social-profile {:margin-top "20px"}[:h3 {:font-size "3rem"}]
-               [:i {:font-size "6rem"}]
-               ]
+               [:i {:font-size "6rem"}]]
               [:h3 {:font-size "4rem"}]
 
               [:ul
