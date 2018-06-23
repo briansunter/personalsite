@@ -3,7 +3,7 @@
  :photo-site "photos.bsun.io"
  :description "My name is Brian Sunter and I'm a software Engineer in San Francisco."
  :social-profiles
- [{:name "Github" :link "https://github.com/briansunter"}
-  {:name "LinkedIn" :link "https://www.linkedin.com/in/brian-sunter-9853a649/"}
-  {:name "Twitter" :link "https://twitter.com/bsunter"}
-  {:name "Facebook" :link "https://www.facebook.com/briansunterblog"}]}
+ [{:name "Github" :link "https://github.com/briansunter" :type :github}
+  {:name "LinkedIn" :link "https://www.linkedin.com/in/brian-sunter-9853a649/" :type :linkedin}
+  {:name "instagram" :link "https://www.instagram.com/bsunter" :type :instagram}
+  {:name "Twitter" :link "https://twitter.com/bsunter" :type :twitter}]}

@@ -20,7 +20,17 @@
       s.parentNode.insertBefore(wf, s);
    })(document);"
     ]
+   (include-css "https://use.fontawesome.com/releases/v5.0.13/css/all.css")
    (include-css "/css/garden.css")])
+
+(defn social-type-to-icon
+  [social-type]
+  (case social-type
+    :github "fa-github-square"
+    :facebook "fa-facebook"
+    :twitter "fa-twitter-square"
+    :instagram "fa-instagram"
+    :linkedin "fa-linkedin"))
 
 (defn header
   [{:keys [social-profiles title description]}]
@@ -28,10 +38,10 @@
    [:h1 title]
    [:p description]
    [:ul.social
-    (for [{:keys [link name]} social-profiles]
+    (for [{:keys [link name type]} social-profiles]
       [:li.social-profile.flex-item
        [:a {:href link}
-        [:i {:class "fab fa-github-square"}]
+        [:i {:class (str "fab " (social-type-to-icon type))}]
         [:h3 name]]])]])
 
 (defn blog-entry
@@ -98,8 +108,8 @@
         photo-entries (filter (partial has-tag? "photography") entries)]
     [:div.home
      (header meta)
-     (projects-section projects)
      (blog-section blog-entries)
+     (projects-section projects)
      (photo-section photo-entries)
      (work-section jobs)]))
 

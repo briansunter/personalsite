@@ -4,17 +4,14 @@
 
 (gdn/defstyles base [[:h1 :h2 :h3 :h4 {:font-family "'Monserrat', sans-serif"}]
                      [:ul.social {:display "flex"
+                                  :text-align "center"
                                   :justify-content "space-between"}]
 
                      (at-media {:max-width "1000px"}
                                [:p {:font-family "'Lora', serif"}]
                                [:.container {:display :grid
-                                             :grid-template-columns "5vw 90vw 5vw"
-                                             }]
-                               [:.content {
-                                           :grid-column "2"
-
-                                           }])
+                                             :grid-template-columns "5vw 90vw 5vw"}]
+                               [:.content {:grid-column "2"}])
 
                      (at-media {:min-width "1050px"}
                                [:div.container {:display :grid
@@ -22,8 +19,7 @@
                                                 :grid-template-columns "auto 1050px auto"
                                                 :grid-template-rows "auto"}]
                                [:.content {:grid-column 2
-                                           :max-width "1050px"}])
-                     ])
+                                           :max-width "1050px"}])])
 
 (gdn/defstyles index
   [[:h1 :h2 :h3 :h4
@@ -36,24 +32,21 @@
 
    [:.social-profile [:h3 {:font-size "1.25rem"}]]
 
-   [:ul.social
-    {:display "flex"
-     :justify-content "space-around"}]
-
    (at-media {:max-width "1000px"}
              [:.home {:padding "20px"}]
              [:.home [[:h1 {:font-size "3rem"
                             :font-style "bold"}]
-
                       [:h3 {:font-size "2rem"}]
                       [:p {:font-size "1.5rem"}]]]
-             ;; [:.container {:padding "20px"}]
              [:.content [[:h1 {:font-size "3rem"}]
                          [:h2 {:font-size "3rem"}]
                          [:p {:font-size "2rem"}]
+                         [:.CodeMirror {:margin-top "20px"
+                                        :margin-bottom "20px"}]
                          [:.CodeMirror-code {:font-size "1rem"
                                              :padding "10px"}]]]
-             [:.social-profile [:h3 {:font-size "1rem"}]]
+             [:.social-profile {:margin-top "10px"} [:h3 {:font-size "1.25rem"}]
+              [:i {:font-size "4rem"}]]
              [:h3 {:font-size "4rem"}])
 
    (at-media {:min-width "1000px"}
@@ -64,11 +57,15 @@
               [:.home [[:h1 {:font-size "6rem"}]
                        [:p {:font-size "2rem"}]]]
               [:.content [[:h1 {:font-size "5rem"}]
-                          [:h2 {:font-size "3rem"}]
+                          [:h2 {:font-size "4rem"}]
                           [:p {:font-size "2rem"}]
+                          [:.CodeMirror {:margin-top "30px"
+                                         :margin-bottom "30px"}]
                           [:.CodeMirror-code {:font-size "2rem"
                                               :padding "10px"}]]]
-              [:.social-profile [:h3 {:font-size "3rem"}]]
+              [:.social-profile {:margin-top "20px"}[:h3 {:font-size "3rem"}]
+               [:i {:font-size "6rem"}]
+               ]
               [:h3 {:font-size "4rem"}]
 
               [:ul
@@ -99,9 +96,7 @@
                {:display :grid
                 :grid-gap "20px"
                 :grid-template-columns "1fr 1050px 1fr"
-                :grid-template-areas " \"header\" \"blog-section\" \"projects-section\" \"photo-section\" \"work-section\""}]])
-
-   ])
+                :grid-template-areas " \"header\" \"blog-section\" \"projects-section\" \"photo-section\" \"work-section\""}]])])
 
 (gdn/defstyles screen
   [:body

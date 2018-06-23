@@ -18,5 +18,6 @@ This site was made with [Perun](https://perun.io/guides/ "Link to perun homepage
 ```
 
 
+
 <script type="text/javascript">window.klipse_settings = {selector: '.language-clj'};</script>
 <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
