@@ -26,6 +26,7 @@
 (gdn/defstyles index
   [[:h1 :h2 :h3 :h4
     {:font-family "'Monserrat', sans-serif"
+     :line-height 1.2
      :margin 0}]
    [:p {:font-size "1.5rem"
         :font-family "'Lora', serif"}]
@@ -36,13 +37,17 @@
    (at-media {:max-width "1000px"}
              [:.home {:padding "20px"}]
              [:.home [[:h1 {:font-size "3rem"
-                            :font-style "bold"}]
-                      [:h3 {:font-size "2rem"}]
+                            :font-style "bold"
+                            :margin-top "20px"
+                            :margin-bottom "20px"                           }]
+                      [:h3 {:font-size "2rem"
+                            :margin-top "10px"
+                            :margin-bottom "10px"                           }]
                       [:p {:font-size "1.5rem"}]]]
              [:.content [[:h1 {:font-size "3rem"
                                :margin-top "20px"
                                :margin-bottom "20px"}]
-                         [:h2 {:font-size "2.5rem"
+                         [:h2 {:font-size "2rem"
                                :margin-top "20px"
                                :margin-bottom "20px"}]
                          [:h3 {:font-size "2rem"
@@ -50,13 +55,13 @@
                                :margin-bottom "20px"}]
                          [:p {:font-size "1.5rem"
                               :margin-top "20px"}]
+
                          [:.CodeMirror {:margin-top "20px"
                                         :margin-bottom "20px"}]
                          [:.CodeMirror-code {:font-size "1rem"
-                                             :padding "10px"}]]
-              [:.social-profile {:margin-top "10px"}
-               [:h3 {:font-size "1.25rem"}]
-               [:i {:font-size "4rem"}]]])
+                                             :padding "10px"}]]]
+             [:.social-profile {:margin-top "10px"} [:h3 {:font-size "1.25rem"}]]
+             [:i {:font-size "4rem"}])
 
    (at-media {:min-width "1000px"}
              [[:ul.social
@@ -65,15 +70,20 @@
               [:h3 {:font-size "2rem"}]
               [:.home [[:h1 {:font-size "6rem"}]
                        [:p {:font-size "2rem"}]]]
-              [:.content [[:h1 {:font-size "5rem"}]
-                          [:h2 {:font-size "4rem"}]
+              [:.content [[:h1 {:font-size "5rem"
+                                :margin-top "20px"
+                                :margin-bottom "20px"                               }]
+                          [:h2 {:font-size "4rem"
+                                :margin-top "20px"
+                                :margin-bottom "20px"                               }]
                           [:p {:font-size "2rem"}]
                           [:.CodeMirror {:margin-top "30px"
                                          :margin-bottom "30px"}]
                           [:.CodeMirror-code {:font-size "2rem"
                                               :padding "10px"}]]]
               [:.social-profile {:margin-top "20px"}[:h3 {:font-size "3rem"}]
-               [:i {:font-size "6rem"}]]
+               [:i {:font-size "6rem"}]
+               ]
               [:h3 {:font-size "4rem"}]
 
               [:ul

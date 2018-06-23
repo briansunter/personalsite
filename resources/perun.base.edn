@@ -5,5 +5,5 @@
  :social-profiles
  [{:name "Github" :link "https://github.com/briansunter" :type :github}
   {:name "LinkedIn" :link "https://www.linkedin.com/in/brian-sunter-9853a649/" :type :linkedin}
-  {:name "instagram" :link "https://www.instagram.com/bsunter" :type :instagram}
+  {:name "Instagram" :link "https://www.instagram.com/bsunter" :type :instagram}
   {:name "Twitter" :link "https://twitter.com/bsunter" :type :twitter}]}
