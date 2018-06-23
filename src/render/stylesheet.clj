@@ -21,7 +21,10 @@
               [:h3 {:font-size "3rem"}] [:p {:font-size "1.5rem"}]])])
 
 (def highlight-js
-  [:.hljs {:border "solid 1px #90B4FE", :font-family code-font-family}])
+  [:.hljs {:border "solid 1px #90B4FE", :font-family code-font-family,
+           :padding "10px"
+           :margin-top "20px"
+           :margin-bottom "20px"}])
 
 (def social
   [[:.social
