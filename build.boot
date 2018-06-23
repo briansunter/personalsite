@@ -41,6 +41,7 @@
    (global-metadata)
    (toml-metadata)
    (draft)
+   (pandoc :cmd-opts ["-t" "revealjs" "-s" "-V" "revealjs-url=/js/revealjs" "-V" "theme=dk-light"] :filterer (partial has-tag? "talk"))
    (markdown)
    (asciidoctor)
    (pandoc :extensions [".org"] :out-ext ".html" :cmd-opts ["-f" "org" "-t" "html5"])
