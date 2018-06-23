@@ -11,6 +11,8 @@
     {:font-family header-font-family,
      :margin-top "20px",
      :margin-bottom "20px"}] [:p {:font-family body-font-family}]
+   [:p {:line-height "1.2"}]
+   [:code {:line-height "1.2"}]
    (at-media {:max-width "1000px"}
              [:h1 {:font-size "3rem"}]
              [:h2 {:font-size "2.5rem"}]

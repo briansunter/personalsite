@@ -51,8 +51,8 @@
    [:ul (for [entry entries] (blog-entry entry))]])
 
 (defn photo-entry
-  [{:keys [title description permalink]}]
-  [:li.photo.entry [:h3 [:a {:href permalink} title]] [:p description]])
+  [{:keys [title description gphotos]}]
+  [:li.photo.entry [:h3 [:a {:href gphotos} title]] [:p description]])
 
 (defn photo-section
   [entries]
