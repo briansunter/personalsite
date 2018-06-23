@@ -2,127 +2,104 @@
   (:require [garden.def :as gdn]
             [garden.stylesheet :refer [at-media]]))
 
-(gdn/defstyles base [[:h1 :h2 :h3 :h4 {:font-family "'Monserrat', sans-serif"}]
-                     [:.hljs {:border "solid 1px #90B4FE"
-                              :font-family "FiraCode"}]
-                     [:ul.social {:display "flex"
-                                  :text-align "center"
-                                  :justify-content "space-between"}]
+(def body-font-family "'Lora', serif")
+(def code-font-family "FiraCode")
+(def header-font-family "'Monserrat', sans-serif")
 
-                     (at-media {:max-width "1000px"}
-                               [:p {:font-family "'Lora', serif"}]
-                               [:.container {:display :grid
-                                             :grid-template-columns "5vw 90vw 5vw"}]
-                               [:.content {:grid-column "2"}])
+(def font-defaults
+  [[:h1 :h2 :h3 :h4 {:font-family header-font-family
+                     :margin-top "20px"
+                     :margin-bottom "20px"}]
 
-                     (at-media {:min-width "1050px"}
-                               [:div.container {:display :grid
-                                                :grid-gap "20px"
-                                                :grid-template-columns "auto 1050px auto"
-                                                :grid-template-rows "auto"}]
-                               [:.content {:grid-column 2
-                                           :max-width "1050px"}])])
-
-(gdn/defstyles index
-  [[:h1 :h2 :h3 :h4
-    {:font-family "'Monserrat', sans-serif"
-     :line-height 1.2
-     :margin 0}]
-   [:p {:font-size "1.5rem"
-        :font-family "'Lora', serif"}]
-   [:h1 {:font-size "3.5rem"}]
-
-   [:.social-profile [:h3 {:font-size "1.25rem"}]]
+   [:p {:font-family body-font-family}]
 
    (at-media {:max-width "1000px"}
-             [:.home {:padding "20px"}]
-             [:.home [[:h1 {:font-size "3rem"
-                            :font-style "bold"
-                            :margin-top "20px"
-                            :margin-bottom "20px"                           }]
-                      [:h3 {:font-size "2rem"
-                            :margin-top "10px"
-                            :margin-bottom "10px"                           }]
-                      [:p {:font-size "1.5rem"}]]]
-             [:.content [[:h1 {:font-size "3rem"
-                               :margin-top "20px"
-                               :margin-bottom "20px"}]
-                         [:h2 {:font-size "2rem"
-                               :margin-top "20px"
-                               :margin-bottom "20px"}]
-                         [:h3 {:font-size "2rem"
-                               :margin-top "20px"
-                               :margin-bottom "20px"}]
-                         [:p {:font-size "1.5rem"
-                              :margin-top "20px"}]
-
-                         [:.CodeMirror {:margin-top "20px"
-                                        :margin-bottom "20px"}]
-                         [:.CodeMirror-code {:font-size "1rem"
-                                             :padding "10px"}]]]
-             [:.social-profile {:margin-top "10px"} [:h3 {:font-size "1.25rem"}]]
-             [:i {:font-size "4rem"}])
+             [:h1 {:font-size "3rem"}]
+             [:h2 {:font-size "2.5rem"}]
+             [:h3 {:font-size "2rem"}]
+             [:p {:font-size "1.5rem"}])
 
    (at-media {:min-width "1000px"}
-             [[:ul.social
-               {:display "flex"
-                :justify-content "space-between"}]
-              [:h3 {:font-size "2rem"}]
-              [:.home [[:h1 {:font-size "6rem"}]
-                       [:p {:font-size "2rem"}]]]
-              [:.content [[:h1 {:font-size "5rem"
-                                :margin-top "20px"
-                                :margin-bottom "20px"                               }]
-                          [:h2 {:font-size "4rem"
-                                :margin-top "20px"
-                                :margin-bottom "20px"                               }]
-                          [:p {:font-size "2rem"}]
-                          [:.CodeMirror {:margin-top "30px"
-                                         :margin-bottom "30px"}]
-                          [:.CodeMirror-code {:font-size "2rem"
-                                              :padding "10px"}]]]
-              [:.social-profile {:margin-top "20px"}[:h3 {:font-size "3rem"}]
-               [:i {:font-size "6rem"}]
-               ]
-              [:h3 {:font-size "4rem"}]
+             [[:h1 {:font-size "5rem"}]
+              [:h2 {:font-size "2.5rem"}]
+              [:h3 {:font-size "3rem"}]
+              [:p {:font-size "1.5rem"}]])])
 
-              [:ul
-               {:list-style-type "none"
-                :padding 0}]
+(def highlight-js
+  [:.hljs {:border "solid 1px #90B4FE"
+           :font-family code-font-family}])
 
-              [:div.header
-               {:grid-area "header"
-                :grid-column 2}]
+(def social
+  [[:.social {:display "flex"
+              :margin-top "10px"
+              :text-align "center"
+              :justify-content "space-between"}]
 
-              [:div.work-section
-               {:grid-area "work-section"
-                :grid-column 2}]
+   (at-media {:max-width "1000px"}
+             [:.social-profile {:margin-top "10px"}
+              [:h3 {:font-size "1.25rem" :margin-top "10px"}]
+              [:i {:font-size "3rem"}]])
 
-              [:div.projects-section
-               {:grid-area "projects-section"
-                :grid-column 2}]
+   (at-media {:min-width "1000px"}
+             [:.social-profile {:margin-top "20px"}
+              [:h3 {:font-size "3rem"}]
+              [:i {:font-size "6rem"}]])])
 
-              [:div.blog-section
-               {:grid-area "blog-section"
-                :grid-column 2}]
+(def container
+  [(at-media {:max-width "1000px"}
+             [:.container {:display :grid
+                           :grid-template-columns "5vw 90vw 5vw"}]
+             [:.content {:grid-column "2"}])
 
-              [:div.photo-section
-               {:grid-area "photo-section"
-                :grid-column 2}]
+   (at-media {:min-width "1050px"}
+             [:.container {:display :grid
+                           :grid-gap "20px"
+                           :grid-template-columns "auto 1050px auto"
+                           :grid-template-rows "auto"}]
+             [:.content {:grid-column 2 :max-width "1050px"}])])
 
-              [:div.home
-               {:display :grid
-                :grid-gap "20px"
-                :grid-template-columns "1fr 1050px 1fr"
-                :grid-template-areas " \"header\" \"blog-section\" \"projects-section\" \"photo-section\" \"work-section\""}]])])
+(def header
+  [:.header
+   {:grid-area "header"
+    :grid-column 2}])
 
-(gdn/defstyles screen
-  [:body
-   {:font-family "Helvetica Neue"
-    :font-size   "16px"
-    :line-height 1.5}])
+(def section
+  [:.section {:grid-column 2}])
+
+(gdn/defstyles base [font-defaults
+                     highlight-js
+                     container])
+
+(def home
+  [[:.home {:display :grid
+            :grid-template-areas " \"header\" \"blog-section\" \"projects-section\" \"photo-section\" \"work-section\""}]
+   (at-media {:max-width "1000px"}
+             [:.home {:grid-template-columns "5vw 90vw 5vw"}])
+   (at-media {:min-width "1000px"}
+             [:.home {:grid-template-columns "1fr 1050px 1fr"}])])
+
+(gdn/defstyles index
+  [home
+   header
+   social
+   section])
+
+(def code-mirror
+  [(at-media {:max-width "1000px"}
+             [:.CodeMirror {:margin-top "20px"
+                            :margin-bottom "20px"}]
+             [:.CodeMirror-code {:font-size "1rem"
+                                 :padding "10px"}])
+
+   (at-media {:min-width "1000px"}
+             [:.CodeMirror {:margin-top "30px"
+                            :margin-bottom "30px"}]
+             [:.CodeMirror-code {:font-size "2rem"
+                                 :padding "10px"}])])
+(gdn/defstyles page
+  code-mirror)
 
 (gdn/defstyles combined
-  screen
   base
-  index)
+  index
+  page)

@@ -46,13 +46,13 @@
 
 (defn blog-entry
   [{:keys [title description permalink]}]
-  [:li.blog-entry
+  [:li.blog.entry
    [:h3 [:a {:href permalink} title]]
    [:p description]])
 
 (defn blog-section
   [entries]
-  [:div.blog-section
+  [:div.blog.section
    [:h1 "Blog"]
    [:ul
     (for [entry entries]
@@ -60,13 +60,13 @@
 
 (defn photo-entry
   [{:keys [title description permalink]}]
-  [:li.photo-entry
+  [:li.photo.entry
    [:h3 [:a {:href permalink} title]]
    [:p description]])
 
 (defn photo-section
   [entries]
-  [:div.photo-section
+  [:div.photo.section
    [:h1 "Photos"]
    [:ul
     (for [entry entries]
@@ -80,7 +80,7 @@
 
 (defn work-section
   [entries]
-  [:div.work-section
+  [:div.work.section
    [:h1 "Work"]
    [:ul
     (for [{:keys [name description] :as entry} entries]
@@ -94,7 +94,7 @@
 
 (defn projects-section
   [entries]
-  [:div.projects-section
+  [:div.projects.section
    [:h1 "Projects"]
    [:ul
     (for [entry entries]
