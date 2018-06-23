@@ -3,33 +3,25 @@
             [hiccup.page :refer [html5 include-css include-js]]
             [utils :refer [has-tag?]]
             [clojure.java.io :as io]
-            [io.perun.core   :as perun]
+            [io.perun.core :as perun]
             [garden.stylesheet :refer [at-media]]))
 
 (def photoswipe
-  [:div.pswp
-   {:aria-hidden "true", :role "dialog", :tabindex "-1"}
+  [:div.pswp {:aria-hidden "true", :role "dialog", :tabindex "-1"}
    [:div.pswp__bg]
    [:div.pswp__scroll-wrap
-    [:div.pswp__container
-     [:div.pswp__item]
-     [:div.pswp__item]
-     [:div.pswp__item]]
+    [:div.pswp__container [:div.pswp__item] [:div.pswp__item] [:div.pswp__item]]
     [:div.pswp__ui.pswp__ui--hidden
-     [:div.pswp__top-bar
-      [:div.pswp__counter]
-      [:button.pswp__button.pswp__button--close
-       {:title "Close (Esc)"}]
+     [:div.pswp__top-bar [:div.pswp__counter]
+      [:button.pswp__button.pswp__button--close {:title "Close (Esc)"}]
       [:button.pswp__button.pswp__button--share {:title "Share"}]
-      [:button.pswp__button.pswp__button--fs
-       {:title "Toggle fullscreen"}]
+      [:button.pswp__button.pswp__button--fs {:title "Toggle fullscreen"}]
       [:button.pswp__button.pswp__button--zoom {:title "Zoom in/out"}]
       [:div.pswp__preloader
        [:div.pswp__preloader__icn
         [:div.pswp__preloader__cut [:div.pswp__preloader__donut]]]]]
      [:div.pswp__share-modal.pswp__share-modal--hidden.pswp__single-tap
-      [:div.pswp__share-tooltip]
-      " \n            "]
+      [:div.pswp__share-tooltip] " \n            "]
      [:button.pswp__button.pswp__button--arrow--left
       {:title "Previous (arrow left)"}]
      [:button.pswp__button.pswp__button--arrow--right
@@ -38,9 +30,11 @@
 
 (defn photoswipe-js
   [photoswipe-url]
-  [:script (str
-            "var psURL = '" photoswipe-url "';\n"
-            "var options = {index: 0,
+  [:script
+   (str
+     "var psURL = '" photoswipe-url
+     "';\n"
+       "var options = {index: 0,
 captionEl: true,
 addCaptionHTMLFn: function(item, captionEl, isFake) {
     if(!item.title) {
@@ -96,23 +90,20 @@ msnry.layout()
 (defn render-album
   [{:keys [entry]}]
   (let [photoswipe-url (str (:permalink entry) "photoswipe.json")]
-    (html5 [:head [:meta {:charset "utf-8"}]
-            (include-css "/css/photoswipe.css")
-            (include-css "/static/default-skin/default-skin.css")
-            (include-js "/js/photoswipe.min.js")
-            (include-js "/js/photoswipe-ui-default.min.js")
-            (include-js "https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js")
-            (include-js "https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.js")
-            (include-js "https://code.jquery.com/jquery-3.2.1.slim.min.js")
-            (include-css "/css/garden.css")
-            (photoswipe-js photoswipe-url)]
-           [:div.container
-            [:div.content
-             (:content entry)
-             photoswipe
-             [:div#album
-              (map-indexed (fn [index {:keys [image title]}]
-                             [:img.image {:src (thumbnail image)
-                                          :onClick (str "openGallery(" index ");" )}])
-                           (:images entry))]
-             masonry-js]])))
+    (html5
+      [:head [:meta {:charset "utf-8"}] (include-css "/css/photoswipe.css")
+       (include-css "/static/default-skin/default-skin.css")
+       (include-js "/js/photoswipe.min.js")
+       (include-js "/js/photoswipe-ui-default.min.js")
+       (include-js "https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js")
+       (include-js "https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.js")
+       (include-js "https://code.jquery.com/jquery-3.2.1.slim.min.js")
+       (include-css "/css/garden.css") (photoswipe-js photoswipe-url)]
+      [:div.container
+       [:div.content (:content entry) photoswipe
+        [:div#album
+         (map-indexed (fn [index {:keys [image title]}]
+                        [:img.image
+                         {:src (thumbnail image),
+                          :onClick (str "openGallery(" index ");")}])
+                      (:images entry))] masonry-js]])))
