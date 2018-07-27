@@ -8,11 +8,11 @@
 
 (def font-defaults
   [[:h1 :h2 :h3 :h4
-    {:font-family header-font-family,
-     :margin-top "20px",
-     :margin-bottom "20px"}] [:p {:font-family body-font-family}]
-   [:p {:line-height "1.2"}]
-   [:code {:line-height "1.2"}]
+    {:font-family header-font-family
+     :margin-top "20px"
+     :margin-bottom "20px"}]
+   [:p {:font-family body-font-family}]
+   [:body {:line-height "1.3"}]
    (at-media {:max-width "1000px"}
              [:h1 {:font-size "3rem"}]
              [:h2 {:font-size "2.5rem"}]
@@ -69,7 +69,7 @@
    (at-media {:max-width "1000px"}
              [:.home {:grid-template-columns "5vw 90vw 5vw"}])
    (at-media {:min-width "1000px"}
-             [:.home {:grid-template-columns "1fr 1050px 1fr"}])])
+             [:.home {:grid-template-columns "1fr 870px 1fr"}])])
 
 (gdn/defstyles index [home header social section])
 

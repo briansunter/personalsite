@@ -27,16 +27,35 @@ Testing validates that the code behaves as you expect and helps you double check
 There are different types of testing depending on what you're trying to validate.
 
 ## Unit Testing
+Unit tests run quickly and test individual components of your program, usually functions. These should ideally be run and written during development. They should comprise the majority of testing and be your first line of defense.
+
+<script src="https://unpkg.com/chai@4.0.2/chai.js"> </script>
+<script>
+var expect = chai.expect;
+function it(msg, fn) {
+  return fn().__flags.message || true;
+}
+</script>
+
+``` js
+it("Addition should work", () =>
+ expect(3 + 1).to.equal(4)
+)
+```
 
 ## Integration Testing
+Integration testing verifies the behavior of "external" components. It's not always possible to simulate all external components at once, so this is usually a subset. An example of this would be hitting a rest api with an in memory database with an http client.
 
 ## Functional Testing
+Testing verifies the requirements of the system as a whole.
 
 ## Performance Testing
+Protects against introducing performance degradation.
 
 # How to Write Tests
 
 ## Specify Tests in the Acceptance Criteria
+Make sure to budget time for testing in the development process
 
 ## Write Testable Code
 

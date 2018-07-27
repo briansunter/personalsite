@@ -41,7 +41,7 @@
    (global-metadata)
    (toml-metadata)
    (draft)
-   (pandoc :cmd-opts ["-t" "revealjs" "-s" "-V" "revealjs-url=/js/revealjs" "-V" "theme=simple"] :filterer (partial has-tag? "talk"))
+   (pandoc :cmd-opts ["-t" "revealjs" "-s" "-V" "revealjs-url=/js/revealjs" "-V" "theme=dk-light"] :filterer (partial has-tag? "talk"))
    (markdown)
    (asciidoctor)
    (pandoc :extensions [".org"] :out-ext ".html" :cmd-opts ["-f" "org" "-t" "html5"])
@@ -61,15 +61,11 @@
                :page "index.html"
                :filterer (partial has-tag? "index-page"))
    (garden)
-   (sift :move {#"(.*)\.edn$" "$1.html"})
-   (sift :move {#"(.*\.ttf)" "public/$1"})
-   ;; (sift :move {#"/(.*\.css$)" "public/css/$1"})
-   (sift :move {#"(.*\.js$)" "public/$1"})
-   (sift :move {#"img" "public/img/"})
-   (sift :move {#"static" "public/static"})
+   (sift :move {#"^js/" "public/js"})
+   (sift :move {#"^img" "public/img"})
+   (sift :move {#"^static" "public/static"})
    (sift :move {#"^photos" "public/photos"})
-   (sift :move {#"photography/photoswipe/(.*)\.json" "public/photography/$1/photoswipe.json"})
-   (sift :move {#"css/(.*)" "public/css/$1"})
+   (sift :move {#"^css" "public/css"})
    (target)))
 
 (deftask dev

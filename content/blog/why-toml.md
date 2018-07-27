@@ -26,7 +26,7 @@ This creates a key value map.
 
 You do need to quote strings but at least they give you a multiline strings.
 
-```
+``` toml
 description="""this is extremely useful
 For longer fields"""
 ```
@@ -35,7 +35,7 @@ For longer fields"""
 I wrote a boot task that parses TOML metadata at the top of entries. I heavily rely on metadata for generating my photo albums. I use metadata for generating my photo albums. I need this for build time processing of image dimensions.
 One of my favorite features is called a "table array", which allows you to specify an array of maps.
 
-```
+``` ini
 [[images]]
 title= "Icy Roofed Houses"
 caption= "ICY!"

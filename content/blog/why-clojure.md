@@ -11,14 +11,14 @@ description = """Why would someone want to use a different programming language 
 
 - Pure functions and immutable data are the easiest units of software to reason about
 - Deep support for immutable data structures
-- S-Expressions and functions are very re-usable and composable
-- Great support for destructuring and pattern matching
-- Most "features" from other languages can be added as extensions via macros or in terms of the language itself. Polymorphism, types, inheritance, pattern Matching, etc
-- Interactive Programming: extremely fast feedback loop and experimentation
-- Powerful and simple testing
+- S-Expressions and functions are re-usable and composable
+- Great support for destructuring and pattern matching, working with maps in general
+- Most "features" from other languages can be added as extensions via macros or in terms of the language itself. Polymorphism, types, inheritance, pattern matching, etc
+- Interactive Programming: extremely fast feedback loop and experimentation with the REPL
+- Powerful and simple testing due to emphasis on pure functions
 - Good interop with the worlds most popular languages: Java and Javascript
-- Excellent concurrency support: Immutability, Software Transactional Memory, "Go Channels" (CSP), Agents, Everything in the JVM/Java
-- Subjectively Good Design - Strong notions of things like time, identity, and equality
+- Excellent concurrency support: immutability, software transactional memory, "Go Channels" (CSP), agents, everything in the JVM/Java
+- Subjectively good design - Strong notions of things like time, identity, and equality
 
 # Pure Functions and Immutable Data Structures
 Instead of mutating existing data structures, Clojure encourages you to use immutable data structures. In many languages you create a mutable array object and append to it.
@@ -80,6 +80,7 @@ my-vector
 This encourages us to use compositions of functions instead of functions that mutate objects. This makes a lot of things simpler and gives us confidence that changes in one part of the code won't affect areas in another. We just need to focus on the scope of the function, the inputs, and the outputs. We don't need to worry about prior state.
 
 # (but (there (are (so (many (parens (🙀)))))))
+The first thing you will notice in Clojure is how many parens there are and how dense the code is. It takes some getting used to, but the parens have a lot of benefits.
 
 We can always rewrite syntax repetition with macros and there are plenty of techniques for reducing the number of parens including "threading" operators like `->>`. The following is equivalent to the header.
 
@@ -111,25 +112,33 @@ The syntax is extremely regular. It's natural to wrap a function in another func
 
 Since all functions including built in functions are called the same way, it's easy to swap any function out with another, including built-ins.
 
-This syntax replaces the curly brace function notation.
+The parens replace a lot of the curly brace notation in other languages.
 
-<!-- ``` js -->
-<!-- function myFunction(arg1,arg2) { -->
-<!--   return arg1.concat(arg2) -->
-<!-- } -->
+``` js
+function myFunction(arg1, arg2) {
+  if (arg1.length !== 0) {
+    return arg1;
+  } else {
+    return arg2;
+  }
+}
+```
 
-<!-- ``` -->
-<!-- ``` clj -->
-<!-- (defn my-function -->
-<!--   [arg1 arg2] -->
-<!--   (str arg1 arg2)) -->
-<!-- ``` -->
-
+``` clj
+(defn my-function
+  [arg1 arg2]
+  (if (not (blank? arg1))
+     arg1
+     arg2))
+```
 # Macros
-Go has support for asynchronous "go channels" due to special syntax baked into the language. Clojure added the same features and syntax as a third party library. In Javascript you have to wait for syntax to be adopted but in Clojure it could by anyone.
+Go has support for asynchronous "go channels" due to special syntax baked into the language. Clojure added the same features and syntax as a third party library. In Javascript you have to wait for syntax to be adopted but in Clojure it could by implemented by anyone.
 
 # I must have types
-I initially disliked clojure coming from my semi strongly typed Java and C++. How was I supposed to `⌘+R` to refactor all instances of `foo` when I add a field in my IDE. I should have been asking why I needed to change 23 files. If you use types you have to consider the limits of what they do and the cost of the coupling introduced by type information flowing through your program.
+I initially disliked clojure coming from my semi strongly typed Java and C++. How was I supposed to `⌘+R` to refactor all instances of `foo` when I add a field in my IDE. I should have been asking why I needed to change 23 files. If you use types you have to consider their downsides and the cost of the coupling introduced by type information flowing through your program. After using Clojure, I find things like the "builder pattern" contrived compared to destructuring and optional parameters. There is usually only a few types of true "data" and the rest of the program are subsets and combinations of the data, which don't always deserve an explicit name or type.
+
+# Anti Abstract
+
 
 # Win Without Fighting
-Part of using clojure is a win without fighting approach. If you can write your programs using pure functions and dealing with data on a need to know basis, you can write dramatically simpler code which lessens your need for a type system. When everything deals with data the tests are also much simpler and easier to write. I like taking the extra time I save fighting with a type and investing it in tests, which I feel do more for correctness.
+Part of using Clojure is a win without fighting approach. If you can write your programs using pure functions and dealing with data on a need to know basis, you can write dramatically simpler code which lessens your need for a type system. When everything deals with data the tests are also much simpler and easier to write. I like taking the extra time I save fighting with a type and investing it in tests, which I feel do more for correctness.

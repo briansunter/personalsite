@@ -5,33 +5,122 @@ title = "Why Clojure?"
 description = """Why would someone want to use a different programming language than the one they're already using? Why not node.js?"""
 +++
 
-<link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css" />
 
 # Why Clojure?
+Why would someone want to use a language besides the one they're already using?
 
-- Pure functions and immutable data are the easiest units of software to reason about
-- Deep support for immutable data structures
-- S-Expressions and functions are very re-usable and composable
-- Great support for destructuring and pattern matching
-- Most "features" from other languages can be added as extensions via macros or in terms of the language itself. Polymorphism, types, inheritance, pattern Matching, etc
-- Interactive Programming: extremely fast feedback loop and experimentation
-- Powerful and simple testing
-- Good interop with the worlds most popular languages: Java and Javascript
-- Excellent concurrency support: Immutability, Software Transactional Memory, "Go Channels" (CSP), Agents, Everything in the JVM/Java
-- Subjectively Good Design - Strong notions of things like time, identity, and equality
+# (but (there (are (so (many (parens (🙀)))))))
 
-# Pure Functions and Immutable Data Structures
-Instead of mutating existing data structures, Clojure encourages you to use immutable data structures. In many languages you create a mutable array object and append to it.
+```
+(->> but
+     there
+     are
+     so
+     many
+     parens)
+```
 
+# Immutability
+- Don't mutate data. Always return a new "copy"
+- Deep support for effecient immutable data structures like lists and maps
+- Programs are easier to test and reason about
+- Easier concurrency
+
+# Mutable
+We have an array reference that we call 'push' on.
 ``` js
 var myArray = ['one', 'two', 'three'];
 
 function addOne(item) {
   myArray.push(item);
 }
-
-myArray
 ```
+
+# Immutable
+When we add an element to the vector, we get a new vector and the original is unchanged.
+``` clj
+(def my-new-vector (conj my-vector "four"))
+```
+
+# Pure Functions
+- Easiest units of software to reason about
+- Can be described by inputs and outputs
+- Easy to test and compose
+- Work extremely well with immutable data structures
+
+# (S Expressions)
+- Represent the program as a list of data
+- No syntax sugar. Built in functions can be replaced
+- No differentiation between statements and expressions (functions that return something)
+- Easily composable
+
+# (S Expression)
+```clj
+(if (= a b) "foo" "bar")
+(my-if (= a b) "foo" "bar")
+(my-if (my-fn a b) "foo" "bar")
+```
+# Macros
+- Don't wait for a language committee to release features
+- New features and syntax can be built from the language it
+- Add your own if statement, polymorphism, types, inheritance, pattern matching, etc
+
+# Interactive Programming
+- Interact with your code as you write itself
+- Extremely fast feedback loop
+- Experiment with libraries and ideas
+- Excellent editor integration
+
+# Destructuring
+Extremely good support for extracting information from collections
+
+``` clj
+(let [{:keys [name location description]} client]
+  (println name location "-" description))
+```
+
+# Easy to test
+Testing is much easier when your program is mostly pure functions and immutable data structures. Less need for stubs and mocks.
+
+# Easy to Test
+``` clj
+(deftest test-capitalize-entries
+  (let [employee {:last-name "smith"
+                  :job-title "engineer"
+                  :level 5
+                  :office "seattle"}]
+    ;; Passes
+    (is (= (capitalize-entries employee :job-title :last-name)
+           {:job-title "Engineer"
+            :last-name "Smith"
+            :office "seattle"
+            :level 5}))))
+```
+
+# Interop
+Interop with Java and Javascript
+```clj
+(System/getProperty "java.vm.version")
+```
+
+# Concurrency and Parallelism
+- Immutability and pure functions
+- Software Transactional Memory (Atoms)
+- "Go Channels" (CSP)
+- Agents
+- Everything in Java
+
+# Good Design
+Strong notions of things like time, identity, and equality
+
+# I must have types
+Types are a strong form of coupling in your program. Types encourage giving bogus names to "some of this and that" types.
+
+# Clojure.Spec
+
+# Pure Functions and Immutable Data Structures
+Instead of mutating existing data structures, Clojure encourages you to use immutable data structures. In many languages you create a mutable array object and append to it.
+
 
 We mutate the original array.
 
@@ -83,14 +172,6 @@ This encourages us to use compositions of functions instead of functions that mu
 The first thing everyone notices in Clojure is how many parens there are and how dense the code is. It takes some getting used to, but the parens have a lot of benefits.
 We can always rewrite syntax repetition with macros and there are plenty of techniques for reducing the number of parens including "threading" operators like `->>`. The following is equivalent to the header.
 
-```
-(->> but
-     there
-     are
-     so
-     many
-     parens)
-```
 
 Function calls are different in clojure than most languages. It is represented by a list where the first element is the function, and the rest are the arguments to that function.
 
@@ -138,3 +219,7 @@ I initially disliked clojure coming from my semi strongly typed Java and C++. Ho
 
 # Win Without Fighting
 Part of using clojure is a win without fighting approach. If you can write your programs using pure functions and dealing with data on a need to know basis, you can write dramatically simpler code which lessens your need for a type system. When everything deals with data the tests are also much simpler and easier to write. I like taking the extra time I save fighting with a type and investing it in tests, which I feel do more for correctness.
+
+<link rel="stylesheet" type="text/css" href="/css/vs.css" />
+
+<link rel="stylesheet" type="text/css" href="/css/codemirror.css" />
