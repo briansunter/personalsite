@@ -51,9 +51,9 @@
              [:.container
               {:display :grid,
                :grid-gap "20px",
-               :grid-template-columns "auto 1050px auto",
+               :grid-template-columns "auto 760px auto",
                :grid-template-rows "auto"}]
-             [:.content {:grid-column 2, :max-width "1050px"}])])
+             [:.content {:grid-column 2, :max-width "760px"}])])
 
 (def header [:.header {:grid-area "header", :grid-column 2}])
 
@@ -69,7 +69,7 @@
    (at-media {:max-width "1000px"}
              [:.home {:grid-template-columns "5vw 90vw 5vw"}])
    (at-media {:min-width "1000px"}
-             [:.home {:grid-template-columns "1fr 870px 1fr"}])])
+             [:.home {:grid-template-columns "1fr 760px 1fr"}])])
 
 (gdn/defstyles index [home header social section])
 
