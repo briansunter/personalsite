@@ -8,12 +8,13 @@ description = """Why would someone want to use a different programming language 
 <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css" />
 
 # Why Clojure?
+Why not the programming language I'm already using or some other language?
 
 - Pure functions and immutable data are the easiest units of software to reason about
 - Deep support for immutable data structures
-- S-Expressions and functions are re-usable and composable
-- Great support for destructuring and pattern matching, working with maps in general
-- Most "features" from other languages can be added as extensions via macros or in terms of the language itself. Polymorphism, types, inheritance, pattern matching, etc
+- S-Expressions (parens) are re-usable and composable
+- Great support for destructuring and pattern matching, and working with maps in general
+- Most "features" from other languages can be added as extensions via macros or in terms of the language itself. Polymorphism, "types", inheritance, pattern matching, etc
 - Interactive Programming: extremely fast feedback loop and experimentation with the REPL
 - Powerful and simple testing due to emphasis on pure functions
 - Good interop with the worlds most popular languages: Java and Javascript
@@ -112,11 +113,15 @@ The syntax is extremely regular. It's natural to wrap a function in another func
 
 Since all functions including built in functions are called the same way, it's easy to swap any function out with another, including built-ins.
 
+``` clj
+(if (= 42 42) "True" "False")
+(my-if (= 42 42) "True" "False")
+```
 The parens replace a lot of the curly brace notation in other languages.
 
 ``` js
 function myFunction(arg1, arg2) {
-  if (arg1.length !== 0) {
+  if (arg1) {
     return arg1;
   } else {
     return arg2;
@@ -131,14 +136,82 @@ function myFunction(arg1, arg2) {
      arg1
      arg2))
 ```
+
 # Macros
 Go has support for asynchronous "go channels" due to special syntax baked into the language. Clojure added the same features and syntax as a third party library. In Javascript you have to wait for syntax to be adopted but in Clojure it could by implemented by anyone.
 
+```
+messages := make(chan string)
+go func() { messages <- "ping" }()
+msg := <-messages
+fmt.Println(msg)
+```
+
+```
+(def c (chan 10)
+(go (>! c "hello"))
+(println (<!! c))
+```
+
+# Maps and Destructuring
+Clojure is really good at extracting data from maps and sequences. It is a really good for "data programs", that are mostly calling an api, transforming a sequence, and calling another API.
+
+## Positional Destructuring
+```
+(def large-list '(1 2 3 4 5 6 7 8 9 10))
+(let [[a b c] large-list]
+  (println a b c))
+;= 1 2 3
+```
+## Destructuring with named optional parameters and defaults
+
+```
+(defn configure [val options]
+(let [{:keys [debug verbose]
+       :or {debug false, verbose false}} options]
+(println "val =" val " debug =" debug " verbose =" verbose)))
+```
+
+# Interactive Programming
+Having a fast feedback loop is crucial to be productive. When I first started programming I would write some code, compiles, then manually test my changes, maybe with a debugger. Then I discovered TDD with an auto test runner, which gave me a faster feedback loop, since I could be reasonably confident my program worked without having to recompile for every change. The fastest feedback loop I've discovered so far is the Clojure REPL with editor integration. With Emacs and CIDER I can execute code in my editor as I write it. Having a fast feedback loop for exploratory coding before writing tests helps me be a lot more productive and write higher quality code. Other languages also have REPLs but I feel Clojure is uniquely well suited to this workflow.
+
+# Testing
+Testing is simpler when most things are maps and pure functions. This is an example from the "Gilded Rose Kata".
+
+```
+    @Test public void
+        BackstagePassQualityControl qualityControl = new BackstagePassQualityControl();
+
+    shouldNeverIncreaseQualityToMoreThanFifty() {
+Item backstagePass = anItem()
+                .withName(BACKSTAGE_PASS_ITEM_NAME)
+                .build()
+        backstagePass.setSellIn(FIVE_DAYS);
+        backstagePass.setQuality(50);
+
+        qualityControl.updateQualityFor(backstagePass);
+
+        assertThat(backstagePass.getQuality(), is(50));
+    }
+```
+
+``` clj
+(def max-quality-pass
+  {:quality 50
+   :sell-in 5})
+
+ (deftest test-backstage-pass-peak
+  (testing "Quality never goes over 50"
+    (is (= 50 (:quality (i/update-item max-quality-pass))))))
+```
+
+# Java and Javascript Interop
+Clojure has good interop with the worlds most popular languages. You can tap into the Java ecosystem for foundational libraries like the AWS SDK or database clients. Clojurescript has an excellent wrapper around React called Reagent. You can write your entire stack in Clojure, meaning a single person can be extremely productive. The interop story isn't perfect though: although it works technically, the difference between the programming models does have some friction. This can usually be solved by writing a wrapper.
+
+`(System/getProperty "java.vm.version")`
+
+# Concurrency
+Now that Moore's Law is ending, we can't rely on speed increases of a single core anymore. We need to write code that can take advantage of multiple cores and that can correctly run in parallel. I don't feel good about using some languages like Python or Javascript that are single inherently single threaded. Languages like Java or C++, which weren't designed with concurrency in mind are hard to use correctly. Clojure's data structures are thread safe by default and it has numerous concurrency primitives. The language design de-emphasis the us of state and emphasizes the use of values instead.
+
 # I must have types
-I initially disliked clojure coming from my semi strongly typed Java and C++. How was I supposed to `⌘+R` to refactor all instances of `foo` when I add a field in my IDE. I should have been asking why I needed to change 23 files. If you use types you have to consider their downsides and the cost of the coupling introduced by type information flowing through your program. After using Clojure, I find things like the "builder pattern" contrived compared to destructuring and optional parameters. There is usually only a few types of true "data" and the rest of the program are subsets and combinations of the data, which don't always deserve an explicit name or type.
-
-# Anti Abstract
-
-
-# Win Without Fighting
-Part of using Clojure is a win without fighting approach. If you can write your programs using pure functions and dealing with data on a need to know basis, you can write dramatically simpler code which lessens your need for a type system. When everything deals with data the tests are also much simpler and easier to write. I like taking the extra time I save fighting with a type and investing it in tests, which I feel do more for correctness.
+I initially disliked clojure coming from my semi strongly typed Java and C++. How was I supposed to `⌘+R` to refactor all instances of `foo` when I add a field in my IDE. I should have been asking why I needed to change 23 files. If you use types you have to consider their downsides and the cost of the coupling introduced by type information flowing through your program. After using Clojure, I find things like the "builder pattern" contrived. There is usually only a few types of true "data" and the rest of the program are subsets and combinations of the data, which don't always deserve an explicit name or type. I feel using classes encourages you to make abstractions too early, and making the wrong abstraction is much worse than repetition. A lot of the "bugs" you catch at compile time are often self inflicted bookeeping mistakes.
