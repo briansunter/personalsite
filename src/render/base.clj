@@ -23,8 +23,10 @@
   [:script
    "
     window.klipse_settings = {
-        selector_eval_js: '.language-js',
-        selector: '.language-clj'
+        selector_eval_js: '.language-js ,.js , .javascript',
+        selector: '.language-clj,.clojure',
+        selector_reagent: '.language-reagent,.reagent',
+         selector_eval_reason_3: '.language-reason, .reason'
     };
 "])
 

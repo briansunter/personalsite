@@ -1,21 +1,21 @@
-* meta                                                             :noexport:
----
-uuid: reagent-intro
-author: Brian Sunter
-tags:
-  - post
----
++++
+uuid = "reagent-intro"
+tags = ["blog", "index-page"]
+title = "Reagent Intro"
+description = """An introduction to Clojure with Reagent."""
++++
+
 * Intro to Clojurescript with Reagent
 The Javascript community has finally started rallying around the power of functional programming and immutability with React, but what would this look like in a language that supported these ideas really well?
 
 * What is Reagent?
-Reagent is a Clojurescript wrapper around React. It simplifies the interface to React and allows us to define our UI using hiccup(ish) templates, instead of JSX.
+Reagent is a Clojurescript wrapper around React. It simplifies the interface to React and allows us to define our UI using Clojure data structures, instead of JSX.
 
 * Hello World Component
 Let's start by just getting something on the screen.
 Define a simple Reagent (React) component. Components are functions that take 0 or more arguments and return a hiccup data structure.
 
-#+BEGIN_SRC clojure
+#+BEGIN_SRC clojure :tangle yes
 ;; REPL function syntax for importing.
 ;; From a file, the syntax is:
 ;; (ns my-ns.core
@@ -33,17 +33,23 @@ Define a simple Reagent (React) component. Components are functions that take 0 
 * Clojure functions and hiccup
 ~defn~ defines a function in Clojure. Our function takes one ~name~ parameter and returns a vector. The last "expression" in the function is the return value.
 
-#+BEGIN_SRC clojure
+#+BEGIN_SRC
 (defn hello [name]
    [:p (str "Hello " name "!")])
 #+END_SRC
 
+#+RESULTS:
+: #'user/hello
+
 * Calling our Function
-The first thing in a set of parens is a function that will be called with the following expressions as arguments. Our function will return an array ~[:p "Hello World!"]~ with a :keyword as the first item signifying the type of element to be rendered, and the content of the element in the second position.
+The first thing in a set of parens is a function that will be called with the following expressions as arguments. Our function will return an array ~[:p "Hello World!"]~ with a ~:keyword~ as the first item signifying the type of element to be rendered, and the content of the element in the second position.
 
 #+BEGIN_SRC clojure
 (hello "World")
 #+END_SRC
+
+#+RESULTS:
+| :p | Hello World! |
 
 Some functions can take any number of arguments, like ~str~
 
@@ -51,12 +57,19 @@ Some functions can take any number of arguments, like ~str~
 (str "this" "function" "can" "take" "many" "args")
 #+END_SRC
 
+#+RESULTS:
+: thisfunctioncantakemanyargs
+
 * Keywords
 Keywords are named values commonly used in map keys. They are symbols prefixed with a ~:~ like ~:my-keyword~ or ~:h1~.
 
 * Vectors and Map Syntax in Clojure
 ** Vector Syntax []
-The syntax for a vector is ~[1 2 "three" four]~
+The syntax for a vector is
+
+#+BEGIN_SRC
+[1 2 "three" four]
+#+END_SRC
 The elements are separated by whitespace in between brackets.
 ~,~ is treated as whitespace.
 
@@ -64,7 +77,9 @@ The elements are separated by whitespace in between brackets.
 ** Map Syntax {}
 The syntax for a map is
 
-~{:key-1 :value-1 :key-2 :value-2}~
+#+BEGIN_SRC
+{:key-1 :value-1 :key-2 :value-2}
+#+END_SRC
 
 Maps are a series of pairs in between braces.
 

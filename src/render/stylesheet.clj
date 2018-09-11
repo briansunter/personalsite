@@ -14,14 +14,17 @@
    [:h1 {:text-align "center"}]
    [:p {:font-family body-font-family}]
    [:body {:line-height "1.3"}]
+   [:code {:background-color "rgba(27,31,35,0.05)"}]
    (at-media {:max-width "1000px"}
              [:h1 {:font-size "3rem"}]
              [:h2 {:font-size "2.5rem"}]
              [:h3 {:font-size "2rem"}]
              [:p {:font-size "1.5rem"}])
    (at-media {:min-width "1000px"}
-             [[:h1 {:font-size "5rem"}] [:h2 {:font-size "2.5rem"}]
-              [:h3 {:font-size "2rem"}] [:p {:font-size "1.5rem"}]])])
+             [[:h1 {:font-size "5rem"}]
+              [:h2 {:font-size "2.5rem"}]
+              [:h3 {:font-size "2rem"}]
+              ])])
 
 (def highlight-js
   [:.hljs {:border "solid 1px #90B4FE", :font-family code-font-family,
@@ -88,7 +91,7 @@
              [:.CodeMirror-code {:font-size "1rem", :padding "10px"}])
    (at-media {:min-width "1000px"}
              [:.CodeMirror {:margin-top "30px", :margin-bottom "30px"}]
-             [:.CodeMirror-code {:font-size "2rem", :padding "10px"}])])
+             [:.CodeMirror-code {:font-size "1.25rem", :padding "10px"}])])
 (gdn/defstyles page code-mirror)
 
 (gdn/defstyles combined base index page)
