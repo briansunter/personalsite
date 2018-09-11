@@ -58,8 +58,11 @@
 
 (def header [[:.header {:grid-area "header", :grid-column 2}]
              [:.header>* {:text-align :center}]
-             [:.header>p {:font-size "2rem"}]
-             ])
+             (at-media {:min-width "1050px"}
+                       [:.header>p {:font-size "2rem"}])
+
+             (at-media {:max-width "1000px"}
+                       [:.header>p {:font-size "1.5rem"}])])
 
 (def section [[:.section {:grid-column 2}]
               [:.section>h1 {:text-align "center"}]])
