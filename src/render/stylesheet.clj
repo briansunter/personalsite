@@ -11,6 +11,7 @@
     {:font-family header-font-family
      :margin-top "20px"
      :margin-bottom "20px"}]
+   [:h1 {:text-align "center"}]
    [:p {:font-family body-font-family}]
    [:body {:line-height "1.3"}]
    (at-media {:max-width "1000px"}
@@ -20,7 +21,7 @@
              [:p {:font-size "1.5rem"}])
    (at-media {:min-width "1000px"}
              [[:h1 {:font-size "5rem"}] [:h2 {:font-size "2.5rem"}]
-              [:h3 {:font-size "3rem"}] [:p {:font-size "1.5rem"}]])])
+              [:h3 {:font-size "2rem"}] [:p {:font-size "1.5rem"}]])])
 
 (def highlight-js
   [:.hljs {:border "solid 1px #90B4FE", :font-family code-font-family,
@@ -56,7 +57,9 @@
              [:.content {:grid-column 2, :max-width "760px"}])])
 
 (def header [[:.header {:grid-area "header", :grid-column 2}]
-             [:.header>* {:text-align :center}]])
+             [:.header>* {:text-align :center}]
+             [:.header>p {:font-size "2rem"}]
+             ])
 
 (def section [[:.section {:grid-column 2}]
               [:.section>h1 {:text-align "center"}]])
