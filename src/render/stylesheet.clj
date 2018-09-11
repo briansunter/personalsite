@@ -39,8 +39,8 @@
               [:h3 {:font-size "1.25rem", :margin-top "10px"}]
               [:i {:font-size "3rem"}]])
    (at-media {:min-width "1000px"}
-             [:.social-profile {:margin-top "20px"} [:h3 {:font-size "3rem"}]
-              [:i {:font-size "6rem"}]])])
+             [:.social-profile {:margin-top "20px"} [:h3 {:font-size "2rem"}]
+              [:i {:font-size "4rem"}]])])
 
 (def container
   [(at-media {:max-width "1000px"}
@@ -55,9 +55,11 @@
                :grid-template-rows "auto"}]
              [:.content {:grid-column 2, :max-width "760px"}])])
 
-(def header [:.header {:grid-area "header", :grid-column 2}])
+(def header [[:.header {:grid-area "header", :grid-column 2}]
+             [:.header>* {:text-align :center}]])
 
-(def section [:.section {:grid-column 2}])
+(def section [[:.section {:grid-column 2}]
+              [:.section>h1 {:text-align "center"}]])
 
 (gdn/defstyles base [font-defaults highlight-js container])
 

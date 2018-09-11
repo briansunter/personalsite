@@ -34,7 +34,7 @@
 
 (defn header
   [{:keys [social-profiles title description]}]
-  [:div.header [:h1 title] [:p description]
+  [:div.header [:h1.main-title title] [:p description]
    [:ul.social
     (for [{:keys [link name type]} social-profiles]
       [:li.social-profile.flex-item
@@ -83,8 +83,11 @@
         projects (filter (partial has-tag? "project") entries)
         blog-entries (filter (partial has-tag? "blog") entries)
         photo-entries (filter (partial has-tag? "photography") entries)]
-    [:div.home (header meta) (blog-section blog-entries)
-     (projects-section projects) (photo-section photo-entries)
+    [:div.home
+     (header meta)
+     (blog-section blog-entries)
+     (projects-section projects)
+     (photo-section photo-entries)
      (work-section jobs)]))
 
 (defn render [content] (html5 head (home-page content)))

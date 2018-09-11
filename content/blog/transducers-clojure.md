@@ -17,16 +17,21 @@ You may already be familiar with a function called `reduce`, which takes a seq a
 ```
 
 `+` takes each number in the seq and adds it to the "sum so far"
+``` clojure-repl
+=> (+ 1)
+1
 
-`(+ 1) ;; => 1`
+=> (+ 1 2)
+3
 
-`(+ 1 2) ;; => 3`
+=> (+ 3 3)
+6
 
-`(+ 3 3) ;; => 6`
+=> (+ 6 4)
+10
 
-`(+ 6 4)`
-
-[...]
+;; [...]
+```
 
 Maybe you would do something like this in a mutable imperative language.
 
