@@ -4,7 +4,7 @@ description = """
 What are transducers and why would I want to use them?
   """
 uuid = "test"
-tags = ["blog", "index-page"]
+tags = ["blog"]
 +++
 # Testing Flow
 

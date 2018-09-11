@@ -1,6 +1,6 @@
 +++
 uuid = "rxjs-patterns"
-tags = ["blog", "index-page"]
+tags = ["blog"]
 title = "rxjs Patterns"
 description = """
 Some interesting problems you can solve with reactive programming

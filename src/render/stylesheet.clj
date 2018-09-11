@@ -54,6 +54,7 @@
                :grid-gap "20px",
                :grid-template-columns "auto 760px auto",
                :grid-template-rows "auto"}]
+             [:.content>h1 {:font-size "3rem"}]
              [:.content {:grid-column 2, :max-width "760px"}])])
 
 (def header [[:.header {:grid-area "header", :grid-column 2}]

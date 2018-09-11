@@ -6,10 +6,9 @@ description = "Why TOML? What about YAML? JSON?"
 +++
 
 # TOML
-
 Why TOML? What about YAML? JSON?
 
-# What I want in a configuration language
+# What I Want
 I want to be able to look at a configuration file and see that it's correct and not have to `{"nest": {"every": {"damn": {"thing": "!"}}}}`
 
 # YAML and JSON
@@ -32,8 +31,7 @@ For longer fields"""
 ```
 
 # How I use TOML
-I wrote a boot task that parses TOML metadata at the top of entries. I heavily rely on metadata for generating my photo albums. I use metadata for generating my photo albums. I need this for build time processing of image dimensions.
-One of my favorite features is called a "table array", which allows you to specify an array of maps.
+I wrote a boot task that parses TOML metadata at the top of entries. One of my favorite features is called a "table array", which allows you to specify an array of maps without heavy nesting.
 
 ``` ini
 [[images]]
