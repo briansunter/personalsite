@@ -23,7 +23,6 @@ Define a simple Reagent (React) component. Components are functions that take 0 
 (require '[reagent.core :as r])
 
 (defn hello [name]
-
 [:p (str "Hello " name "!")])
 
 (r/render-component [hello "World"] (.getElementById js/document "hello-world"))

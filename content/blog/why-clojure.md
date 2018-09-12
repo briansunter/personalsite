@@ -2,13 +2,14 @@
 uuid = "why-clojure"
 tags = ["blog", "index-page"]
 title = "Why Clojure?"
-description = """Why would someone want to use a different programming language than the one they're already using? Why not node.js?"""
+description = """Why not the programming language I'm already using or some other language? What makes Clojure uniquely well suited for modern software development?"""
 +++
 
 <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css" />
 
 # Why Clojure?
-Why not the programming language I'm already using or some other language?
+>Why not the programming language I'm already using or some other language? What makes Clojure uniquely well suited for modern software development?
+
 
 - Pure functions and immutable data are the easiest units of software to reason about
 - Deep support for immutable data structures
@@ -58,7 +59,7 @@ my-new-vector
 my-vector
 
 ```
-Since we can't mutate existing data, we're encouraged to use pure functions. You can count on these functions always returning the same value for a given input. Functions like `reverse` return a new vector, rather than mutating the original.
+The benefit of this indirection might not be immediately obvious, but since we can't mutate existing data, we're encouraged to use pure functions. You can count on these functions always returning the same value for a given input. Functions like `reverse` return a new vector, rather than mutating the original.
 
 ``` js
 const myArray = ["one", "two", "three"];
@@ -113,13 +114,13 @@ The syntax is extremely regular. It's natural to wrap a function in another func
 
 Since all functions including built in functions are called the same way, it's easy to swap any function out with another, including built-ins.
 
-``` clj
+```
 (if (= 42 42) "True" "False")
 (my-if (= 42 42) "True" "False")
 ```
 The parens replace a lot of the curly brace notation in other languages.
 
-``` js
+```
 function myFunction(arg1, arg2) {
   if (arg1) {
     return arg1;
@@ -129,7 +130,7 @@ function myFunction(arg1, arg2) {
 }
 ```
 
-``` clj
+```
 (defn my-function
   [arg1 arg2]
   (if (not (blank? arg1))
@@ -157,19 +158,20 @@ fmt.Println(msg)
 Clojure is really good at extracting data from maps and sequences. It is a really good for "data programs", that are mostly calling an api, transforming a sequence, and calling another API.
 
 ## Positional Destructuring
-```
+``` clj
 (def large-list '(1 2 3 4 5 6 7 8 9 10))
 (let [[a b c] large-list]
-  (println a b c))
-;= 1 2 3
+  (str a b c))
 ```
 ## Destructuring with named optional parameters and defaults
 
-```
+``` clj
 (defn configure [val options]
 (let [{:keys [debug verbose]
        :or {debug false, verbose false}} options]
-(println "val =" val " debug =" debug " verbose =" verbose)))
+(str "val =" val " debug =" debug " verbose =" verbose)))
+
+(configure "foo!" {:debug true})
 ```
 
 # Interactive Programming
@@ -195,7 +197,7 @@ Item backstagePass = anItem()
     }
 ```
 
-``` clj
+```
 (def max-quality-pass
   {:quality 50
    :sell-in 5})
@@ -208,7 +210,9 @@ Item backstagePass = anItem()
 # Java and Javascript Interop
 Clojure has good interop with the worlds most popular languages. You can tap into the Java ecosystem for foundational libraries like the AWS SDK or database clients. Clojurescript has an excellent wrapper around React called Reagent. You can write your entire stack in Clojure, meaning a single person can be extremely productive. The interop story isn't perfect though: although it works technically, the difference between the programming models does have some friction. This can usually be solved by writing a wrapper.
 
-`(System/getProperty "java.vm.version")`
+```
+(System/getProperty "java.vm.version")
+```
 
 # Concurrency
 Now that Moore's Law is ending, we can't rely on speed increases of a single core anymore. We need to write code that can take advantage of multiple cores and that can correctly run in parallel. I don't feel good about using some languages like Python or Javascript that are single inherently single threaded. Languages like Java or C++, which weren't designed with concurrency in mind are hard to use correctly. Clojure's data structures are thread safe by default and it has numerous concurrency primitives. The language design de-emphasis the us of state and emphasizes the use of values instead.

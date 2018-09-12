@@ -1,11 +1,21 @@
 (ns render.stylesheet
   (:require [garden.def :as gdn]
+            [garden.selectors :as s]
             [garden.stylesheet :refer [at-media]]))
 
 (def body-font-family "'Lora', serif")
 (def code-font-family "FiraCode")
 (def header-font-family "'Monserrat', sans-serif")
 
+(def block-quote [:blockquote {:font-size "1.4em"
+                               :margin "50px auto"
+                               :font-family "Open Sans"
+                               :color "#555555"
+                               :padding "1em"
+                               :border-left "8px solid black"
+                               :line-height "1.6"
+                               :position "relative"
+                               :background "#EDEDED"}])
 (def font-defaults
   [[:h1 :h2 :h3 :h4
     {:font-family header-font-family
@@ -19,12 +29,14 @@
              [:h1 {:font-size "3rem"}]
              [:h2 {:font-size "2.5rem"}]
              [:h3 {:font-size "2rem"}]
-             [:p {:font-size "1.5rem"}])
+             [:p  {:font-size "1.5rem"}]
+             [:li  {:font-size "1.5rem"}])
    (at-media {:min-width "1000px"}
              [[:h1 {:font-size "5rem"}]
               [:h2 {:font-size "2.5rem"}]
               [:h3 {:font-size "2rem"}]
-              ])])
+              [:p  {:font-size "1.5rem"}]
+              [:li {:font-size "1.5rem"}]])])
 
 (def highlight-js
   [:.hljs {:border "solid 1px #90B4FE", :font-family code-font-family,
@@ -78,6 +90,7 @@
     {:display :grid,
      :grid-template-areas
        " \"header\" \"blog-section\" \"projects-section\" \"photo-section\" \"work-section\""}]
+   [:.home.ul {:list-style-type "none"}]
    (at-media {:max-width "1000px"}
              [:.home {:grid-template-columns "5vw 90vw 5vw"}])
    (at-media {:min-width "1000px"}
@@ -92,6 +105,13 @@
    (at-media {:min-width "1000px"}
              [:.CodeMirror {:margin-top "30px", :margin-bottom "30px"}]
              [:.CodeMirror-code {:font-size "1.25rem", :padding "10px"}])])
-(gdn/defstyles page code-mirror)
+
+(s/defselector *)
+
+(def post
+  [:.content [:ul {:list-style-type "disc"}]])
+
+(gdn/defstyles page code-mirror block-quote post)
+
 
 (gdn/defstyles combined base index page)
