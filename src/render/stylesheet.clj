@@ -109,8 +109,9 @@
 (s/defselector *)
 
 (def post
-  [:.content [:ul {:list-style-type "disc"
-                   :padding-left ".5em"}]])
+  [:.content [[:ul {:list-style-type "disc"
+                    :padding-left "1em"}]]
+   [:li {:margin-top "10px"}]])
 
 (gdn/defstyles page code-mirror block-quote post)
 
