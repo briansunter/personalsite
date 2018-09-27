@@ -70,7 +70,7 @@ Keywords are named values commonly used in map keys. They are symbols prefixed w
 The syntax for a vector is
 
 #+BEGIN_SRC
-[1 2 "three" four]
+[1 2 "three" "four"]
 #+END_SRC
 The elements are separated by whitespace in between brackets.
 ~,~ is treated as whitespace.
@@ -80,7 +80,7 @@ The elements are separated by whitespace in between brackets.
 The syntax for a map is
 
 #+BEGIN_SRC
-{:key-1 :value-1 :key-2 :value-2}
+{:key-1 "value" :key-2 "value"}
 #+END_SRC
 
 Maps are a series of pairs in between braces.
@@ -146,4 +146,6 @@ c (int (+ (* x x) (* y y)))]
 
 #+END_SRC
 
-#+HTML: <div id="black-and-white"> </div>
+#+BEGIN_EXPORT html
+<div id="black-and-white"> </div>
+#+END_EXPORT
