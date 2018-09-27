@@ -23,7 +23,8 @@
      :margin-bottom "20px"}]
    [:h1 {:text-align "center"}]
    [:p {:font-family body-font-family}]
-   [:body {:line-height "1.3"}]
+   [:body {:line-height "1.3"
+           :margin-bottom "3rem"}]
    [:code {:background-color "rgba(27,31,35,0.05)"}]
    (at-media {:max-width "1000px"}
              [:h1 {:font-size "3rem"}]
@@ -39,16 +40,17 @@
               [:li {:font-size "1.5rem"}]])])
 
 (def highlight-js
-  [:.hljs {:border "solid 1px #90B4FE", :font-family code-font-family,
+  [:.hljs {:border "solid 1px #90B4FE"
+           :font-family code-font-family
            :padding "10px"
            :margin-top "20px"
            :margin-bottom "20px"}])
 
 (def social
   [[:.social
-    {:display "flex",
-     :margin-top "10px",
-     :text-align "center",
+    {:display "flex"
+     :margin-top "10px"
+     :text-align "center"
      :justify-content "space-between"}]
    (at-media {:max-width "1000px"}
              [:.social-profile {:margin-top "10px"}
