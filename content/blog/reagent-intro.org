@@ -28,9 +28,9 @@ Define a simple Reagent (React) component. Components are functions that take 0 
 (r/render-component [hello "World"] (.getElementById js/document "hello-world"))
 #+END_SRC
 
-#+BEGIN_HTML
+#+BEGIN_EXPORT html
  <div id="hello-world">Loading...</div>
-#+END_HTML
+#+END_EXPORT
 
 * Clojure functions and hiccup
 ~defn~ defines a function in Clojure. Our function takes one ~name~ parameter and returns a vector. The last "expression" in the function is the return value.
