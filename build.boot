@@ -50,8 +50,6 @@
    (atom-feed :site-title "Brian Sunter" :description "Brian Sunter's Personal Site" :base-url "https://briansunter.com/")
    (permalink)
    (ttr)
-   (render :renderer 'render.photography/render-album
-           :filterer (partial has-tag? "photography"))
    (render :renderer 'render.base/render
            :filterer (partial has-tag? "blog"))
    (render :renderer 'render.base/render
@@ -61,7 +59,7 @@
                :page "index.html"
                :filterer (partial has-tag? "index-page"))
    (garden)
-   (sift :move {#"^js/" "public/js"})
+   (sift :move {#"^js" "public/js"})
    (sift :move {#"^img" "public/img"})
    (sift :move {#"^static" "public/static"})
    (sift :move {#"^photos" "public/photos"})
