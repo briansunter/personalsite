@@ -61,7 +61,6 @@
    (garden)
    (sift :move {#"^js" "public/js"})
    (sift :move {#"^img" "public/img"})
-   (sift :move {#"^static" "public/static"})
    (sift :move {#"^photos" "public/photos"})
    (sift :move {#"^css" "public/css"})
    (target)))
