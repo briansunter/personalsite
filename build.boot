@@ -29,11 +29,11 @@
 (task-options!
  pom {:project 'briansuter.com
       :version "0.2.0"}
- sync-bucket {:bucket "bsun.io"
+ sync-bucket {:bucket "briansunter.com"
           :dir "target/public/"
           :access-key (System/getenv "AWS_ACCESS_KEY")
           :secret-key (System/getenv "AWS_SECRET_KEY")
-          :cloudfront-id "EMH2KZONKJMO3"})
+              :cloudfront-id "ESIJ6FZOAN90E"})
 
 (deftask build
   []
