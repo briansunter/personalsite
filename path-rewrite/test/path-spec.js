@@ -19,8 +19,8 @@ describe('rewritePath', function () {
         assert.equal(rewritePath(realPage),realPage)
     });
 
-    let root = "https://bsun.io/"
-    let realRoot = "https://bsun.io/index.html"
+    let root = "https://briansunter.com/"
+    let realRoot = "https://briansunter.com/index.html"
 
     it('root should work', function () {
         assert.equal(rewritePath(root),realRoot)
