@@ -72,6 +72,7 @@
                :grid-template-columns "auto 760px auto",
                :grid-template-rows "auto"}]
              [:.content>h1 {:font-size "3rem"}]
+             ;; [:.content>*>img {:width "100%"}]
              [:.content {:grid-column 2, :max-width "760px"}])])
 
 (def header [[:.header {:grid-area "header", :grid-column 2}]
@@ -91,7 +92,7 @@
   [[:.home
     {:display :grid,
      :grid-template-areas
-       " \"header\" \"blog-section\" \"projects-section\" \"photo-section\" \"work-section\""}]
+     " \"header\" \"blog-section\" \"projects-section\" \"photo-section\" \"work-section\""}]
    [:.home.ul {:list-style-type "none"}]
    (at-media {:max-width "1000px"}
              [:.home {:grid-template-columns "5vw 90vw 5vw"}])
@@ -112,7 +113,8 @@
 
 (def post
   [:.content [[:ul {:list-style-type "disc"
-                    :padding-left "1em"}]]
+                    :padding-left "1em"}]
+              [:*>img {:width "100%"}]]
    [:li {:margin-top "10px"}]])
 
 (gdn/defstyles page code-mirror block-quote post)
