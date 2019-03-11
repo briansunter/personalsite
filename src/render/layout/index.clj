@@ -20,6 +20,13 @@
       wf.async = true;
       s.parentNode.insertBefore(wf, s);
    })(document);"]
+
+   [:script {:async true :src "https://www.googletagmanager.com/gtag/js?id=UA-18360473-1"}]
+   [:script
+    "window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+     gtag('config', 'UA-18360473-1');"]
    (include-css "https://use.fontawesome.com/releases/v5.0.13/css/all.css")
    (include-css "/css/garden.css")])
 

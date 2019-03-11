@@ -43,7 +43,14 @@
      (include-js "/js/highlight.pack.js")
      (include-css "https://use.fontawesome.com/releases/v5.0.13/css/all.css")
      [:script "hljs.initHighlightingOnLoad()"]
-     #_(include-js "/js/scripts/klipse.js") klipse-settings async-fonts]
+     #_(include-js "/js/scripts/klipse.js") klipse-settings async-fonts
+     [:script {:async true :src "https://www.googletagmanager.com/gtag/js?id=UA-18360473-1"}]
+     [:script
+      "window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+     gtag('config', 'UA-18360473-1');"]
+     ]
     [:div.container
      [:div.content
       (-> content
