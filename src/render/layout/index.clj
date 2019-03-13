@@ -2,33 +2,8 @@
   (:require [hiccup.core :refer [deftag]]
             [utils :refer [has-tag?]]
             [hiccup.page :refer [html5 include-css include-js]]
+            [render.base :refer [head]]
             [garden.stylesheet :refer [at-media]]))
-
-(def head
-  [:head
-   [:meta {:name "viewport", :content "width=device-width, initial-scale=1"}]
-   [:script
-    "WebFontConfig = { google: { families:
-    ['Source Sans Pro:400,600,700,400italic,700italic',
-    'Montserrat',
-    'Open Sans',
-    'Lora']}};
-
-   (function(d) {
-      var wf = d.createElement('script'), s = d.scripts[0];
-      wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
-      wf.async = true;
-      s.parentNode.insertBefore(wf, s);
-   })(document);"]
-
-   [:script {:async true :src "https://www.googletagmanager.com/gtag/js?id=UA-18360473-1"}]
-   [:script
-    "window.dataLayer = window.dataLayer || [];
-     function gtag(){dataLayer.push(arguments);}
-     gtag('js', new Date());
-     gtag('config', 'UA-18360473-1');"]
-   (include-css "https://use.fontawesome.com/releases/v5.0.13/css/all.css")
-   (include-css "/css/garden.css")])
 
 (defn social-type-to-icon
   [social-type]

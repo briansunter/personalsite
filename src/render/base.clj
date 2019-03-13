@@ -21,36 +21,36 @@
 
 (def klipse-settings
   [:script
-   "
-    window.klipse_settings = {
+       "window.klipse_settings = {
         selector_eval_js: '.language-js ,.js , .javascript',
         selector: '.language-clj,.clojure',
         selector_reagent: '.language-reagent,.reagent',
-         selector_eval_reason_3: '.language-reason, .reason'
+        selector_eval_reason_3: '.language-reason, .reason'
     };
 "])
+
+(def head
+[:head
+ async-fonts
+ klipse-settings
+ [:meta {:name "viewport", :content "width=device-width, initial-scale=1"}]
+ [:meta {:charset "utf-8"}] (include-css "/css/codemirror.css")
+ (include-js "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js")
+ (include-css "/css/vs.css") (include-css "/css/garden.css")
+ (include-js "/js/highlight.pack.js")
+ (include-css "https://use.fontawesome.com/releases/v5.0.13/css/all.css")
+ [:script "hljs.initHighlightingOnLoad()"]
+ [:script {:async true :src "https://www.googletagmanager.com/gtag/js?id=UA-18360473-1"}]
+ [:script
+  "window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+     gtag('config', 'UA-18360473-1');"]])
 
 (defn render
   [content]
   (html5
-    [:head
-     [:meta {:name "viewport", :content "width=device-width, initial-scale=1"}]
-     [:meta {:charset "utf-8"}] (include-css "/css/codemirror.css") ;; (include-css
-                                                                    ;; "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/styles/Vs.min.css")
-     (include-js
-       "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js")
-     (include-css "/css/vs.css") (include-css "/css/garden.css")
-     (include-js "/js/highlight.pack.js")
-     (include-css "https://use.fontawesome.com/releases/v5.0.13/css/all.css")
-     [:script "hljs.initHighlightingOnLoad()"]
-     #_(include-js "/js/scripts/klipse.js") klipse-settings async-fonts
-     [:script {:async true :src "https://www.googletagmanager.com/gtag/js?id=UA-18360473-1"}]
-     [:script
-      "window.dataLayer = window.dataLayer || [];
-     function gtag(){dataLayer.push(arguments);}
-     gtag('js', new Date());
-     gtag('config', 'UA-18360473-1');"]
-     ]
+    head
     [:div.container
      [:div.content
       (-> content
