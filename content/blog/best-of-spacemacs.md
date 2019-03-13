@@ -7,7 +7,7 @@ description = """These are some of my favorite spacemacs features"""
 
 # Why Spacemacs
 
-> Spacemacs is an opinationed emacs configuration that supports vim keybindings. It has excelellent keybindings, plugins, and a declarative configuration. I use spacemacs like a keyboard only IDE.
+> Spacemacs is an opinionated emacs configuration that supports vim keybindings. It has excellent keybindings, plugins, and a declarative configuration. I use spacemacs like a keyboard only IDE.
 
 # Hierarchical, searchable, discoverable, keybindings
 The most unique idea in spacemacs is the keybinding system. When you hit the spacebar, a window pops up at the bottom of the screen to show you "sub commands". These are high level categories at the top level and it shows you options such as `p project`, `w window`, `s search`, and `f files`. If you press another key, such as `w` for window, you are shown another set of commands related to window such as vertical and horizontal split. If you type these commands slowly, you can see prompts of all possible commands, but you can also type them quickly, like `SPC w v` for vertical window split. It's easy to manage a large number of keybindings without conflict with with method. You can also type `SPC SPC` to search for keybindings.
@@ -47,7 +47,7 @@ Helm is a general purpose search and completion system that powers Spacemacs. It
 
 # Neotree
 
-Neotree is a project sidebar that shows directory structure and let's you navigate files. It is simlar to the sidebars in other editors, but you can navigate it with the keyboard using vim keybindings, like any other buffer.
+Neotree is a project sidebar that shows directory structure and let's you navigate files. It is similar to the sidebars in other editors, but you can navigate it with the keyboard using vim keybindings, like any other buffer.
 
 ## Open project sidebar `SPC-f-t`
 
@@ -72,7 +72,7 @@ Magit is a very comprehensive git UI that has replaced most terminal commands fo
 ![Magit Log](/img/spacemacs/magit-log.png "Git History")
 
 # Org-Mode
-Org mode is a note taking and task management tool in emacs and spacemacs has especially good support. I really like the workflow in org because you can write notes in a collapsable outline view, then turn the notes into tasks and schedule them. There is a convenient org-capture keybinding that you can use to capture a random thought to be organized later. You can write customizations for tasks to be in different states like "blocked" or "waiting".
+Org mode is a note taking and task management tool in emacs and spacemacs has especially good support. I really like the workflow in org because you can write notes in a collapsible outline view, then turn the notes into tasks and schedule them. There is a convenient org-capture keybinding that you can use to capture a random thought to be organized later. You can write customizations for tasks to be in different states like "blocked" or "waiting".
 
 ## Editing
 
@@ -89,7 +89,7 @@ Spacemacs has good support for most of the languages I use except for Java. It i
 ![Autocomplete](/img/spacemacs/autocomplete.png "Typescript support in spacemacs")
 
 # Writing
-There is great support for writing english language in emacs as well. Emacs has great support for every text format I use like `markdown` and `org`.
+There is great support for writing English language in emacs as well. Emacs has great support for every text format I use like `markdown` and `org`.
 
 ## Ispell
 I-Spell is a spell checker for emacs. You can go through the spelling errors using the keyboard, and either correct them or add them to a custom dictionary.
