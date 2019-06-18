@@ -69,7 +69,7 @@
              [:.container
               {:display :grid,
                :grid-gap "20px",
-               :grid-template-columns "15vw 70vw 15vw",
+               :grid-template-columns "auto 760px auto",
                :grid-template-rows "auto"}]
              [:.content>h1 {:font-size "3rem"}]
              ;; [:.content>*>img {:width "100%"}]
