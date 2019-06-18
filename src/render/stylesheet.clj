@@ -28,15 +28,15 @@
    [:code {:background-color "rgba(27,31,35,0.05)"}]
    (at-media {:max-width "1000px"}
              [:h1 {:font-size "3rem"}]
-             [:h2 {:font-size "2.5rem"}]
-             [:h3 {:font-size "2rem"}]
-             [:p  {:font-size "1.5rem"}]
+             [:h2 {:font-size "2.0rem"}]
+             [:h3 {:font-size "1.5rem"}]
+             [:p  {:font-size "1.25rem"}]
              [:li  {:font-size "1.5rem"}])
    (at-media {:min-width "1000px"}
              [[:h1 {:font-size "5rem"}]
-              [:h2 {:font-size "2.5rem"}]
-              [:h3 {:font-size "2rem"}]
-              [:p  {:font-size "1.5rem"}]
+              [:h2 {:font-size "2.0rem"}]
+              [:h3 {:font-size "1.5rem"}]
+              [:p  {:font-size "1.25rem"}]
               [:li {:font-size "1.5rem"}]])])
 
 (def highlight-js
