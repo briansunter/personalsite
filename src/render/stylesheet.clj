@@ -19,8 +19,8 @@
 (def font-defaults
   [[:h1 :h2 :h3 :h4
     {:font-family header-font-family
-     :margin-top "20px"
-     :margin-bottom "20px"}]
+     :margin-top "10px"
+     :margin-bottom "10px"}]
    [:h1 {:text-align "center"}]
    [:p {:font-family body-font-family}]
    [:body {:line-height "1.3"
@@ -49,13 +49,14 @@
 (def social
   [[:.social
     {:display "flex"
+     :flex-wrap "wrap"
      :margin-top "10px"
      :text-align "center"
-     :justify-content "space-between"}]
+     :justify-content "space-around"}]
    (at-media {:max-width "1000px"}
-             [:.social-profile {:margin-top "10px"}
-              [:h3 {:font-size "1.25rem", :margin-top "10px"}]
-              [:i {:font-size "3rem"}]])
+             [:.social-profile {:margin "10px" :width "100px"}
+              [:h3 {:font-size "1rem"}]
+              [:i {:font-size "2rem"}]])
    (at-media {:min-width "1000px"}
              [:.social-profile {:margin-top "20px"} [:h3 {:font-size "2rem"}]
               [:i {:font-size "4rem"}]])])
@@ -69,11 +70,11 @@
              [:.container
               {:display :grid,
                :grid-gap "20px",
-               :grid-template-columns "auto 760px auto",
+               :grid-template-columns "auto 970px auto",
                :grid-template-rows "auto"}]
              [:.content>h1 {:font-size "3rem"}]
              ;; [:.content>*>img {:width "100%"}]
-             [:.content {:grid-column 2, :max-width "760px"}])])
+             [:.content {:grid-column 2, :max-width "970px"}])])
 
 (def header [[:.header {:grid-area "header", :grid-column 2}]
              [:.header>* {:text-align :center}]
@@ -97,7 +98,7 @@
    (at-media {:max-width "1000px"}
              [:.home {:grid-template-columns "5vw 90vw 5vw"}])
    (at-media {:min-width "1000px"}
-             [:.home {:grid-template-columns "1fr 760px 1fr"}])])
+             [:.home {:grid-template-columns "1fr 970px 1fr"}])])
 
 (gdn/defstyles index [home header social section])
 
