@@ -2,15 +2,17 @@
  :jvm-opts ["-Xmx4G"]
  :source-paths #{"src"}
  :resource-paths #{"content" "resources"}
- :dependencies '[[perun "0.4.2-SNAPSHOT" :scope "test"]
+ :dependencies '[[org.flatland/ordered "1.5.7"] 
+                 [org.clojure/core.rrb-vector "0.0.13"]
+                 [perun "0.4.2-SNAPSHOT" :scope "test"]
                  [org.clojure/clojure "1.8.0"]
-                 [boot/core "2.6.0" :scope "provided"]
+                 [boot/core "2.8.3" :scope "provided"]
                  [pandeiro/boot-http "0.8.3"]
                  [shakkuri "1.0.5"]
-                 [cheshire "5.8.0"]
-                 [clj-time "0.9.0"]
+                 [cheshire "5.8.1"]
+                 [clj-time "0.15.1"]
                  [org.martinklepsch/boot-garden "1.3.2-1"]
-                 [garden "1.3.3"]
+                 [garden "1.3.9"]
                  [confetti/confetti "0.2.1"]
                  [hashobject/boot-s3 "0.1.2-SNAPSHOT"]])
 
