@@ -27,17 +27,17 @@
            :margin-bottom "3rem"}]
    [:code {:background-color "rgba(27,31,35,0.05)"}]
    (at-media {:max-width "1000px"}
-             [:h1 {:font-size "3rem"}]
-             [:h2 {:font-size "2.0rem"}]
-             [:h3 {:font-size "1.5rem"}]
-             [:p  {:font-size "1.25rem"}]
-             [:li  {:font-size "1.5rem"}])
+             [:h1 {:font-size "2.5rem"}]
+             [:h2 {:font-size "1.5rem"}]
+             [:h3 {:font-size "1.25rem"}]
+             [:p  {:font-size "1.0rem"}]
+             [:li  {:font-size "1.0rem"}])
    (at-media {:min-width "1000px"}
-             [[:h1 {:font-size "5rem"}]
+             [[:h1 {:font-size "4rem"}]
               [:h2 {:font-size "2.0rem"}]
               [:h3 {:font-size "1.5rem"}]
               [:p  {:font-size "1.25rem"}]
-              [:li {:font-size "1.5rem"}]])])
+              [:li {:font-size "1.0rem"}]])])
 
 (def highlight-js
   [:.hljs {:border "solid 1px #90B4FE"
@@ -55,10 +55,10 @@
      :justify-content "space-around"}]
    (at-media {:max-width "1000px"}
              [:.social-profile {:margin "10px" :width "100px"}
-              [:h3 {:font-size "1rem"}]
+              [:h3 {:font-size "1rem" :margin 0}]
               [:i {:font-size "2rem"}]])
    (at-media {:min-width "1000px"}
-             [:.social-profile {:margin-top "20px"} [:h3 {:font-size "2rem"}]
+             [:.social-profile {:margin-top "20px"} [:h3 {:font-size "1.5rem"}]
               [:i {:font-size "4rem"}]])])
 
 (def container
@@ -120,5 +120,9 @@
 
 (gdn/defstyles page code-mirror block-quote post)
 
+(def blog-list-header
+  [[:p.blog-list-date {:font-size "1rem"
+                       :color "#4d4d4d"
+                       :font-family header-font-family}]])
 
-(gdn/defstyles combined base index page)
+(gdn/defstyles combined base index page blog-list-header)

@@ -1,6 +1,8 @@
 (ns render.layout.index
   (:require [hiccup.core :refer [deftag]]
             [utils :refer [has-tag?]]
+            [clj-time.format :as f]
+            [clj-time.coerce :as c]
             [hiccup.page :refer [html5 include-css include-js]]
             [render.base :refer [head]]
             [garden.stylesheet :refer [at-media]]))
@@ -23,9 +25,14 @@
        [:a {:href link} [:i {:class (str "fab " (social-type-to-icon type))}]
         [:h3 name]]])]])
 
+(def blog-entry-date-formatter (f/formatter "MMMM d, y"))
+
 (defn blog-entry
-  [{:keys [title description permalink]}]
-  [:li.blog.entry [:h3 [:a {:href permalink} title]] [:p description]])
+  [{:keys [title tags date-published description permalink]}]
+  [:li.blog.entry [:h3 [:a {:href permalink} title]]
+   [:div.blog-list-header
+   [:p.blog-list-date (f/unparse blog-entry-date-formatter (c/from-date date-published))]]
+   [:p.blog-entry-description description]])
 
 (defn blog-section
   [entries]

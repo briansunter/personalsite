@@ -3,6 +3,7 @@ uuid = "emacs-deamon-macos"
 tags = ["blog", "index-page"]
 title = "Emacs Daemon mode on macos"
 description = """How to have emacs launch quickly and always be available on macos"""
+date-published = 2019-06-23T00:00:00Z
 +++
 
 # Emacs Deamon Mode on macos
