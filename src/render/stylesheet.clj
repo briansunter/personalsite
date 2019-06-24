@@ -104,10 +104,10 @@
 
 (def code-mirror
   [(at-media {:max-width "1000px"}
-             [:.CodeMirror {:margin-top "20px", :margin-bottom "20px"}]
+             [:.CodeMirror {:margin-top "20px" :margin-bottom "20px"}]
              [:.CodeMirror-code {:font-size "1rem"}])
    (at-media {:min-width "1000px"}
-             [:.CodeMirror {:margin-top "30px"}]
+             [:.CodeMirror {:margin-top "20px" :margin-bottom "20px"}]
              [:.CodeMirror-code {:font-size "1.25rem"}])])
 
 (s/defselector *)
