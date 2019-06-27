@@ -2,7 +2,7 @@
  :jvm-opts ["-Xmx4G"]
  :source-paths #{"src"}
  :resource-paths #{"content" "resources"}
- :dependencies '[[org.flatland/ordered "1.5.7"] 
+ :dependencies '[[org.flatland/ordered "1.5.7"]
                  [org.clojure/core.rrb-vector "0.0.13"]
                  [perun "0.4.2-SNAPSHOT" :scope "test"]
                  [org.clojure/clojure "1.8.0"]
@@ -61,6 +61,7 @@
                :page "index.html"
                :filterer (partial has-tag? "index-page"))
    (garden)
+   (sift :move {#"^data" "public/data"})
    (sift :move {#"^js" "public/js"})
    (sift :move {#"^img" "public/img"})
    (sift :move {#"^photos" "public/photos"})
