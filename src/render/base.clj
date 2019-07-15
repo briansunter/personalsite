@@ -52,6 +52,7 @@
 (defn render
   [content]
   (html5
+   {:lang "en"}
     head
     [:div.container
      [:div.content
