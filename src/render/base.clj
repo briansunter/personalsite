@@ -35,6 +35,8 @@
  klipse-settings
  [:meta {:name "viewport", :content "width=device-width, initial-scale=1"}]
  [:meta {:charset "utf-8"}] (include-css "/css/codemirror.css")
+ [:title "Brian Sunter"]
+ [:meta {:name "Description" :content "The personal site of Brian Sunter including blog posts, projects, travel, and photography."}]
  (include-js "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js")
  (include-css "/css/vs.css") (include-css "/css/garden.css")
  (include-js "/js/highlight.pack.js")
