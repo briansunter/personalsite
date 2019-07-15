@@ -22,7 +22,7 @@
      :margin-top "10px"
      :margin-bottom "10px"}]
    [:h1 {:text-align "center"}]
-   [:p {:font-family body-font-family}]
+   [:p {:font-family body-font-family :margin-bottom "10px", :margin-top "10px"}]
    [:body {:line-height "1.3"
            :margin-bottom "3rem"}]
    [:code {:background-color "rgba(27,31,35,0.05)"}]
