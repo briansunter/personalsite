@@ -20,7 +20,7 @@
   [{:keys [social-profiles title description]}]
   [:div.header [:h1.main-title title] [:p description]
    [:ul.social
-    (for [{:keys [link name type]} social-profiles]
+    (for [{:keys [link name type]} (take 4 social-profiles)]
       [:li.social-profile.flex-item
        [:a {:href link} [:i {:class (str "fab " (social-type-to-icon type))}]
         [:h3 name]]])]])

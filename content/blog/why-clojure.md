@@ -171,7 +171,7 @@ Clojure is really good at extracting data from maps and sequences. It is a reall
 (defn configure [val options]
 (let [{:keys [debug verbose]
        :or {debug false, verbose false}} options]
-(str "val =" val " debug =" debug " verbose =" verbose)))
+(str "val=" val " debug="debug " verbose="verbose)))
 
 (configure "foo!" {:debug true})
 ```
@@ -228,6 +228,8 @@ The design choices and tradeoffs in Clojure were made deliberately. There are mu
 
 I remember having to learn the difference between comparing primitives and objects in Java. Code like this feels unintuitive.
 
+## Equality
+
 ``` java
 Integer a = new Integer(1);
 Integer b = new Integer(1);
@@ -252,10 +254,79 @@ Comparing object equality is almost never what I want to do and I don't think it
 ({foo: "bar"} === {foo: "bar"})
 ```
 
-This does what I expect, and I don't need to know the difference between `=`, `equals`, `==`, and `===`
+This does what I expect, and I don't need to know the difference between `=`, `equals`, `==`, `===`, `deepEqual`, and `deepStrictEqual`.
 
 ``` clj
 (= {:foo "bar"} {:foo "bar"})
 ```
-There is only `=` for structural equality and no object assignment.
+There is only `=` for structural equality and no assignment operator.
 The only `false` value is `nil` and everything else is `true`.
+
+## Polymorphism without classes
+Clojure is described as having "polymorphism a la carte", which means it has the benefits of inheritance and interface without being forced to use it and without many of the downsides.
+
+In Java, we could do something like this to represent a shape that can be extended in other areas of the program.
+``` java
+abstract class Shape {
+    public double area() {
+        return 0;
+    }
+}
+
+class Rectangle extends Shape {
+    protected int width, height;
+
+    public Rectangle(int width, int height) {
+        this.width = width; this.height = height;
+    }
+
+    public double area() {
+        return width * height;
+    }
+}
+
+class Triangle extends Shape {
+    protected int a, b, c;
+
+    public Triangle(int a, int b, int c) {
+        this.a = a; this.b = b; this.c = c;
+    }
+
+    public double area() {
+        double s = (a + b + c) / 2;
+        return Math.sqrt(s * (s - a) * (s - b) * (s - c));
+    }
+}
+
+class Circle extends Shape {
+    protected int r;
+
+    public Circle(int r) {
+        this.r = r;
+    }
+
+    public double area() {
+        return Math.PI * r * r;
+    }
+}
+```
+One downside of this approach is we need to think hard ahead of time about the relationship of our data.
+
+In Clojure we can start with the data and add multiple dispatch if or when we need it.
+``` clj
+(def triangle {:shape :triangle :point-a 1 :point-b 2 :point-c 3})
+(def rect {:shape :rect :width 3 :height 4})
+(def circle {:shape :circle :radius 5})
+
+(defmulti area :shape)
+
+(defmethod area :rect [r]
+    (* (:width r) (:height r)))
+
+(defmethod area :circle [c]
+    (* Math/PI (* (:radius c) (:radius c))))
+
+(defmethod area :default [x] :error)
+
+(area circle)
+```

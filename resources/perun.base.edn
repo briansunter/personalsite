@@ -5,4 +5,11 @@
  [{:name "Github" :link "https://github.com/briansunter" :type :github}
   {:name "LinkedIn" :link "https://www.linkedin.com/in/brian-sunter-9853a649/" :type :linkedin}
   {:name "Instagram" :link "https://www.instagram.com/bsunter" :type :instagram}
-  {:name "Twitter" :link "https://twitter.com/bsunter" :type :twitter}]}
+  {:name "Twitter" :link "https://twitter.com/bsunter" :type :twitter}
+  {:name "Keybase" :link "https://keybase.io/bsunter" :type :keybase}
+  {:name "Public Key" :link "https://briansunter.com/data/id_rsa.txt" :type :pubkey}
+  {:name "YouTube" :link "https://www.youtube.com/user/bsunter/" :type :youtube}
+  {:name "Dribble" :link "https://dribbble.com/bsunter" :type :dribble}
+  {:name "Product Hunt" :link "https://www.producthunt.com/@bsunter" :type :producthunt}
+  {:name "stackoverflow" :link "https://stackoverflow.com/users/1327871/devgeek" :type :stackoverflow}
+  ]}
