@@ -1,4 +1,4 @@
-(ns render.stylesheet (:require [garden.def :as gdn]
+ (ns render.stylesheet (:require [garden.def :as gdn]
             [garden.selectors :as s]
             [garden.stylesheet :refer [at-media]]))
 
@@ -30,7 +30,7 @@
              [:h2 {:font-size "1.5rem"}]
              [:h3 {:font-size "1.25rem"}]
              [:p  {:font-size "1.0rem"}]
-             [:li  {:font-size "1.0rem"}])
+             [:li {:font-size "1.0rem"}])
    (at-media {:min-width "1000px"}
              [[:h1 {:font-size "4rem"}]
               [:h2 {:font-size "2.0rem"}]
