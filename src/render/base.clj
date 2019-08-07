@@ -57,7 +57,7 @@
     [:div.container
      [:div.content
       [:div.page-header
-       [:h1 "Brian Sunter"]
+       [:h1 [:a {:href "/"}"Brian Sunter"]]
        [:ul.nav-links
         [:li [:a {:href "/#blog"} "Blog"]]
         [:li [:a {:href "/#projects"} "Projects"]]
