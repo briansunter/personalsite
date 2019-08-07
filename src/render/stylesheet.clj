@@ -62,6 +62,10 @@
 
 (def container
   [(at-media {:max-width "1000px"}
+             [:.page-header {:flex-direction :row :display :flex :justify-content :space-between :align-items :center}]
+             [:.nav-links {:display :flex :flex-direction :row :align-items :center}]
+             [:.nav-links>li {:list-style-type :none :margin-left "10px" :margin-right "10px" :font-family header-font-family}]
+             [:.page-header>h1 {:font-size "1.25rem" :text-align "left" :margin-bottom 0}]
              [:.container
               {:display :grid, :grid-template-columns "5vw 90vw 5vw"}]
              [:.content {:grid-column "2"}])
@@ -72,6 +76,10 @@
                :grid-template-columns "auto 720px auto",
                :grid-template-rows "auto"}]
              [:.content>h1 {:font-size "3rem"}]
+             [:.page-header {:flex-direction :row :display :flex :justify-content :space-between}]
+             [:.nav-links {:display :flex :flex-direction :row :align-items :center}]
+             [:.nav-links>li {:list-style-type :none :margin-left "10px" :margin-right "10px" :font-family header-font-family}]
+             [:.page-header>h1 {:font-size "2rem" :text-align "left" :margin-bottom 0}]
              ;; [:.content>*>img {:width "100%"}]
              [:.content {:grid-column 2, :max-width "720px"}])])
 

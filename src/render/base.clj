@@ -56,6 +56,13 @@
     head
     [:div.container
      [:div.content
+      [:div.page-header
+       [:h1 "Brian Sunter"]
+       [:ul.nav-links
+        [:li [:a {:href "/"} "About"]]
+        [:li [:a {:href "/#blog"} "Blog"]]
+        [:li [:a {:href "/#projects"} "Projects"]]]]
+      [:hr]
       (-> content
           :entry
           :content)] (include-js "/js/klipse_plugin.js")]))

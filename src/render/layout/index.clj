@@ -79,4 +79,4 @@
      (photo-section photo-entries)
      (work-section jobs)]))
 
-(defn render [content] (html5 {:lang "en"}head (home-page content)))
+(defn render [content] (html5 {:lang "en"} head (home-page content)))
