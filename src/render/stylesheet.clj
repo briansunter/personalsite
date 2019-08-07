@@ -1,5 +1,4 @@
-(ns render.stylesheet
-  (:require [garden.def :as gdn]
+(ns render.stylesheet (:require [garden.def :as gdn]
             [garden.selectors :as s]
             [garden.stylesheet :refer [at-media]]))
 
@@ -70,11 +69,11 @@
              [:.container
               {:display :grid,
                :grid-gap "20px",
-               :grid-template-columns "auto 970px auto",
+               :grid-template-columns "auto 720px auto",
                :grid-template-rows "auto"}]
              [:.content>h1 {:font-size "3rem"}]
              ;; [:.content>*>img {:width "100%"}]
-             [:.content {:grid-column 2, :max-width "970px"}])])
+             [:.content {:grid-column 2, :max-width "720px"}])])
 
 (def header [[:.header {:grid-area "header", :grid-column 2}]
              [:.header>* {:text-align :center}]
@@ -98,7 +97,7 @@
    (at-media {:max-width "1000px"}
              [:.home {:grid-template-columns "5vw 90vw 5vw"}])
    (at-media {:min-width "1000px"}
-             [:.home {:grid-template-columns "1fr 970px 1fr"}])])
+             [:.home {:grid-template-columns "1fr 720px 1fr"}])])
 
 (gdn/defstyles index [home header social section])
 
