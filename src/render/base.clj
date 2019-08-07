@@ -59,9 +59,9 @@
       [:div.page-header
        [:h1 "Brian Sunter"]
        [:ul.nav-links
-        [:li [:a {:href "/"} "About"]]
         [:li [:a {:href "/#blog"} "Blog"]]
-        [:li [:a {:href "/#projects"} "Projects"]]]]
+        [:li [:a {:href "/#projects"} "Projects"]]
+        [:li [:a {:href "/#photos"} "Photos"]]]]
       [:hr]
       (-> content
           :entry

@@ -36,7 +36,7 @@
 
 (defn blog-section
   [entries]
-  [:div.blog.section [:h1 "Blog"]
+  [:div.blog.section [:h1#blog "Blog"]
    [:ul (for [entry entries] (blog-entry entry))]])
 
 (defn photo-entry
@@ -45,16 +45,16 @@
 
 (defn photo-section
   [entries]
-  [:div.photo.section [:h1 "Photos"]
+  [:div.photo.section [:h1#photos "Photos"]
    [:ul (for [entry entries] (photo-entry entry))]])
 
 (defn job [name desc] [:li.job [:h3 name] [:p desc]])
 
 (defn work-section
   [entries]
-  [:div.work.section [:h1 "Work"]
+  [:div.work.section [:h1#work "Work"]
    [:ul
-    (for [{:keys [name description], :as entry} entries]
+    (for [{:keys [name description] :as entry} entries]
       (job name description))]])
 
 (defn project
@@ -63,7 +63,7 @@
 
 (defn projects-section
   [entries]
-  [:div.projects.section [:h1 "Projects"]
+  [:div.projects.section [:h1#projects "Projects"]
    [:ul (for [entry entries] (project entry))]])
 
 (defn home-page
