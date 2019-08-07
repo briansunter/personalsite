@@ -66,8 +66,8 @@
              [:.nav-links {:display :flex :flex-direction :row :align-items :center}]
              [:.nav-links>li {:list-style-type :none :margin-left "10px" :margin-right "10px" :font-family header-font-family}]
              [:.page-header>h1 {:font-size "1.25rem" :text-align "left" :margin-bottom 0}]
-             [:.page-header>*>a:visited {:color "#4d4d4d"} ]
-             [:.nav-links>*>a:visited {:color "#4d4d4d"} ]
+             [:.page-header>*>a {:color "#4d4d4d"} ]
+             [:.nav-links>*>a {:color "#4d4d4d"} ]
              [:.container
               {:display :grid, :grid-template-columns "5vw 90vw 5vw"}]
              [:.content {:grid-column "2"}])
@@ -82,8 +82,8 @@
              [:.nav-links {:display :flex :flex-direction :row :align-items :center}]
              [:.nav-links>li {:list-style-type :none :margin-left "10px" :margin-right "10px" :font-family header-font-family}]
              [:.page-header>h1 {:font-size "2rem" :text-align "left" :margin-bottom 0}]
-             [:.page-header>*>a:visited {:color "#4d4d4d"} ]
-             [:.nav-links>*>a:visited {:color "#4d4d4d"} ]
+             [:.page-header>*>a {:color "#4d4d4d"} ]
+             [:.nav-links>*>a {:color "#4d4d4d"} ]
              ;; [:.content>*>img {:width "100%"}]
              [:.content {:grid-column 2, :max-width "720px"}])])
 
