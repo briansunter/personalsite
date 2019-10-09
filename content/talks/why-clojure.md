@@ -220,6 +220,7 @@ I initially disliked clojure coming from my semi strongly typed Java and C++. Ho
 # Win Without Fighting
 Part of using clojure is a win without fighting approach. If you can write your programs using pure functions and dealing with data on a need to know basis, you can write dramatically simpler code which lessens your need for a type system. When everything deals with data the tests are also much simpler and easier to write. I like taking the extra time I save fighting with a type and investing it in tests, which I feel do more for correctness.
 
+<script src="/js/scripts/head.min.js"></script>
 <link rel="stylesheet" type="text/css" href="/css/vs.css" />
 
 <link rel="stylesheet" type="text/css" href="/css/codemirror.css" />

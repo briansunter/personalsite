@@ -10,7 +10,6 @@ description = """Why not the programming language I'm already using or some othe
 # Why Clojure?
 >Why not the programming language I'm already using or some other language? What makes Clojure uniquely well suited for modern software development?
 
-
 - Pure functions and immutable data are the easiest units of software to reason about
 - Deep support for immutable data structures
 - S-Expressions (parens) are re-usable and composable

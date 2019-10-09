@@ -98,7 +98,9 @@
 (def section [[:.section {:grid-column 2}]
               [:.section>h1 {:text-align "center"}]])
 
-(gdn/defstyles base [font-defaults highlight-js container])
+(def images [[:img {:padding "20px"}]])
+
+(gdn/defstyles base [font-defaults highlight-js container images])
 
 (def home
   [[:.home
@@ -129,7 +131,7 @@
               [:*>img {:width "100%"}]]
    [:li {:margin-top "10px"}]])
 
-(gdn/defstyles page code-mirror block-quote post)
+(gdn/defstyles page base code-mirror block-quote post)
 
 (def blog-list-header
   [[:p.blog-list-date {:font-size "1rem"

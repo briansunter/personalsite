@@ -22,7 +22,7 @@ The most unique idea in spacemacs is the keybinding system. When you hit the spa
 ![Markdown Insert Commands](/img/spacemacs/markdown-insert.png "Commands related to things you can insert into markdown, like links and images")
 
 # Vim Keybindings
-I never liked the emacs keybindings and never learned them well, but I can use Spacemacs no problem. I just don't think anything can beat vim keybindings in productivity and Spacemacs has perfect support. `gg` goes to the top of the file, `dt"` deletes up to the quotation mark, etc.
+I never liked the emacs keybindings and never learned them well, but I can use Spacemacs with no problems. I don't think anything can beat vim keybindings in productivity and Spacemacs has perfect support. `gg` goes to the top of the file, `dt"` deletes up to the quotation mark, etc.
 
 # Declarative Configuration
 You declare all the plugins and configuration in a file called `.spacemacs` which should be sufficient to recreate your editor. You can easily create custom layers that wrap functions in keybindings. You could easily create an "npm mode" which runs `npm install` when you use the keybindings in a javascript file. This provides a clear way to organize a large number of keybindings without conflicts.

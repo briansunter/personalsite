@@ -2,7 +2,7 @@
 name = "Books"
 description = "Books I want to read or have read."
 uuid = "books-to-read"
-tags = ["project", "index-page"]
+tags = ["project"]
 +++
 
 * 1421: The Year China Discovered America

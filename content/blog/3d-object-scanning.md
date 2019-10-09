@@ -1,7 +1,7 @@
 +++
 title = "3D Object Scanning"
 description = """
-I went in for a body scan to 3D-print a miniature model of myself. I uploaded the 3D object and ran it in the browser using three.js
+I went in for a body scan to 3D-print a miniature model of myself. I uploaded the 3D object and ran it in the browser using three.js.
 """
 uuid = "3d-object-scanning"
 tags = ["blog", "index-page"]

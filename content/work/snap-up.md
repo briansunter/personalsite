@@ -5,7 +5,7 @@ name = "SnapUp"
 date = "2014-08-01"
 description = """
   I worked on SnapUp, a machine learning powered shopping app.
-  Track any product you like by taking a screenshot.
+  Track any product you like by taking a screenshot of the app or website.
   We do this with patented product fingerprinting and price tracking technology. Acquired by ipsy.
 """
 +++
