@@ -31,7 +31,7 @@
   [{:keys [title tags date-published description permalink]}]
   [:li.blog.entry [:h3 [:a {:href permalink} title]]
    [:div.blog-list-header
-   [:p.blog-list-date (f/unparse blog-entry-date-formatter (c/from-date date-published))]]
+   #_[:p.blog-list-date (f/unparse blog-entry-date-formatter (c/from-date date-published))]]
    [:p.blog-entry-description description]])
 
 (defn blog-section
