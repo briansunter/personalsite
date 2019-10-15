@@ -5,7 +5,7 @@ title = "Org Mode"
 description = """My workflow in org-mode and spacemacs"""
 +++
 
-I constantantly have a stream of events happening and it's sometimes a struggle to keep everything organized. One of the best tools I've used is org-mode in Emacs.
+I constantly have a stream of events happening and it's sometimes a struggle to keep everything organized. One of the best tools I've used is org-mode in Emacs.
 
 * What is org-mode
 org-mode is a format like markdown and a plugin for the emacs editor. It allows for both note-taking and task management. The format is very similar to markdown and it's easy to export to markdown from org-mode. Everything is stored in a simple flat text format.
@@ -75,7 +75,7 @@ the tag ‘:work:’ and any tag starting with ‘boss’.
 #+END_SRC
 
 * org-agenda
-Org agenda allows you to gather up all your todos and schedule them. I like having a big backlog of tasks and queueing them up at the beginning of the week.
+Org agenda allows you to gather up all your todos and schedule them. I like having a big backlog of tasks and queuing them up at the beginning of the week.
 
 You can use ~SPC-a-o-t~ or ~org-todo-list~ to capture all todo headers from your notes. You cant hen use ~,s~ to schedule the task at a specific time.
 
@@ -92,7 +92,7 @@ Press ‘N r’ (e.g. ‘0 r’) to search again: (0)[ALL] (1)TODO (2)DONE
 
 #+END_SRC
 
-After you schedule the tasks, you can use ~SPC-a-o-a~ or ~org-agenda-list~ to view the weekly agenda, where you can mark tasks complete,  akes notes on the task, or log work time on the ask.
+After you schedule the tasks, you can use ~SPC-a-o-a~ or ~org-agenda-list~ to view the weekly agenda, where you can mark tasks complete, take notes on the task, or log work time on the ask.
 
 #+BEGIN_SRC md
 Week-agenda (W42):
